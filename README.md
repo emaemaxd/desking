@@ -6,5 +6,4 @@ Die GPS-Funktion des Handys ermöglicht die Standorteintragung beim Ein- bzw. Au
 Der Teamleiter bekommt in einem Dashboard eine Übersicht aller wichtigen Informationen, wie Urlaubsanträge, Zeiterfassungen, Projekte und dessen Arbeitsstunden.
 
 Die Projektabwicklung geschieht im GitHub Projekt.
-
 Für die Entwicklung der Webseiten wird React.js und Gatsby verwendet, während für die Handy-Apps React Native benutzt wird.
