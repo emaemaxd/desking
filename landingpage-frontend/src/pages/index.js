@@ -14,7 +14,7 @@ const Page = () => {
     <p>Unsere Webpräsenz wird aktuell eingerichtet. Bitte schauen Sie später vorbei! :)</p>
     <br/>
     <br />
-    <Link className="button tertiary" to="https://github.com/emaemaxd/desking">..und unser GitHub Repo finden Sie hier </Link>
+    <Link className="button tertiary" to="https://github.com/emaemaxd/desking">und unser GitHub Repo finden Sie hier </Link>
     <br />
     <br />
     <p className="footerline"><i>Desking © HTBLA Leonding, 4BHITM</i></p>
