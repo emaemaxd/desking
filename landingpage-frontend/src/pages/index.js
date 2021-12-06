@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import * as React from "react"
 import Logo from "../images/logo.png"
 import "../style/index.scss"
+import Button from "../elements/Button";
 
 const Page = () => {
 
@@ -9,6 +10,8 @@ const Page = () => {
 
   return (
     <>
+    <Button type="primary" />
+
     <img src={Logo} alt="Desking Logo" />
     <h1>Wilkommen auf der Desking Landing page</h1>
     <p>Unsere Webpräsenz wird aktuell eingerichtet. Bitte schauen Sie später vorbei! :)</p>
