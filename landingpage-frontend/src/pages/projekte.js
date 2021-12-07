@@ -4,8 +4,8 @@ import Layout from "../components/sections/layout"
 const Page = () => {
 
   return (
-    <Layout slug="/">
-      <h1>hi</h1>
+    <Layout slug="/projekte">
+      <h1>Projekte</h1>
     </Layout>
   );
 }
