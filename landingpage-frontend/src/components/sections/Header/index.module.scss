@@ -1,5 +1,5 @@
 .wrapper {
-    width: 100%;
+    width: 100vw;
     background-color: #151515;
     height: 50px;
     display: flex;
@@ -7,7 +7,13 @@
     flex-flow: row nowrap;
     padding: 0 30px;
     align-items: center;
+
+    @media only screen and (max-width: 992px) {
+        padding: 0 25px;
+        justify-content: flex-end;
+    }
 }
+
 .links a {
     color: white;
     cursor: pointer;
@@ -61,6 +67,34 @@
     }
 }
 
+.userWrapper {
+    margin-right: 45px;
+    @media only screen and (max-width: 992px) {
+        margin-right: 20px;
+    }
+}
+
 .logoWrapper, .icons {
     min-width: 250px;
+
+    @media only screen and (max-width: 992px) {
+        min-width: auto;
+    }
+}
+
+.links, .logoWrapper {
+    @media only screen and (max-width: 992px) {
+        display: none;
+    }
+}
+
+.hideOnMobile {
+    @media only screen and (max-width: 992px) {
+        display: none;
+    }
+}
+.hideOnDesktop {
+    @media only screen and (min-width: 993px) {
+        display: none;
+    }
 }
