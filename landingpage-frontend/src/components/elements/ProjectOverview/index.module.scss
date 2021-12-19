@@ -1,0 +1,79 @@
+.headline {
+    margin-bottom: 40px;
+}
+
+.projectname {
+    margin-bottom: 16px;
+}
+
+.projectcard {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #707070;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.graph {
+    width: 95px;
+    height: 95px;
+    border: 6px solid #d7f7bc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    color: #707070;
+
+    .upper_graph {
+        border-bottom: 1px solid #707070;
+        padding: 0 4px 1px 4px;
+        margin-bottom: 1px;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.arrow {
+    display: inline-block;
+    font-size: 28px;
+    cursor: pointer;
+    &:first-child {
+        transform: rotate(180deg);
+    }
+}
+
+.center {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+
+.circles {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #707070;
+    border-radius: 50%;
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &.active {
+        border-color: #8A90AB;
+        background-color: #8A90AB;
+    }
+}

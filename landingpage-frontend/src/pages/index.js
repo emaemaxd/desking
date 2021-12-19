@@ -1,5 +1,8 @@
 import React from "react"
-import Weekactivitiess from "../components/elements/Weekactivities";
+import NeededAttention from "../components/elements/NeededAttention";
+import ProjectOverview from "../components/elements/ProjectOverview";
+import Spacer from "../components/elements/Spacer";
+import Weekactivitiess from "../components/elements/WeekActivities";
 import Layout from "../components/sections/layout"
 
 const Page = () => {
@@ -10,9 +13,11 @@ const Page = () => {
         <div className="col5">
           <Weekactivitiess />
         </div>
-        <div className="col2" />
-        <div className="col5">
-          <h2>hlo</h2>
+        <div className="col1"/>
+        <div className="col6">
+          <ProjectOverview />
+          <Spacer desktop={100} />
+          <NeededAttention />
         </div>
       </div>
     </Layout>

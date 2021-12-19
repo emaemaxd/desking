@@ -2,20 +2,21 @@ import React, {useState} from "react"
 import * as styles from "./index.module.scss"
 
 const Button = (props) => {
-    console.log(props);
-    const [buttonText, setButtonText] = useState("i bims button");
 
-    if (props.type == "primary") {
+    const text = props.text || "Button";
+    const type = props.type || "primary"
+
+    if (type == "primary") {
         return (
-            <div className={styles.primary}>i bims button</div>
+            <div className={styles.primary}>{text}</div>
         )
-    } else if (props.type == "secondary") {
+    } else if (type == "secondary") {
         return (
-            <div className={styles.secondary}>i bims button</div>
+            <div className={styles.secondary}>{text}</div>
         )
     } else {
         return (
-            <div className={styles.primary}>i bims button undefined</div>
+            <div className={styles.tertiary}>{text}</div>
         )
     }
     
