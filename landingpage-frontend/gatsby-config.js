@@ -4,6 +4,15 @@ module.exports = {
     title: "Desking Landingpage",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Lato`,
+        ],
+        display: 'swap'
+      }
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
