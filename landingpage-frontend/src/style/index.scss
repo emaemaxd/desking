@@ -124,3 +124,25 @@ p {
         margin-right: 16px;
     }
 }
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-standort {
+
+    div {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    label {
+        min-width: 120px;
+    }
+
+    input {
+        line-height: 26px;
+        font-size: 18px;
+    }
+}

@@ -15,11 +15,11 @@ const Header = (props) => {
 
     return (
         <div className={styles.wrapper}>
-                <div className={styles.logoWrapper}>
+            <div className={styles.logoWrapper}>
                 <Link to="/">
                     <img className={styles.logo} alt="Desking Logo" src={Logo} />
-                    </Link>
-                </div>
+                </Link>
+            </div>
             <div className={styles.links}>
                 <Link className={props.current === "/arbeitszeiten" && styles.active} to="/arbeitszeiten">Arbeitszeiten</Link>
                 <Link className={props.current === "/urlaubsantraege" && styles.active} to="/urlaubsantraege">Urlaubsanträge</Link>
@@ -32,7 +32,9 @@ const Header = (props) => {
                     <img style={{ width: 35, height: 35, marginLeft: 15, marginRight: 15 }} alt="Profil" src={props.current === "/profil" ? UserBlack : User} />
                 </Link>
                 <img className={styles.hideOnMobile} style={{ width: 25 }} alt="Logout" src={Logout} />
-                <img className={styles.hideOnDesktop} onClick={e => setBurgerOpen(!burgerOpen)} style={{ width: 25 }} alt="Burger Menu" src={burgerOpen ? BurgerOpen : BurgerClosed} />
+                <div role="button" tabindex="0" onClick={e => setBurgerOpen(!burgerOpen)} onKeyDown={e => console.log(e)}>
+                    <img className={styles.hideOnDesktop} style={{ width: 25 }} alt="Burger Menu" src={burgerOpen ? BurgerOpen : BurgerClosed} />
+                </div>
             </div>
 
         </div>

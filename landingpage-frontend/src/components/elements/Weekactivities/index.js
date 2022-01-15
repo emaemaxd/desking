@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import * as styles from "./index.module.scss"
 // ▲ ▼ when it's active and △ ▽ when not active
 const Weekactivitiess = (props) => {
