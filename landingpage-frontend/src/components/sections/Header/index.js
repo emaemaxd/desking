@@ -14,7 +14,7 @@ const Header = (props) => {
     const [burgerOpen, setBurgerOpen] = useState(false);
 
     return (
-        <div className={styles.wrapper}>
+        <div className={`${styles.wrapper} ${props.hideMenu && styles.hideInner}`}>
             <div className={styles.logoWrapper}>
                 <Link to="/">
                     <img className={styles.logo} alt="Desking Logo" src={Logo} />
@@ -31,7 +31,9 @@ const Header = (props) => {
                 <Link className={`${styles.userWrapper} ${props.current === "/profil" && styles.active}`} to="/profil">
                     <img style={{ width: 35, height: 35, marginLeft: 15, marginRight: 15 }} alt="Profil" src={props.current === "/profil" ? UserBlack : User} />
                 </Link>
-                <img className={styles.hideOnMobile} style={{ width: 25 }} alt="Logout" src={Logout} />
+                <Link to="/login">
+                    <img className={styles.hideOnMobile} style={{ width: 25 }} alt="Logout" src={Logout} />
+                </Link>
                 <div role="button" tabindex="0" onClick={e => setBurgerOpen(!burgerOpen)} onKeyDown={e => console.log(e)}>
                     <img className={styles.hideOnDesktop} style={{ width: 25 }} alt="Burger Menu" src={burgerOpen ? BurgerOpen : BurgerClosed} />
                 </div>

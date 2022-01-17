@@ -9,6 +9,12 @@
     align-items: center;
     margin-bottom: 60px;
 
+    &.hideInner {
+        & > * {
+            display: none;
+        }
+    }
+
     @media only screen and (max-width: 992px) {
         padding: 0 25px;
         justify-content: flex-end;

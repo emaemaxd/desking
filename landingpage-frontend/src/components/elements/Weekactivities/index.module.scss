@@ -4,54 +4,6 @@
         margin-bottom: 40px;
     }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    tr {
-        border-bottom: 1px solid #DDDDDD;
-
-        th {
-            padding: 10px 14px;
-            color: #272727;
-            font-size: 15px;
-            span {
-                font-size: 10px;
-                margin-left: 4px;
-                cursor: pointer;
-            }
-        }
-
-        td {
-            padding: 14px;
-            color: #3C3429;
-
-            span {
-                font-size: 12px;
-            }
-        }
-
-        &:first-child {
-            background-color: #FAFAFA;
-        }
-
-        td:first-child, th:first-child {
-            text-align: left;
-            font-size: 15px;
-        }
-
-        td:not(:last-child):not(:first-child), th:not(:last-child):not(:first-child) {
-            text-align: center;
-        }
-
-        td:last-child, th:last-child {
-            text-align: right;
-        }
-    }
-
-
-
 }
 
 .checkin_yes {

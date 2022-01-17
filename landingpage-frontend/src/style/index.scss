@@ -130,11 +130,75 @@ label {
     font-weight: bold;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.checkbox-column {
+    width: 0;
+    input {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.has-checkbox {
+    td:nth-child(2) , th:nth-child(2) {
+        text-align: left !important;
+    }
+}
+
+tr {
+    border-bottom: 1px solid #DDDDDD;
+
+    th {
+        padding: 10px 14px;
+        color: #272727;
+        font-size: 15px;
+        span {
+            font-size: 10px;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+    }
+
+    td {
+        padding: 14px;
+        color: #3C3429;
+
+        span {
+            font-size: 12px;
+        }
+    }
+
+    &:first-child {
+        background-color: #FAFAFA;
+    }
+
+    td:first-child, th:first-child {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    td:not(:last-child):not(:first-child), th:not(:last-child):not(:first-child) {
+        text-align: center;
+    }
+
+    td:last-child, th:last-child {
+        text-align: right;
+    }
+}
+
 .form-standort {
 
     div {
         display: flex;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+
+        &:last-of-type{
+            margin-bottom: 40px;
+        }
     }
 
     label {
@@ -145,4 +209,92 @@ label {
         line-height: 26px;
         font-size: 18px;
     }
+}
+
+.form-profil, .form-password {
+
+    & > input {
+        margin-bottom: 24px;
+    }
+
+    input {
+        width: 100%;
+        max-width: 500px;
+        line-height: 32px;
+        font-size: 24px;
+        font-weight: 900;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    h2 {
+        margin-bottom: 16px;
+    }
+
+    .big-input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+    }
+}
+
+.preference-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 60px;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    &:last-child {
+        margin-bottom: 60px;
+    }
+}
+
+.password-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.login-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    & > div {
+        width: 100%;
+        display: flex;
+        margin-bottom: 60px;
+
+        input {
+            width: 100%;
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+        img {
+            margin-right: 30px;
+        }
+    }
+
+    
+}
+
+.login-helpline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #remember_user {
+        width: 16px;
+        height: 16px;
+        margin-right: 16px;
+    }
+
 }

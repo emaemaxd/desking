@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/sections/layout"
 import { useForm } from "react-hook-form"
+import Button from "../components/elements/Button"
 
 const Page = () => {
 
@@ -11,12 +12,44 @@ const Page = () => {
     <Layout slug="/standorte">
       <div className="container">
         <div className="col7">
-          <h1>Standorte</h1>
+          <h1 style={{marginBottom: 60}}>Standorte</h1>
+          <table className="has-checkbox">
+            <tr>
+              <th className="checkbox-column"><input type="checkbox" /></th>
+              <th>Name</th>
+              <th>Anschrift</th>
+              <th>Info</th>
+            </tr>
+            <tr>
+              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td>Büro #1</td>
+              <td>Waltherstraße 7<br />4020 Linz</td>
+              <td>Sonntags gesperrt</td>
+            </tr>
+            <tr>
+              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td>Büro #2</td>
+              <td>Landstraße 32<br />4020 Linz</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td>Kunde XY</td>
+              <td>Salzburgerstraße 32<br />4600 Wels</td>
+              <td>Hauptbüro</td>
+            </tr>
+            <tr>
+              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td>Kopiergeschäft</td>
+              <td>Waltherstraße 13<br />4020 Linz</td>
+              <td>Firmenrabatt</td>
+            </tr>
+          </table>
 
         </div>
         <div className="col1" />
         <div className="col3">
-          <h1>Standort hinzufügen</h1>
+          <h1 style={{ marginBottom: 60 }}>Standort hinzufügen</h1>
           <div>
             <form className="form-standort" onSubmit={handleSubmit(onSubmit())}>
               <div>
@@ -39,6 +72,7 @@ const Page = () => {
                 <label htmlFor="info">Info:</label>
                 <input id="info" {...register("info")} />
               </div>
+              <Button text="Hinzufügen" type="primary" disabled={true} align="center" />
             </form>
           </div>
         </div>
