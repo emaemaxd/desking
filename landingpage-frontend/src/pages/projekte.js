@@ -8,11 +8,11 @@ const Page = () => {
   return (
     <Layout slug="/projekte">
       <div className="container">
-        <div className="col5">
+        <div className="col6">
           <h1 style={{marginBottom: 30}} >Projektübersicht</h1>
           <ProjectTable />
         </div>
-        <div className="col2" />
+        <div className="col1" />
         <div className="col5">
           <h1 style={{marginBottom: 30}} >Projekt hinzufügen</h1>
           <div className="form-add-project">

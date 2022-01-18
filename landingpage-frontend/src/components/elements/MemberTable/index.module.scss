@@ -7,7 +7,13 @@
                 cursor: pointer;
             }
         }
-        
+    }
+
+    & > tr {
+        & > td:not(:last-of-type),
+        & > th:not(:last-of-type) {
+            text-align: left !important;
+        }
     }
 }
 
@@ -18,7 +24,7 @@
     position: relative;
 
     table {
-        max-width: 75%;
+        max-width: 70%;
     }
 }
 

@@ -1,0 +1,40 @@
+.iconWrapper {
+    img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        cursor: pointer;
+
+        &:first-of-type {
+            margin-right: 16px;
+        }
+    }
+}
+
+.prevGrid {
+    display: grid;
+    grid: auto-flow dense / 1fr 1fr;
+    border-collapse: collapse;
+
+    & > div {
+        display: inline-block;
+        width: auto;
+        padding: 4px 0;
+    
+        &:first-of-type {
+            border-right: 1px solid #707070;
+            border-bottom: 1px solid #707070;
+        }
+
+        &:nth-of-type(3) {
+            border-right: 1px solid #707070;
+        }
+
+        &:nth-of-type(2) {
+            border-bottom: 1px solid #707070;
+        }
+    
+    }
+
+
+}

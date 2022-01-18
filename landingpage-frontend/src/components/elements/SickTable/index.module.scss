@@ -1,0 +1,14 @@
+.table {
+    max-height: 300px;
+    overflow-y: scroll;
+    display: block;
+    width: 100%;
+
+    tr {
+        width: 100%;
+    }
+    tr:first-of-type {
+        position: sticky;
+        top: 0;
+    }
+}
