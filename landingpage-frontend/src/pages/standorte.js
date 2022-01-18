@@ -15,31 +15,31 @@ const Page = () => {
           <h1 style={{marginBottom: 60}}>Standorte</h1>
           <table className="has-checkbox">
             <tr>
-              <th className="checkbox-column"><input type="checkbox" /></th>
+              <th className="checkbox-column"><input aria-label="Alle auswählen" type="checkbox" /></th>
               <th>Name</th>
               <th>Anschrift</th>
               <th>Info</th>
             </tr>
             <tr>
-              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>
               <td>Büro #1</td>
               <td>Waltherstraße 7<br />4020 Linz</td>
               <td>Sonntags gesperrt</td>
             </tr>
             <tr>
-              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>
               <td>Büro #2</td>
               <td>Landstraße 32<br />4020 Linz</td>
               <td></td>
             </tr>
             <tr>
-              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>
               <td>Kunde XY</td>
               <td>Salzburgerstraße 32<br />4600 Wels</td>
               <td>Hauptbüro</td>
             </tr>
             <tr>
-              <td className="checkbox-column"><input type="checkbox" /></td>
+              <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>
               <td>Kopiergeschäft</td>
               <td>Waltherstraße 13<br />4020 Linz</td>
               <td>Firmenrabatt</td>

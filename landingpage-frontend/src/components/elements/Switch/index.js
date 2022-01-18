@@ -4,7 +4,7 @@ import * as styles from "./index.module.scss"
 const Switch = ({opt1, opt2, value, setter}) => {
 
     return (
-        <div className={styles.wrapper} onClick={(e) => {
+        <div className={styles.wrapper} role="switch" tabIndex="0" aria-checked={value} onClick={(e) => {
             setter(!value);
         }}>
             <div className={`${value && styles.selected}`}>

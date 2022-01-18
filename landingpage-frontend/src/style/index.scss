@@ -242,6 +242,35 @@ tr {
     }
 }
 
+.form-add-project {
+
+
+    input {
+        width: 100%;
+        max-width: 500px;
+        line-height: 32px;
+        font-size: 24px;
+        font-weight: 900;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    h2 {
+        margin-bottom: 8px;
+        margin-right: 50px;
+    }
+
+    .big-input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+    }
+}
+
 .preference-item {
     display: flex;
     align-items: center;

@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+        padding: 8px;
+        border-radius: 13px;
+        outline: none;
+        font-size: 15px;
+        color: #972834;
+        background: white;
+        border: 1px solid #707070;
+        cursor: pointer;
+    }
+}

@@ -36,13 +36,13 @@ const Button = (props) => {
     } else if (type === "secondary") {
         if (color === "light") {
             return (
-                <div style={props.style} onClick={props.onClick} className={`${styles.secondary} ${styles.light}`}>
+                <button style={props.style} role="button" onClick={props.onClick} className={`${styles.secondary} ${styles.light}`}>
                     {text}
-                </div>
+                </button>
             )
         } else {
             return (
-                <div style={props.style} onClick={props.onClick} className={styles.secondary}>{text}</div>
+                <button style={props.style} onClick={props.onClick} className={styles.secondary}>{text}</button>
             )
         }
 
