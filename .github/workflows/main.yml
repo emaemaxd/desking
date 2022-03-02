@@ -27,6 +27,4 @@ jobs:
         run: cd ./landingpage-frontend/
 
       - name: Build gatsby project
-        run: gatsby build
-        
-      - name: Copy public content to VM
+        run: gatsby build     #- name: Copy public content to VM
