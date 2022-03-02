@@ -25,10 +25,10 @@ jobs:
 
       - name: Install all node modules
         run: npm i 
-        working-dir: ./landingpage-frontend/
+        working-directory: ./landingpage-frontend/
 
       - name: Build gatsby project
         run: npm run build   
-        working-dir: ./landingpage-frontend/
+        working-directory: ./landingpage-frontend/
 
       #- name: Copy public content to VM
