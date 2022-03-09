@@ -2,7 +2,7 @@ import React from "react"
 import NeededAttention from "../components/elements/NeededAttention";
 import ProjectOverview from "../components/elements/ProjectOverview";
 import Spacer from "../components/elements/Spacer";
-import Weekactivitiess from "../components/elements/WeekActivities";
+import Weekactivitiess from "../components/elements/Weekactivities";
 import Layout from "../components/sections/layout"
 
 const Page = () => {
