@@ -23,10 +23,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Enter gatsby directory
-        run: cd ./landingpage-frontend/
+      - name: Install all node modules
+        run: npm i 
+        working-directory: ./landingpage-frontend/
 
       - name: Build gatsby project
-        run: gatsby build
-        
-      - name: Copy public content to VM
+        run: npm run build   
+        working-directory: ./landingpage-frontend/
+
+      #- name: Copy public content to VM

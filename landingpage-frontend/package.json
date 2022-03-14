@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop -H 0.0.0.0 -p 8000",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "npx gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -29,5 +29,8 @@
     "react-hook-form": "^7.24.0",
     "recharts": "^2.1.8",
     "sass": "^1.43.4"
+  },
+  "devDependencies": {
+    "gatsby-cli": "^4.9.0"
   }
 }
