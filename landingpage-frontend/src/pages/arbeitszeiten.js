@@ -1,5 +1,6 @@
 import React from "react"
 import SickTable from "../components/elements/SickTable";
+import TimeGraph from "../components/elements/TimeGraph";
 import Layout from "../components/sections/layout"
 
 const Page = () => {
@@ -9,7 +10,7 @@ const Page = () => {
       <div className="container">
         <div className="col8">
           <h1 style={{marginBottom: 30}}>Zeitenansicht</h1>
-          recharts bro
+          <TimeGraph />
         </div>
         <div className="col1" />
         <div className="col3">

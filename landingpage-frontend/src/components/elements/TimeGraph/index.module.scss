@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.middle {
+    display: flex;
+    flex-flow: row nowrap;
+
+    div {
+        display: inline;
+        padding: 4px;
+        text-align: center;
+    }
+}
