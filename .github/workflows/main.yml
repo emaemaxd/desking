@@ -37,5 +37,16 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.HALILOVICVM_PRIVATE_KEY_SSH }}
           user: ${{ secrets.SERVER_USER }}
-          server: ${{ secrets.SERVER }}
+          server: ${{ secrets.SERVER_IP }}
           alias: server
+      
+      - name: build-application-server
+        run: |
+          mvn clean package
+          ls -a ./target
+        working-directory: server/
+
+      - name: copy jar file to vm
+        run: |
+        scp target/*.jar/server
+        working-directory: server/
