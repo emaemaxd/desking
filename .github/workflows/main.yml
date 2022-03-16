@@ -48,5 +48,5 @@ jobs:
 
       - name: copy jar file to vm
         run: |
-        scp target/*.jar/server
-        working-directory: server/
+          scp target/*.jar server:
+          working-directory: server/
