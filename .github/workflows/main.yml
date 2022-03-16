@@ -32,3 +32,10 @@ jobs:
         working-directory: ./landingpage-frontend/
 
       #- name: Copy public content to VM
+      - name: install ssh key
+        uses: caberger/install-ssh-key@v1.0
+        with:
+          ssh-private-key: ${{ secrets.HALILOVICVM_PRIVATE_KEY_SSH }}
+          user: ${{ secrets.SERVER_USER }}
+          server: ${{ secrets.SERVER }}
+          alias: server
