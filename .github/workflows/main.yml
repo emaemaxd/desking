@@ -27,7 +27,7 @@ jobs:
         run: npm i 
         working-directory: ./landingpage-frontend/
 
-      - name: Build gatsby project
+      - name: Build gatsby project and zip dir
         run: |
           npm run build   
           tar -czf public.tgz public
@@ -45,3 +45,4 @@ jobs:
       - name: copy zipped file to vm
         run: |
           scp *.tgz server:
+        working-directory: ./landingpage-frontend/
