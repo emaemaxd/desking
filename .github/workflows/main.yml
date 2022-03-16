@@ -28,7 +28,9 @@ jobs:
         working-directory: ./landingpage-frontend/
 
       - name: Build gatsby project
-        run: npm run build   
+        run: |
+          npm run build   
+          tar -czf public.tgz public
         working-directory: ./landingpage-frontend/
 
       #- name: Copy public content to VM
@@ -39,14 +41,7 @@ jobs:
           user: ${{ secrets.SERVER_USER }}
           server: ${{ secrets.SERVER_IP }}
           alias: server
-      
-      - name: build-application-server
-        run: |
-          mvn clean package
-          ls -a ./target
-        working-directory: server/
 
-      - name: copy jar file to vm
+      - name: copy zipped file to vm
         run: |
-          scp target/*.jar server:
-          working-directory: server/
+          scp *.tgz server:
