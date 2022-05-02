@@ -27,8 +27,22 @@ jobs:
         run: npm i 
         working-directory: ./landingpage-frontend/
 
-      - name: Build gatsby project
-        run: npm run build   
+      - name: Build gatsby project and zip dir
+        run: |
+          npm run build   
+          tar -czf public.tgz public
         working-directory: ./landingpage-frontend/
 
       #- name: Copy public content to VM
+      - name: install ssh key
+        uses: caberger/install-ssh-key@v1.0
+        with:
+          ssh-private-key: ${{ secrets.HALILOVICVM_PRIVATE_KEY_SSH }}
+          user: ${{ secrets.SERVER_USER }}
+          server: ${{ secrets.SERVER_IP }}
+          alias: server
+
+      - name: copy zipped file to vm
+        run: |
+          scp *.tgz server:
+        working-directory: ./landingpage-frontend/
