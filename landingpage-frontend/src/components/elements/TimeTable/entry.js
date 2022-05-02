@@ -6,8 +6,8 @@ import SettingsIcon from "../../../images/settings.png"
 const ProjectEntry = (props) => {
 
     const name = props.name || "Projekt nicht gefunden"
-    const anschrift = props.anschrift || "Keine Adresse"
-    const info = props.info || "-"
+    const email = props.anschrift || "Keine Adresse"
+    const lastlogin = props.info || "-.-"
     const [showDetail, setShowDetail] = useState(false);
 
     const detailToggle = () => {
@@ -19,8 +19,8 @@ const ProjectEntry = (props) => {
             <tr onClick={detailToggle}>
             <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>
                 <td>{name}</td>
-                <td>{anschrift}</td>
-                <td>{info}</td>
+                <td>{email}</td>
+                <td>{lastlogin}</td>
             </tr>
             {
                 showDetail &&

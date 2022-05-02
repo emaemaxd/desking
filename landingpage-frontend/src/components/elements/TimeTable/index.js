@@ -10,14 +10,13 @@ const TimeTable = (props) => {
         <tr>
           <th className="checkbox-column"><input aria-label="Alle auswählen" type="checkbox" /></th>
           <th>Name</th>
-          <th>Anschrift</th>
-          <th>Info</th>
+          <th>E-Mail</th>
+          <th>Zuletzt eingecheckt</th>
         </tr>
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
+        <TimeEntry name="Max Mustermann" email="max@mustermann.com" lastlogin="Montag" />
+        <TimeEntry name="Max Mustermann" email="max@mustermann.com" lastlogin="Montag" />
+        <TimeEntry name="Max Mustermann" email="max@mustermann.com" lastlogin="Montag" />
+        
         </table>
     );
 
