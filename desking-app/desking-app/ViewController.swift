@@ -173,20 +173,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getEntries(){
+        
         let url : String = "http://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking_entries/"
                
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, response, error in
                     // Handle result
                     if((data?.isEmpty) != nil){
                     let response = String (data: data!, encoding: String.Encoding.utf8)
-                               print("response is \(response)")
+                        print("response is \(String(describing: response))")
 
                     do {
                         let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
 
                         print(getResponse)
-                                    
+                     //   let cast = getResponse as! json
+                     //   print(cast[0])
+                       // let parsedData =
+                        let cast = getResponse as! Dictionary<String, Any>
+                        
+                      //  print(cast[2])
+                        let items = cast["items"] as! [[String: Any]]
                     
+                        print(items[0])
                          
                    } catch {
                        print("error serializing JSON: \(error)")
