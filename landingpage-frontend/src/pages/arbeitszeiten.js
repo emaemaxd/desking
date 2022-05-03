@@ -1,7 +1,8 @@
 import React from "react"
 import SickTable from "../components/elements/SickTable";
 import TimeGraph from "../components/elements/TimeGraph";
-import Layout from "../components/sections/layout"
+import Layout from "../components/sections/layout";
+import TimeTable from "../components/elements/TimeTable";
 
 const Page = () => {
 
@@ -12,6 +13,7 @@ const Page = () => {
           <h1 style={{marginBottom: 30}}>Zeitenansicht</h1>
           <TimeGraph />
           hier tabelle
+          <TimeTable />
         </div>
         <div className="col1" />
         <div className="col3">

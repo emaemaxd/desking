@@ -23,6 +23,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getEntries()
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -170,5 +171,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
       // perform the task
       task.resume()
     }
-}
+    
+    func getEntries(){
+        let url : String = "http://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking_entries/"
+               
+        URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, response, error in
+                    // Handle result
+                    if((data?.isEmpty) != nil){
+                    let response = String (data: data!, encoding: String.Encoding.utf8)
+                               print("response is \(response)")
+
+                    do {
+                        let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+
+                        print(getResponse)
+                                    
+                    
+                         
+                   } catch {
+                       print("error serializing JSON: \(error)")
+                   }}else{
+                       print("data is nil -.- ")
+                   }
+                }.resume()
+            }
+    }
+                                    
+
+
 
