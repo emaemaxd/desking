@@ -12,7 +12,7 @@ const Page = () => {
         <div className="col8">
           <h1 style={{marginBottom: 30}}>Zeitenansicht</h1>
           <TimeGraph />
-          hier tabelle
+          
           <TimeTable />
         </div>
         <div className="col1" />
