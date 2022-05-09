@@ -19,7 +19,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var start_button: UIButton!
     @IBOutlet weak var time_display: UILabel!
-    @IBOutlet weak var info_label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +41,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             // Change button style
             start_button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             
-            info_label.text = ""
             timestamp = NSDate().timeIntervalSince1970
 
         }
@@ -110,7 +108,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func postTime() {
       // declare the parameter as a dictionary that contains string as key and value combination. considering inputs are valid
-        let parameters: [String: Any] = ["userId": userId, "startTime": timestamp!, "timePassed": totalSeconds, "entryLocation": locationManager.location ??  "Unknown"]
+        let parameters: [String: Any] = ["userId": userId, "startTime": timestamp!, "timePassed": totalSeconds, "longitude": locationManager.location?.coordinate.longitude ??  0, "latitude": locationManager.location?.coordinate.latitude ?? 0]
       
       // create the url with URL
       let url = URL(string: "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/new")!
@@ -159,7 +157,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         do {
           // create json object from data or use JSONDecoder to convert to Model stuct
             if (try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers) as? [String: Any]) != nil {
-              self.info_label.text = "Zeit wurde erfolgreich gespeichert"
           } else {
             print("data maybe corrupted or in wrong format")
             throw URLError(.badServerResponse)

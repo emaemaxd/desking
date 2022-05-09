@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qp7-TN-bmn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qp7-TN-bmn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,28 +103,29 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGH-Xq-qm9">
-                                <rect key="frame" x="0.0" y="506.5" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="270.5" width="414" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7A-ps-Gb3">
-                                <rect key="frame" x="0.0" y="572.5" width="414" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="KBm-ok-YdL">
+                                <rect key="frame" x="133" y="506.5" width="148" height="30"/>
+                                <menu key="menu" id="Tmz-33-7zb">
+                                    <children>
+                                        <command title="Limesstraße 12 - 10m" id="Vif-MI-2GX"/>
+                                        <command title="Goethekreuzung - 2.53km" id="4vc-YY-Wks"/>
+                                    </children>
+                                </menu>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pbW-By-nml"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="m7A-ps-Gb3" firstAttribute="leading" secondItem="pbW-By-nml" secondAttribute="leading" id="119-vr-SP5"/>
                             <constraint firstItem="lGH-Xq-qm9" firstAttribute="leading" secondItem="pbW-By-nml" secondAttribute="leading" id="5vM-XS-2Sn"/>
                             <constraint firstItem="pbW-By-nml" firstAttribute="trailing" secondItem="lGH-Xq-qm9" secondAttribute="trailing" id="99d-os-xRX"/>
-                            <constraint firstItem="lGH-Xq-qm9" firstAttribute="top" secondItem="fLy-ic-2VD" secondAttribute="bottom" constant="30" id="A1g-av-8bq"/>
-                            <constraint firstItem="m7A-ps-Gb3" firstAttribute="centerX" secondItem="9r3-Qi-A2m" secondAttribute="centerX" id="ZvR-ld-wFz"/>
-                            <constraint firstItem="m7A-ps-Gb3" firstAttribute="top" secondItem="lGH-Xq-qm9" secondAttribute="bottom" constant="30" id="bfG-BO-K7p"/>
-                            <constraint firstItem="pbW-By-nml" firstAttribute="trailing" secondItem="m7A-ps-Gb3" secondAttribute="trailing" id="eol-qO-HFY"/>
+                            <constraint firstItem="fLy-ic-2VD" firstAttribute="top" secondItem="lGH-Xq-qm9" secondAttribute="bottom" constant="30" id="EXF-Ai-doc"/>
+                            <constraint firstItem="KBm-ok-YdL" firstAttribute="top" secondItem="fLy-ic-2VD" secondAttribute="bottom" constant="30" id="LxC-SO-zdE"/>
+                            <constraint firstItem="KBm-ok-YdL" firstAttribute="centerX" secondItem="9r3-Qi-A2m" secondAttribute="centerX" id="Xjs-is-0ok"/>
                             <constraint firstItem="fLy-ic-2VD" firstAttribute="centerY" secondItem="9r3-Qi-A2m" secondAttribute="centerY" id="u9b-qh-ctk"/>
                             <constraint firstItem="fLy-ic-2VD" firstAttribute="centerX" secondItem="9r3-Qi-A2m" secondAttribute="centerX" id="xPK-vE-PC1"/>
                         </constraints>
@@ -132,7 +134,6 @@
                         <imageReference key="image" image="play.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="info_label" destination="m7A-ps-Gb3" id="slg-2N-8P5"/>
                         <outlet property="secondLabel" destination="lGH-Xq-qm9" id="e9q-WG-jLx"/>
                         <outlet property="start_button" destination="fLy-ic-2VD" id="ACx-Sk-dWA"/>
                         <outlet property="time_display" destination="lGH-Xq-qm9" id="5SR-1I-L6p"/>
