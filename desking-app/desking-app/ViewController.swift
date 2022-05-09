@@ -15,7 +15,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // UserID to be stored in the db
     let userId = 1
     
-    
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var start_button: UIButton!
     @IBOutlet weak var time_display: UILabel!
@@ -174,7 +173,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func getEntries(){
         
-        let url : String = "http://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking_entries/"
+        let url : String = "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/new"
                
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, response, error in
                     // Handle result
@@ -186,15 +185,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
 
                         print(getResponse)
-                     //   let cast = getResponse as! json
-                     //   print(cast[0])
-                       // let parsedData =
                         let cast = getResponse as! Dictionary<String, Any>
                         
                       //  print(cast[2])
                         let items = cast["items"] as! [[String: Any]]
                     
-                        print(items[0])
+                        print(items[0]["timepassed"]!)
                          
                    } catch {
                        print("error serializing JSON: \(error)")
