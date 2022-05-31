@@ -4,6 +4,10 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var selectField: UITextField!
+    let values = ["oida", "wappler", "ibin sad wegen da schui"]
+    var pickerView = UIPickerView()
+    
     let locationManager = CLLocationManager()
     var hours: Int = 0
     var minutes: Int = 0
@@ -22,7 +26,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getEntries()
+        
+        // selecting
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        selectField.inputView = pickerView
+        selectField.textAlignment = .center
+        
+        getProject()
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -32,6 +44,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+   
+    
+    
+
     @IBAction func onTimerButtonClick(_ sender: UIButton) {
         if((timer?.isValid) == nil) {
             
@@ -44,9 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             info_label.text = ""
             timestamp = NSDate().timeIntervalSince1970
 
-        }
-        
-        else {
+        } else {
             postTime()
             
             // Stop timer
@@ -171,36 +185,58 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
       task.resume()
     }
     
-    func getEntries(){
+
+    func getProject(){
+        let url : String = "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/locations"
         
-        let url : String = "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/new"
-               
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, response, error in
-                    // Handle result
-                    if((data?.isEmpty) != nil){
-                    let response = String (data: data!, encoding: String.Encoding.utf8)
-                        print("response is \(String(describing: response))")
-
-                    do {
-                        let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-
-                        print(getResponse)
-                        let cast = getResponse as! Dictionary<String, Any>
-                        
-                      //  print(cast[2])
-                        let items = cast["items"] as! [[String: Any]]
+            // Handle result
+            if((data?.isEmpty) != nil){
+                let response = String (data: data!, encoding: String.Encoding.utf8)
+                print("response is \(String(describing: response))")
+                
+                do {
+                    let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                     
-                        print(items[0]["timepassed"]!)
-                         
-                   } catch {
-                       print("error serializing JSON: \(error)")
-                   }}else{
-                       print("data is nil -.- ")
-                   }
-                }.resume()
-            }
+                    print(getResponse)
+                    let cast = getResponse as! Dictionary<String, Any>
+                    
+                    //  print(cast[2])
+                    let items = cast["items"] as! [[String: Any]]
+                    
+                   // let temp = items[0]["starttime"] as! Double
+                    
+                 //   let uhm = NSDate(timeIntervalSince1970: temp)
+                   
+                    
+                } catch {
+                    print("error serializing JSON: \(error)")
+                }}else{
+                    print("data is nil -.- ")
+                }
+        }.resume()
     }
-                                    
+}
 
 
 
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return values.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return values[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectField.text = values[row]
+        selectField.resignFirstResponder()
+    }
+    
+}
