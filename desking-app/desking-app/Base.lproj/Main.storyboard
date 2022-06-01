@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p3M-zW-gDR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qp7-TN-bmn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -146,7 +146,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="play.fill" catalog="system" title="" cornerStyle="capsule">
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="47"/>
-                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onTimerButtonClick:" destination="p3M-zW-gDR" eventType="touchUpInside" id="f3S-pn-MRI"/>
@@ -164,23 +163,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9o-JJ-EqI">
-                                <rect key="frame" x="137" y="196" width="140" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9o-JJ-EqI">
+                                <rect key="frame" x="93" y="196" width="228" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ausgewähltes Projekt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qx-v2-Rku">
+                                <rect key="frame" x="125" y="247" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pbW-By-nml"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="m7A-ps-Gb3" firstAttribute="leading" secondItem="pbW-By-nml" secondAttribute="leading" id="119-vr-SP5"/>
+                            <constraint firstItem="U9o-JJ-EqI" firstAttribute="leading" secondItem="pbW-By-nml" secondAttribute="leading" constant="93" id="1W3-fd-X0a"/>
+                            <constraint firstItem="fLy-ic-2VD" firstAttribute="top" secondItem="1Qx-v2-Rku" secondAttribute="bottom" constant="68.5" id="3Za-cL-O3R"/>
                             <constraint firstItem="lGH-Xq-qm9" firstAttribute="leading" secondItem="pbW-By-nml" secondAttribute="leading" id="5vM-XS-2Sn"/>
                             <constraint firstItem="pbW-By-nml" firstAttribute="trailing" secondItem="lGH-Xq-qm9" secondAttribute="trailing" id="99d-os-xRX"/>
                             <constraint firstItem="lGH-Xq-qm9" firstAttribute="top" secondItem="fLy-ic-2VD" secondAttribute="bottom" constant="30" id="A1g-av-8bq"/>
+                            <constraint firstItem="1Qx-v2-Rku" firstAttribute="centerX" secondItem="pbW-By-nml" secondAttribute="centerX" id="Nis-Bv-J4Z"/>
+                            <constraint firstItem="1Qx-v2-Rku" firstAttribute="centerX" secondItem="9r3-Qi-A2m" secondAttribute="centerX" id="Rwl-ie-Dhn"/>
                             <constraint firstItem="m7A-ps-Gb3" firstAttribute="centerX" secondItem="9r3-Qi-A2m" secondAttribute="centerX" id="ZvR-ld-wFz"/>
                             <constraint firstItem="m7A-ps-Gb3" firstAttribute="top" secondItem="lGH-Xq-qm9" secondAttribute="bottom" constant="30" id="bfG-BO-K7p"/>
                             <constraint firstItem="pbW-By-nml" firstAttribute="trailing" secondItem="m7A-ps-Gb3" secondAttribute="trailing" id="eol-qO-HFY"/>
+                            <constraint firstItem="1Qx-v2-Rku" firstAttribute="top" secondItem="U9o-JJ-EqI" secondAttribute="bottom" constant="17" id="gAX-mU-29G"/>
+                            <constraint firstItem="pbW-By-nml" firstAttribute="trailing" secondItem="U9o-JJ-EqI" secondAttribute="trailing" constant="93" id="h6D-lh-1al"/>
+                            <constraint firstItem="U9o-JJ-EqI" firstAttribute="centerX" secondItem="pbW-By-nml" secondAttribute="centerX" id="hZ5-4z-pSI"/>
                             <constraint firstItem="fLy-ic-2VD" firstAttribute="centerY" secondItem="9r3-Qi-A2m" secondAttribute="centerY" id="u9b-qh-ctk"/>
                             <constraint firstItem="fLy-ic-2VD" firstAttribute="centerX" secondItem="9r3-Qi-A2m" secondAttribute="centerX" id="xPK-vE-PC1"/>
                         </constraints>
@@ -190,6 +201,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="info_label" destination="m7A-ps-Gb3" id="slg-2N-8P5"/>
+                        <outlet property="locProject" destination="1Qx-v2-Rku" id="JHf-AZ-slQ"/>
                         <outlet property="secondLabel" destination="lGH-Xq-qm9" id="e9q-WG-jLx"/>
                         <outlet property="selectField" destination="U9o-JJ-EqI" id="mJ2-il-zcx"/>
                         <outlet property="start_button" destination="fLy-ic-2VD" id="ACx-Sk-dWA"/>

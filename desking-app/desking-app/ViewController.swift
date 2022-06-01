@@ -4,9 +4,13 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var locProject: UILabel!
     @IBOutlet weak var selectField: UITextField!
-    let values = ["oida", "wappler", "ibin sad wegen da schui"]
+    var locations = [DeskingLocation]()
     var pickerView = UIPickerView()
+    
+    // variable for projectId input into database
+    var selectedProjectId = 0
     
     let locationManager = CLLocationManager()
     var hours: Int = 0
@@ -27,6 +31,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        start_button.tintColor = UIColor.gray
+        
         // selecting
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -43,22 +49,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
     }
-    
-   
-    
-    
 
     @IBAction func onTimerButtonClick(_ sender: UIButton) {
         if((timer?.isValid) == nil) {
-            
-            // Start timer
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireSeconds), userInfo: nil, repeats: true)
-            
-            // Change button style
-            start_button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-            
-            info_label.text = ""
-            timestamp = NSDate().timeIntervalSince1970
+            if(!(selectField.text!.isEmpty)){
+                // Start timer
+                timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireSeconds), userInfo: nil, repeats: true)
+                
+                // Change button style
+                start_button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                selectField.isUserInteractionEnabled = false
+                
+                info_label.text = ""
+                timestamp = NSDate().timeIntervalSince1970
+            }else{
+                // TODO: make button visibly unaccessable
+                // print(UIColor.red)
+                
+            }
 
         } else {
             postTime()
@@ -76,6 +84,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             // Change button style
             start_button.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            // selectField.isUserInteractionEnabled = true
         }
     }
     
@@ -112,6 +121,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
+    
     // City Mapping
     func fetchLocation(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
         CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
@@ -123,7 +133,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func postTime() {
       // declare the parameter as a dictionary that contains string as key and value combination. considering inputs are valid
-        let parameters: [String: Any] = ["userId": userId, "startTime": timestamp!, "timePassed": totalSeconds, "entryLocation": locationManager.location ??  "Unknown"]
+       // let selectedProject = selectField.text  "project_id": ,
+        let parameters: [String: Any] = ["userId": userId, "startTime": timestamp!, "timePassed": totalSeconds, "projectId": selectedProjectId, "entryLocation": locationManager.location ??  "Unknown"]
       
       // create the url with URL
       let url = URL(string: "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/new")!
@@ -169,6 +180,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
           return
         }
         
+        // ! BUG: exception thrown when no reason?
         do {
           // create json object from data or use JSONDecoder to convert to Model stuct
             if (try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers) as? [String: Any]) != nil {
@@ -185,29 +197,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
       task.resume()
     }
     
-
     func getProject(){
         let url : String = "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/locations"
+        locations.removeAll()
         
         URLSession.shared.dataTask(with: NSURL(string: url)! as URL) { data, response, error in
             // Handle result
             if((data?.isEmpty) != nil){
-                let response = String (data: data!, encoding: String.Encoding.utf8)
-                print("response is \(String(describing: response))")
-                
                 do {
-                    let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-                    
-                    print(getResponse)
-                    let cast = getResponse as! Dictionary<String, Any>
-                    
+                    let response = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+              //      print(getResponse)
                     //  print(cast[2])
-                    let items = cast["items"] as! [[String: Any]]
+                    let jsonResponse = response as! [String: Any]
                     
-                   // let temp = items[0]["starttime"] as! Double
+                    let items = jsonResponse["items"] as! [ [String: Any] ]
+                    print(items)
                     
-                 //   let uhm = NSDate(timeIntervalSince1970: temp)
-                   
+                    for item in items{
+                        let loc = DeskingLocation()
+                        loc.locationId = item["locationid"] as! Int
+                        loc.locationName = item["location_name"] as! String
+                        loc.longitude = item["longitude"] as! Double
+                        loc.latitude = item["latitude"] as! Double
+                        loc.projectName = item["project_name"] as! String
+                        loc.projectId = item["projectid"] as? Int ?? 0
+                        self.locations.append(loc)
+                    }
                     
                 } catch {
                     print("error serializing JSON: \(error)")
@@ -219,24 +234,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 
-
-
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return values.count
+        return locations.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return values[row]
+        return locations[row].locationName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectField.text = values[row]
+        locProject.text = locations[row].projectName
+        selectedProjectId = locations[row].projectId
+        print(selectedProjectId)
+        selectField.text = locations[row].locationName
         selectField.resignFirstResponder()
+        
+        start_button.tintColor = UIColor.black
     }
-    
 }

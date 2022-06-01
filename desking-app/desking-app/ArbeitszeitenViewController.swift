@@ -21,11 +21,6 @@ class ArbeitszeitenViewController: UITableViewController {
         }
         
         getEntries()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
@@ -52,6 +47,10 @@ class ArbeitszeitenViewController: UITableViewController {
         
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected time: \(indexPath.row)")
     }
     
     func getEntries(){
