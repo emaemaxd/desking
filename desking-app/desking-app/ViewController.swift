@@ -141,8 +141,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func postTime() {
       // declare the parameter as a dictionary that contains string as key and value combination. considering inputs are valid
+
        // let selectedProject = selectField.text  "project_id": ,
         let parameters: [String: Any] = ["userId": userId, "startTime": timestamp!, "timePassed": totalSeconds, "projectId": selectedProjectId, "longitude": locationManager.location?.coordinate.longitude ??  0, "latitude": locationManager.location?.coordinate.latitude ?? 0]
+
       
       // create the url with URL
       let url = URL(string: "https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/desking/new")!

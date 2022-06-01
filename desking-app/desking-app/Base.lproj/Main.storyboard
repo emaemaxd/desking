@@ -201,11 +201,7 @@
                         <imageReference key="image" image="play.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
-<<<<<<< HEAD
-                        <outlet property="info_label" destination="m7A-ps-Gb3" id="slg-2N-8P5"/>
                         <outlet property="locProject" destination="1Qx-v2-Rku" id="JHf-AZ-slQ"/>
-=======
->>>>>>> origin
                         <outlet property="secondLabel" destination="lGH-Xq-qm9" id="e9q-WG-jLx"/>
                         <outlet property="selectField" destination="U9o-JJ-EqI" id="mJ2-il-zcx"/>
                         <outlet property="start_button" destination="fLy-ic-2VD" id="ACx-Sk-dWA"/>
