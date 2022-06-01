@@ -27,7 +27,7 @@ const ProjectTable = (props) => {
           <th>Info</th>
         </tr>
         {data !== undefined && data.items.map((item) => {
-                return <TimeEntry name={item.name} lon={item.longitude} lat={item.latitude}  info="Keine Info" />
+                return <TimeEntry name={item.name} lon={item.longitude} lat={item.latitude}  info={item.info} />
             })}
 
         </table>
