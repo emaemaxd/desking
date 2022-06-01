@@ -8,11 +8,10 @@ const ProjectEntry = (props) => {
     const name = props.name || "Projekt nicht gefunden"
     const client = props.client || ""
     const [showDetail, setShowDetail] = useState(false);
-
     const detailToggle = () => {
         setShowDetail(prev => !prev);
     }
-
+    
     return (
         <>
             <tr onClick={detailToggle}>

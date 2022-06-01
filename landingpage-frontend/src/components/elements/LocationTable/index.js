@@ -1,9 +1,22 @@
 import { Link } from "gatsby";
-import React from "react"
+import axios from "axios"
+import React, { useEffect, useState } from "react"
 import TimeEntry from "./entry";
 import * as styles from "./index.module.scss"
 
 const ProjectTable = (props) => {
+  const reverseGeocodingUrl = "https://api.geoapify.com/v1/geocode/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&apiKey=${myAPIKey}";
+  const [data, setData] = useState();
+  useEffect(() => {
+      getdata()
+  }, [])
+
+  const getdata = () => {
+      axios.get('https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/dashboard/locations').then((response) => {
+          setData(response.data);
+          console.log(data);
+      })
+  }
 
     return (
         <table className="has-checkbox">
@@ -13,11 +26,10 @@ const ProjectTable = (props) => {
           <th>Anschrift</th>
           <th>Info</th>
         </tr>
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
-        <TimeEntry name="Büro #1" anschrift="Waltherstraße 7 4020 Linz" info="Sonntags gesperrt" />
+        {data !== undefined && data.items.map((item) => {
+                return <TimeEntry name={item.name} lon={item.longitude} lat={item.latitude}  info="Keine Info" />
+            })}
+
         </table>
     );
 
