@@ -314,6 +314,8 @@
 				DEVELOPMENT_TEAM = 66HCK5HV86;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "desking-app/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Needed for Location tracking";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needed for location tracking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -342,6 +344,8 @@
 				DEVELOPMENT_TEAM = 66HCK5HV86;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "desking-app/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Needed for Location tracking";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needed for location tracking";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
