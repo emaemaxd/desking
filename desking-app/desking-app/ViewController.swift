@@ -61,21 +61,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 timestamp = NSDate().timeIntervalSince1970
             }else{
-                // TODO: make button visibly unaccessable
-                // print(UIColor.red)
+                // Start timer
+                timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireSeconds), userInfo: nil, repeats: true)
                 
+                // Change button style
+                start_button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                
+                timestamp = NSDate().timeIntervalSince1970
             }
-
-            
-            // Start timer
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireSeconds), userInfo: nil, repeats: true)
-            
-            // Change button style
-            start_button.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-            
-            timestamp = NSDate().timeIntervalSince1970
-
-
         } else {
             postTime()
             
