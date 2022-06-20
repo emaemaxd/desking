@@ -11,16 +11,28 @@ class ArbeitszeitenViewController: UITableViewController {
     
     var hours = [Int]();
     
+    var beginHour = 0
     
+    let oneDate = Date()
+    let q = OperationQueue()
     
     override func viewDidLoad() {
+        /*
+        q.addOperation{
+            self.getEntries()
+            
+        }
+        q.waitUntilAllOperationsAreFinished()
+        */
+        getEntries()
+        print(beginHour)
         super.viewDidLoad()
         
         for hour in 0...23 {
             hours.append(hour)
         }
         
-        getEntries()
+        
     }
     
     // MARK: - Table view data source
@@ -38,12 +50,18 @@ class ArbeitszeitenViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellElem", for: indexPath) as! CalendarTableViewCell
         
         // init the time next to the lines
         let hour = hours[indexPath.row]
         cell.timeLabel.text = String(format: "%02d:%02d", hour, 0)
-         
+        
+        print(beginHour)
+        if(indexPath.row == beginHour){
+            // TODO make extra cells to add different occasions und so 
+            cell.backgroundColor = UIColor.red
+        }
         
         
         return cell
@@ -51,6 +69,9 @@ class ArbeitszeitenViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected time: \(indexPath.row)")
+        if(indexPath.row == 2){
+            
+        }
     }
     
     func getEntries(){
@@ -66,38 +87,42 @@ class ArbeitszeitenViewController: UITableViewController {
                 do {
                     let getResponse = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                     
-                    print(getResponse)
+                    // print(getResponse)
                     let cast = getResponse as! Dictionary<String, Any>
                     
                     //  print(cast[2])
                     let items = cast["items"] as! [[String: Any]]
                     
-                    let temp = items[0]["starttime"] as! Double
+                    let temp = items[3]["starttime"] as! Double
                     
-                    let uhm = NSDate(timeIntervalSince1970: temp)
-                   
+                    let uhm = Date(timeIntervalSince1970: temp)
                     
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dddd-YY-MM"
-                    let date = dateFormatter.string(from: uhm as Date)
+                    
                     let calendar = Calendar.current
-                    let comp = calendar.dateComponents([.hour, .minute], from: uhm as Date)
-                    let hour = comp.hour
-                    let minute = comp.minute
+                    let comp = calendar.dateComponents([.year, .month, .day, .hour, .minute, .timeZone], from: uhm as Date)
                     
+                    // timezone
+                    let dtFormatter = DateFormatter()
+                    dtFormatter.locale = Locale(identifier: "ger_AU")
+                    dtFormatter.setLocalizedDateFormatFromTemplate("dd-MM-yyyy HH-mm-ss")
                     
-                    
+                    print(dtFormatter.string(from: uhm))
+                    self.beginHour = calendar.component(.hour, from: uhm)
+                    print(self.beginHour)
+                    // ISSUE for some reason hour 2h behind ???
+                    print(uhm)
                     print(comp)
-                    
                 } catch {
                     print("error serializing JSON: \(error)")
                 }}else{
                     print("data is nil -.- ")
                 }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }.resume()
     }
 }
-
 
 
 /*
