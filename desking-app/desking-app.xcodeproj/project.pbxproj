@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E9BFF2D282912220061CEF3 /* ArbeitszeitenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BFF2C282912220061CEF3 /* ArbeitszeitenViewController.swift */; };
+		3E9BFF2F282A63880061CEF3 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BFF2E282A63880061CEF3 /* CalendarTableViewCell.swift */; };
+		3E9BFF31284616210061CEF3 /* DeskingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BFF30284616210061CEF3 /* DeskingLocation.swift */; };
+		3EA01BDA285FD567003894F6 /* DeskingUserArbeitszeit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA01BD9285FD567003894F6 /* DeskingUserArbeitszeit.swift */; };
 		4BD348F3281488A50044039B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD348F2281488A50044039B /* AppDelegate.swift */; };
 		4BD348F5281488A50044039B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD348F4281488A50044039B /* SceneDelegate.swift */; };
 		4BD348F7281488A50044039B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD348F6281488A50044039B /* ViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E9BFF2C282912220061CEF3 /* ArbeitszeitenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArbeitszeitenViewController.swift; sourceTree = "<group>"; };
+		3E9BFF2E282A63880061CEF3 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		3E9BFF30284616210061CEF3 /* DeskingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskingLocation.swift; sourceTree = "<group>"; };
+		3EA01BD9285FD567003894F6 /* DeskingUserArbeitszeit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskingUserArbeitszeit.swift; sourceTree = "<group>"; };
 		4BD348EF281488A50044039B /* desking-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desking-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD348F2281488A50044039B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BD348F4281488A50044039B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,10 @@
 				4BD348F4281488A50044039B /* SceneDelegate.swift */,
 				4BD348F6281488A50044039B /* ViewController.swift */,
 				4BD348F8281488A50044039B /* Main.storyboard */,
+				3E9BFF2E282A63880061CEF3 /* CalendarTableViewCell.swift */,
+				3E9BFF30284616210061CEF3 /* DeskingLocation.swift */,
+				3E9BFF2C282912220061CEF3 /* ArbeitszeitenViewController.swift */,
+				3EA01BD9285FD567003894F6 /* DeskingUserArbeitszeit.swift */,
 				4BD348FB281488A80044039B /* Assets.xcassets */,
 				4BD348FD281488A80044039B /* LaunchScreen.storyboard */,
 				4BD34900281488A80044039B /* Info.plist */,
@@ -146,8 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA01BDA285FD567003894F6 /* DeskingUserArbeitszeit.swift in Sources */,
+				3E9BFF31284616210061CEF3 /* DeskingLocation.swift in Sources */,
+				3E9BFF2D282912220061CEF3 /* ArbeitszeitenViewController.swift in Sources */,
 				4BD348F7281488A50044039B /* ViewController.swift in Sources */,
 				4BD348F3281488A50044039B /* AppDelegate.swift in Sources */,
+				3E9BFF2F282A63880061CEF3 /* CalendarTableViewCell.swift in Sources */,
 				4BD348F5281488A50044039B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
