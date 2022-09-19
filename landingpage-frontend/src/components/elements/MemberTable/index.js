@@ -1,9 +1,22 @@
 import { Link } from "gatsby";
-import React from "react"
+import axios from "axios"
+import React, { useEffect, useState } from "react"
 import Member from "./entry";
 import * as styles from "./index.module.scss"
 
 const MemberTable = (props) => {
+    const [data, setData] = useState();
+    useEffect(() => {
+        getdata()
+    }, [])
+
+    const getdata = () => {
+        axios.get('https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/dashboard/users').then((response) => {
+            setData(response.data);
+            console.log(data);
+
+        })
+    }
 
     return (
         <table className={styles.table}>
@@ -13,19 +26,9 @@ const MemberTable = (props) => {
                 <th>E-Mail</th>
                 <th>Zuletzt Eingecheckt</th>
             </tr>
-            <Member vorname="Michal" nachname="Stencel" email="m.stencel@students.htl-leonding.ac.at" last="Heute, 12:44" />
-            <Member vorname="Ema" nachname="Halilovic" email="e.halilovic@students.htl-leonding.ac.at" last="Gestern, 17:03" />
-            <Member vorname="Mathias" nachname="Witak" email="m.witak@students.htl-leonding.ac.at" last="08.02.2021 10:50" />
-            <Member vorname="Michal" nachname="Stencel" email="m.stencel@students.htl-leonding.ac.at" last="Heute, 12:44" />
-            <Member vorname="Ema" nachname="Halilovic" email="e.halilovic@students.htl-leonding.ac.at" last="Gestern, 17:03" />
-            <Member vorname="Mathias" nachname="Witak" email="m.witak@students.htl-leonding.ac.at" last="08.02.2021 10:50" />
-            <Member vorname="Michal" nachname="Stencel" email="m.stencel@students.htl-leonding.ac.at" last="Heute, 12:44" />
-            <Member vorname="Ema" nachname="Halilovic" email="e.halilovic@students.htl-leonding.ac.at" last="Gestern, 17:03" />
-            <Member vorname="Mathias" nachname="Witak" email="m.witak@students.htl-leonding.ac.at" last="08.02.2021 10:50" />
-            <Member vorname="Michal" nachname="Stencel" email="m.stencel@students.htl-leonding.ac.at" last="Heute, 12:44" />
-            <Member vorname="Ema" nachname="Halilovic" email="e.halilovic@students.htl-leonding.ac.at" last="Gestern, 17:03" />
-            <Member vorname="Mathias" nachname="Witak" email="m.witak@students.htl-leonding.ac.at" last="08.02.2021 10:50" />
-
+            {data !== undefined && data.items.map((item) => {      
+            return <Member vorname={item.first_name} nachname={item.last_name} email={item.email} last="Noch kein Eintrag" />
+            })}
         </table>
     );
 

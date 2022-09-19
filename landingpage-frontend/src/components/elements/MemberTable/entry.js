@@ -4,10 +4,10 @@ import * as styles from "./index.module.scss"
 
 const Member = (props) => {
 
-    const vorname = props.vorname || "Vorname"
-    const nachname = props.nachname || "Nachname"
-    const email = props.email || "user@desking.at"
-    const last = props.last || "-"
+    const vorname = props.vorname;
+    const nachname = props.nachname;
+    const email = props.email;
+    const last = props.last;
 
     const [showDetail, setShowDetail] = useState(false);
 

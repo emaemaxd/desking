@@ -1,17 +1,29 @@
 import { Link } from "gatsby";
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import axios from "axios"
 import * as styles from "./index.module.scss"
 import SettingsIcon from "../../../images/settings.png"
 
 const ProjectEntry = (props) => {
 
     const name = props.name || "Projekt nicht gefunden"
-    const anschrift = props.anschrift || "Keine Adresse"
     const info = props.info || "-"
     const [showDetail, setShowDetail] = useState(false);
+    const reverseGeocodingUrl = `https://api.geoapify.com/v1/geocode/reverse?lat=${props.lat}&lon=${props.lon}&apiKey=37a34965914146f99bbcf1df22ab7ee1`;
+    const [data, setData] = useState();
+    useEffect(() => {
+        getdata()
+    }, [])
 
     const detailToggle = () => {
         setShowDetail(prev => !prev);
+    }
+    const getdata = () => {
+            axios.get(reverseGeocodingUrl).then((response) => {
+        setData(response.data);
+        console.log(data);
+
+    })
     }
 
     return (
@@ -19,7 +31,8 @@ const ProjectEntry = (props) => {
             <tr onClick={detailToggle}>
             <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>
                 <td>{name}</td>
-                <td>{anschrift}</td>
+                <td>{data?.features[0].properties.formatted}
+                </td>
                 <td>{info}</td>
             </tr>
             {
