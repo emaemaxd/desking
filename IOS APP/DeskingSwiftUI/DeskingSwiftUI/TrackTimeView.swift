@@ -57,14 +57,14 @@ struct TrackTimeView: View {
                             .resizable()
                             .padding(.vertical, 16.0)
                             .frame(width: 160.0, height: 192.0)
-                            .foregroundColor(.black)
+                            .foregroundColor(.primary)
                         
                     } else {
                         Image(systemName: "play.circle.fill")
                             .resizable()
                             .padding(.vertical, 16.0)
                             .frame(width: 160.0, height: 192.0)
-                            .foregroundColor(.black)
+                            .foregroundColor(.primary)
                     }
                 }
                 

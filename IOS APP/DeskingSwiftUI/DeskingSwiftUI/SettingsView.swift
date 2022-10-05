@@ -19,47 +19,29 @@ struct SettingsView: View {
                 Section{
                     HStack(spacing: 25) {
                         Text("Name").foregroundColor(.gray)
+                        
+                        TextField("Username", text: $name)
 //                        Spacer()
-                        Picker(name, selection: $name){
-                            TextField(
-                                "Name",
-                                text: $name
-                            )
-                        }
+//                        Picker(name, selection: $name){
+//                            SettingsEditView(savedState: "Ema Halilovic", toEdit: "Username")
+//                        }
                     }
+                    
                     HStack(spacing: 20) {
                         Text("E-Mail").foregroundColor(.gray)
-                        //                        Spacer()
-                        Picker(email, selection: $email){
-                            TextField(
-                                "E-Mail",
-                                text: $email
-                            )
-                        }
+                        TextField("E-Mail", text: $email)
                     }
                     .lineLimit(1)
                     
                     HStack {
                         Text("Adresse").foregroundColor(.gray)
-                        //                        Spacer()
-                        Picker(adress, selection: $adress){
-                            TextField(
-                                "Adresse",
-                                text: $adress
-                            )
-                        }
+                        TextField("Adresse", text: $adress)
                     }
                     .lineLimit(1)
                     
                     HStack(spacing: 15) {
                         Text("Telefon").foregroundColor(.gray)
-                        //                        Spacer()
-                        Picker(tel, selection: $tel){
-                            TextField(
-                                "Telefon",
-                                text: $tel
-                            )
-                        }
+                        TextField("Telefon", text: $tel)
                     }
                     .lineLimit(1)
                 } header: {

@@ -11,12 +11,12 @@ struct ContentView: View {
    
     var body: some View {
         TabView {
-            Stopwatch()
+            Text("Home Screen")
                 .tabItem {
                     Image(systemName: "house")
                 }
            
-            Text("statistiken")
+            Text("Statistiken Screen")
                 .tabItem{
                     Image(systemName: "chart.bar")
                 }
@@ -24,7 +24,7 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "play.circle")
                 }
-            Text("urlaub buchen")
+            Text("Urlaub buchen Screen")
                 .tabItem {
                     Image(systemName: "calendar.badge.clock")
                 
