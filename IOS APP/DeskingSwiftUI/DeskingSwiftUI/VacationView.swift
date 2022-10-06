@@ -21,20 +21,21 @@ struct VacationView: View {
     }()
     
     var body: some View {
-        
-        DatePicker(
-            "Startdatum",
-            selection: $startDate,
-            in: dateRange,
-            displayedComponents: [.date]
-        )
-        
-        DatePicker(
-            "Startdatum",
-            selection: $endDate,
-            in: dateRange,
-            displayedComponents: [.date]
-        )
+        VStack{
+            DatePicker(
+                "Anfang",
+                selection: $startDate,
+                in: dateRange,
+                displayedComponents: [.date]
+            )
+            
+            DatePicker(
+                "Ende",
+                selection: $endDate,
+                in: dateRange,
+                displayedComponents: [.date]
+            )
+        }
     }
 }
 
