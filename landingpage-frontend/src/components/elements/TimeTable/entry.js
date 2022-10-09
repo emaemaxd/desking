@@ -6,8 +6,8 @@ import SettingsIcon from "../../../images/settings.png"
 const ProjectEntry = (props) => {
 
     const name = props.name || "Projekt nicht gefunden"
-    const email = props.anschrift || "Keine Adresse"
-    const lastlogin = props.info || "-.-"
+    const email = props.anschrift || "admin@desking.com"
+    const lastlogin = props.info || "Montag"
     const [showDetail, setShowDetail] = useState(false);
 
     const detailToggle = () => {

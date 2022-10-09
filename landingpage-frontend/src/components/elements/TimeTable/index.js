@@ -13,9 +13,9 @@ const TimeTable = (props) => {
           <th>E-Mail</th>
           <th>Zuletzt eingecheckt</th>
         </tr>
-        <TimeEntry name="Max Mustermann" email="max@mustermann.com" lastlogin="Montag" />
-        <TimeEntry name="Max Mustermann" email="max@mustermann.com" lastlogin="Montag" />
-        <TimeEntry name="Max Mustermann" email="max@mustermann.com" lastlogin="Montag" />
+        <TimeEntry name="admin" email="max@mustermann.com" lastlogin="Montag" />
+        <TimeEntry name="Ema Halilovic" email="max@mustermann.com" lastlogin="Montag" />
+        <TimeEntry name="Mathias Witak" email="max@mustermann.com" lastlogin="Montag" />
         
         </table>
     );

@@ -39,12 +39,12 @@ const TimeGraph = (props) => {
       datasets: [
         {
           label: 'SOLL',
-          data: labels.map(() => faker.datatype.number({ min: 0, max: 8 })),
+          data: labels.map(() => faker.datatype.number({ min: 7, max: 8 })),
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
         },
         {
           label: 'IST',
-          data: labels.map(() => faker.datatype.number({ min: 0, max: 8 })),
+          data: labels.map(() => faker.datatype.number({ min: 6, max: 8 })),
           backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
       ],
