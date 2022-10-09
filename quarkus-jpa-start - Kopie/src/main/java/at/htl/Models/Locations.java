@@ -11,16 +11,16 @@ public class Locations {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
-    private long name;
+    private String name;
     private long latitude;
     private long longitude;
     private String info;
 
-    public long getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(long name) {
+    public void setName(String name) {
         this.name = name;
     }
 

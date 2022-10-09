@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Provider;
 import java.net.URI;
+import java.util.List;
 
 @Path("/api/customer")
 public class CustomerResource {
@@ -33,5 +34,11 @@ public class CustomerResource {
         this.customerRepository.persist(customer);
         URI uri = uriInfo.getAbsolutePathBuilder().path(Long.toString(customer.getId())).build();
         return Response.created(uri).build();
+    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/")
+    public List<Customer> getCustomers(){
+        return this.customerRepository.getCustomers();
     }
 }

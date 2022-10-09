@@ -3,6 +3,7 @@ package at.htl.Models;
 import javax.persistence.*;
 
 @Entity
+@Table(name="Userss")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

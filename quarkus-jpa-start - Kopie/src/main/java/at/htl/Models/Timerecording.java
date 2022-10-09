@@ -11,6 +11,7 @@ public class Timerecording {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long timerecID;
     @ManyToOne
+    @JoinColumn(name="user_id")
     private User user;
 
     public Long getLatitude() {
@@ -29,11 +30,11 @@ public class Timerecording {
         this.longitude = longitude;
     }
 
-    public Time getTimepassed() {
+    public int getTimepassed() {
         return timepassed;
     }
 
-    public void setTimepassed(Time timepassed) {
+    public void setTimepassed(int timepassed) {
         this.timepassed = timepassed;
     }
 
@@ -47,7 +48,7 @@ public class Timerecording {
 
     private Long latitude;
     private Long longitude;
-    private Time timepassed;
+    private int timepassed;
     private LocalDateTime starttime;
 
 }
