@@ -30,4 +30,12 @@ public class ProjectsResource {
     public Projects getProjectByID(@PathParam("id") int id){
         return pr.getProjectByID(id);
     }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/user/{id}")
+    public List<Projects> getProjectsFromUser(@PathParam("id") int id){
+        return pr.getUserProjects(id);
+    }
+
 }

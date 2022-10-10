@@ -11,7 +11,7 @@ const ProjectTable = (props) => {
     }, [])
 
     const getdata = () => {
-        axios.get('https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/dashboard/projects').then((response) => {
+        axios.get('http://localhost:8080/api/projects/').then((response) => {
             setData(response.data);
             console.log(data);
 
@@ -24,8 +24,8 @@ const ProjectTable = (props) => {
                 <th>Projektname</th>
                 <th>Kunde</th>
             </tr>
-            {data !== undefined && data.items.map((item) => {
-                return <ProjectEntry name={item.name} client={item.customername} />
+            {data !== undefined && data.map((item) => {
+                return <ProjectEntry name={item.name} client={item.customerid.email} />
             })}
         </table>
     );

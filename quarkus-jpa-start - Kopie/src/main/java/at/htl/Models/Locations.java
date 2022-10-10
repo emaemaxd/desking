@@ -12,8 +12,8 @@ public class Locations {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
     private String name;
-    private long latitude;
-    private long longitude;
+    private double latitude;
+    private double longitude;
     private String info;
 
     public String getName() {
@@ -24,7 +24,7 @@ public class Locations {
         this.name = name;
     }
 
-    public long getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
@@ -32,7 +32,7 @@ public class Locations {
         this.latitude = latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 

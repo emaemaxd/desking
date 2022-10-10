@@ -10,6 +10,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.sql.Time;
 import java.util.List;
 
 @Path("/api/entries")
@@ -28,5 +29,11 @@ public class TimerecordingResource {
     @Path("/")
     public List<Timerecording> getAllEntries(){
         return trr.getAllEntries();
+    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/project/{id}")
+    public List<Timerecording> getProjectEntries(@PathParam("id") int id){
+        return trr.getEntriesForProject(id);
     }
 }

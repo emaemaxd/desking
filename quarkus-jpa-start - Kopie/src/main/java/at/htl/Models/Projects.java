@@ -1,9 +1,6 @@
 package at.htl.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Projects {
@@ -19,9 +16,18 @@ public class Projects {
     @Id
     private int id;
     private String name;
-
+    @ManyToOne
+    private Customer customer;
     public String getName() {
         return name;
+    }
+
+    public Customer getCustomerid() {
+        return customer;
+    }
+
+    public void setCustomerid(Customer customerid) {
+        this.customer = customerid;
     }
 
     public void setName(String name) {

@@ -1,6 +1,7 @@
 package at.htl.boundary;
 
 import at.htl.Models.Locations;
+import at.htl.Models.Projects;
 import at.htl.repository.LocationRepository;
 
 import javax.inject.Inject;
@@ -29,5 +30,11 @@ public class LocationResource {
     @Path("/{id}")
     public Locations getLocationByID(@PathParam("id") long id){
         return lr.getLocationByID(id);
+    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/projects/{id}")
+    public List<Projects> getProjectsByLocation(@PathParam("id") long id){
+        return lr.getProjectsbyLocaton(id);
     }
 }

@@ -5,14 +5,14 @@ import TimeEntry from "./entry";
 import * as styles from "./index.module.scss"
 
 const ProjectTable = (props) => {
-  const reverseGeocodingUrl = "https://api.geoapify.com/v1/geocode/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&apiKey=${myAPIKey}";
+  const reverseGeocodingUrl = "https://api.geoapify.com/v1/geocode/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&apiKey=37a34965914146f99bbcf1df22ab7ee1";
   const [data, setData] = useState();
   useEffect(() => {
       getdata()
   }, [])
 
   const getdata = () => {
-      axios.get('https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/dashboard/locations').then((response) => {
+      axios.get('http://localhost:8080/api/locations/').then((response) => {
           setData(response.data);
           console.log(data);
       })
@@ -26,7 +26,7 @@ const ProjectTable = (props) => {
           <th>Anschrift</th>
           <th>Info</th>
         </tr>
-        {data !== undefined && data.items.map((item) => {
+        {data !== undefined && data.map((item) => {
                 return <TimeEntry name={item.name} lon={item.longitude} lat={item.latitude}  info={item.info} />
             })}
 
