@@ -30,6 +30,7 @@ struct SettingsView: View {
                     HStack(spacing: 20) {
                         Text("E-Mail").foregroundColor(.gray)
                         TextField("E-Mail", text: $email)
+                            
                     }
                     .lineLimit(1)
                     

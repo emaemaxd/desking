@@ -28,7 +28,7 @@ struct ContentView: View {
                     Image(systemName: "play.circle")
                 }
                 .tag(3)
-            Text("Urlaub buchen Screen")
+            VacationView()
                 .tabItem {
                     Image(systemName: "calendar.badge.clock")
                 
