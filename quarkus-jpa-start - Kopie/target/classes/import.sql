@@ -16,4 +16,4 @@ insert into customer (id, email, firstname, lastname, tel) values (1, 'ceo@sony.
 
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id) values (1,44,2,current_timestamp,200,1);
 
-select * from Userss;
+insert into projectentries (entry_timerecid, project_id) values (1,1);

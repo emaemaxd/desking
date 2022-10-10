@@ -9,7 +9,7 @@ import java.util.List;
 @ApplicationScoped
 public class TimerecordingRepository implements PanacheRepository<Timerecording> {
     public List<Timerecording> getAllEntries(){
-        var query = getEntityManager().createQuery("select t.timepassed,u.firstname,u.lastname from Timerecording t join User u on u.id = t.user.id");
+        var query = getEntityManager().createQuery("select t.timepassed,u.lastname from Timerecording t join User u on u.id = t.user.id");
         return query.getResultList();
     }
     public List<Timerecording> getUserEntries(int userid){
