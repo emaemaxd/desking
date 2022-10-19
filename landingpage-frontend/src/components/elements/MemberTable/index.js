@@ -11,7 +11,7 @@ const MemberTable = (props) => {
     }, [])
 
     const getdata = () => {
-        axios.get('https://apex.cloud.htl-leonding.ac.at/ords/ws_u4bhitm13/dashboard/users').then((response) => {
+        axios.get('http://localhost:8080/api/users/').then((response) => {
             setData(response.data);
             console.log(data);
 
@@ -26,8 +26,8 @@ const MemberTable = (props) => {
                 <th>E-Mail</th>
                 <th>Zuletzt Eingecheckt</th>
             </tr>
-            {data !== undefined && data.items.map((item) => {      
-            return <Member vorname={item.first_name} nachname={item.last_name} email={item.email} last="Noch kein Eintrag" />
+            {data !== undefined && data.map((item) => {      
+            return <Member vorname={item.firstname} nachname={item.lastname} email={item.email} last="Noch kein Eintrag" />
             })}
         </table>
     );
