@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct VacationView: View {
+    @State var notes = ""
+    @State var vacationType = "geb"
+    
     @State var startDate = Date()
     @State var endDate = Date()
     
@@ -21,32 +24,44 @@ struct VacationView: View {
     }()
     
     var body: some View {
-        HStack{
-            Spacer()
-            VStack{
-//                HStack{
-//                    Spacer()
+        NavigationView{
+//        HStack{
+//            Spacer()
+            VStack(spacing: 20){
+                //                HStack{
+                //                    Spacer()
+                VStack{
                     DatePicker(
                         "Von",
                         selection: $startDate,
                         in: dateRange,
                         displayedComponents: [.date]
                     )
-//                    Spacer()
                     DatePicker(
                         "Bis",
                         selection: $endDate,
                         in: dateRange,
                         displayedComponents: [.date]
                     )
-//                }
-                Button{
-                    
-                } label: {
-                    Text("Urlaubsantrag senden")
                 }
+                
+                Picker(selection: $vacationType, label: Text("Art von Urlaub:")) {
+                    Text("Gebührenurlaub").tag("geb")
+                    Text("Zeitausgleich").tag("zeit")
+                }.pickerStyle(SegmentedPickerStyle())
+                
+                
+                Button{
+                    //                    TODO: post
+                } label:{
+                    Label("Urlaub buchen", systemImage: "airplane")
+                }
+                .buttonStyle(BorderedButtonStyle())
+                .padding()
+                
             }
-            Spacer()
+            .frame(minWidth: 250, idealWidth: 250, maxWidth: 250)
+            .navigationBarTitle("Urlaub anfragen")
         }
     }
 }

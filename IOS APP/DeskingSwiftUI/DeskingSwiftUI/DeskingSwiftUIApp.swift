@@ -14,4 +14,10 @@ struct DeskingSwiftUIApp: App {
             ContentView()
         }
     }
+    
+    private func setupDependencies() {
+        let apiBaseUrl: String = "http://localhost:8080/api/"
+        
+        DIContainer.shared.register(type: ApiClient.self, component: DeskingApiClient(baseUrl: apiBaseUrl))
+    }
 }
