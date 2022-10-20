@@ -269,4 +269,6 @@ xcuserdata/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+**/UserInterfaceState.xcuserstate
+
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos,intellij
