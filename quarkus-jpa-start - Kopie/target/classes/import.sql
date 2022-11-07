@@ -16,15 +16,24 @@ insert into customer (id, email, firstname, lastname, tel) values (3,'info@linza
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id) values (1,48.268455462664114,14.25179316922848,current_timestamp,200,1);
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id) values (2,48.268455462664114,14.25179316922848,current_timestamp,5433,2);
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id) values (3,48.268455462664114,14.25179316922848,current_timestamp,444,1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id) values (4,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00.000+02:00'),86400000,1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id) values (5,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00.000+02:00'),90000000,2);
+
 
 insert into projects (id,description,name,customer_id) values (1,'Website für HTL Leonding überarbeiten', 'HTL Leonding Webpage',2);
 insert into projects (id,description,name,customer_id) values (2,'Sony TV Ad Kampagne schalten', 'Sony Ads',1);
 insert into projects (id,description,name,customer_id) values (3,'Linz AG Straßenbahn Bildschirme austauschen', 'Linz AG Öffis',3);
+insert into projects (id,description,name,customer_id) values (4,'Desking - Zeiterfassungstool leicht gemacht', 'Desking',2);
 
 insert into projectentries (entry_timerecid, project_id) values (1,1);
 insert into projectentries (entry_timerecid, project_id) values (2,1);
 insert into projectentries (entry_timerecid, project_id) values (3,1);
+insert into projectentries (entry_timerecid, project_id) values (4,4);
+insert into projectentries (entry_timerecid, project_id) values (5,4);
+
 
 insert into userprojects (user_id, project_id) values (1,1);
 insert into userprojects(user_id, project_id) values (1,2);
 insert into userprojects(user_id, project_id) values (2,3);
+insert into userprojects(user_id, project_id) values (1,4);
+insert into userprojects(user_id, project_id) values (2,4);
