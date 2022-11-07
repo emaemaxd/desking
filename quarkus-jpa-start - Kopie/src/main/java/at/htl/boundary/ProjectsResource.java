@@ -34,7 +34,7 @@ public class ProjectsResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/user/{id}")
-    public List<Projects> getProjectsFromUser(@PathParam("id") int id){
+    public List getProjectsFromUser(@PathParam("id") int id){
         return pr.getUserProjects(id);
     }
 }

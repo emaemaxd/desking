@@ -17,7 +17,7 @@ public class LocationRepository implements PanacheRepository<Locations> {
         query.setParameter('1',id1);
         return (Locations) query.getSingleResult();
     }
-    public List<Projects> getProjectsbyLocaton(long id){
+    public List getProjectsbyLocaton(long id){
         var query = getEntityManager().createQuery("select l.id.project.id,l.id.project.name " +
                 "from ProjectLocations l " +
                 "where l.id.location.id = :id");

@@ -17,7 +17,7 @@ public class ProjectRepository implements PanacheRepository<Projects> {
         var query = getEntityManager().createQuery("select p from Projects p where p.id = :id");
         return (Projects) query.setParameter("id",id).getSingleResult();
     }
-    public List<Projects> getUserProjects(int id){
+    public List getUserProjects(int id){
         var query = getEntityManager().createQuery("select p.name,p.id,up.user.lastname from Projects p join UserProjects up on up.user.id = :id");
         query.setParameter("id",id);
         return query.getResultList();
