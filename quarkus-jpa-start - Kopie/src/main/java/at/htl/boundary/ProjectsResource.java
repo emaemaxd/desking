@@ -37,5 +37,4 @@ public class ProjectsResource {
     public List<Projects> getProjectsFromUser(@PathParam("id") int id){
         return pr.getUserProjects(id);
     }
-
 }
