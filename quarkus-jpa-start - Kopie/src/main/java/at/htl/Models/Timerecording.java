@@ -4,15 +4,19 @@ import javax.persistence.*;
 import java.sql.Time;
 import java.time.LocalDateTime;
 
+/**
+ * One recorded timeentry with location and time stored.
+ *
+ */
 //id, customer_id, court_id, starttime, endtime, restimestamp
 @Entity
 public class Timerecording {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long timerecID;
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
+
 
     public Long getLatitude() {
         return latitude;
@@ -50,5 +54,8 @@ public class Timerecording {
     private Long longitude;
     private int timepassed;
     private LocalDateTime starttime;
+
+    @ManyToOne
+    private Projects projectid;
 
 }

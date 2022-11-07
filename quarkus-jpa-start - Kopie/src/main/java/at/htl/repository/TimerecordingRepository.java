@@ -10,7 +10,7 @@ import java.util.List;
 @ApplicationScoped
 public class TimerecordingRepository implements PanacheRepository<Timerecording> {
     public List<Timerecording> getAllEntries(){
-        var query = getEntityManager().createQuery("select t.timepassed,u.lastname,p.name from Timerecording t " +
+        var query = getEntityManager().createQuery("select t.starttime,t.timepassed,u.lastname,p.name from Timerecording t " +
                 "join User u on u.id = t.user.id " +
                 "join ProjectEntries pe on pe.id.entry.timerecID = t.timerecID " +
                 "join Projects p on p.id = pe.id.project.id");

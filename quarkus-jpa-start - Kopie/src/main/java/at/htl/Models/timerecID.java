@@ -2,6 +2,7 @@ package at.htl.Models;
 
 
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.Objects;

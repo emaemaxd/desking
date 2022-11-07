@@ -8,6 +8,7 @@ import javax.print.attribute.standard.Media;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.sql.Time;
 import java.util.List;
 
@@ -34,11 +35,18 @@ public class TimerecordingResource {
     public List<Timerecording> getProjectEntries(@PathParam("id") int id){
         return trr.getEntriesForProject(id);
     }
+
+    /**
+     * add an entry to the records
+     *
+     * @param timerecording the time to record
+     * @return
+     */
     @POST
     @Transactional
-    public Timerecording addEntry(Timerecording timerecording){
+    public Response addEntry(Timerecording timerecording){
         trr.persist(timerecording);
-        return timerecording;
+        return Response.ok(timerecording).build();
     }
 
 }
