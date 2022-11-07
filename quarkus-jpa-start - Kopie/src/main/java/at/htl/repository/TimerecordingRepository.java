@@ -26,4 +26,5 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
         query.setParameter("id",id);
         return query.getResultList();
     }
+
 }
