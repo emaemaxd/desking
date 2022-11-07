@@ -12,6 +12,7 @@
 		3E3239B82919237000BBBE74 /* TimeEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3239B72919237000BBBE74 /* TimeEntryService.swift */; };
 		3E3239BA2919290100BBBE74 /* TimeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3239B92919290100BBBE74 /* TimeOverviewView.swift */; };
 		3E3239BC2919294700BBBE74 /* TimeEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3239BB2919294700BBBE74 /* TimeEntryModel.swift */; };
+		3E47EF2B29199CB900DEA494 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E47EF2A29199CB900DEA494 /* Project.swift */; };
 		3E4D169128D8808900482C7D /* DeskingSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D169028D8808900482C7D /* DeskingSwiftUIApp.swift */; };
 		3E4D169328D8808900482C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D169228D8808900482C7D /* ContentView.swift */; };
 		3E4D169528D8808B00482C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4D169428D8808B00482C7D /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		3E3239B72919237000BBBE74 /* TimeEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryService.swift; sourceTree = "<group>"; };
 		3E3239B92919290100BBBE74 /* TimeOverviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeOverviewView.swift; sourceTree = "<group>"; };
 		3E3239BB2919294700BBBE74 /* TimeEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryModel.swift; sourceTree = "<group>"; };
+		3E47EF2A29199CB900DEA494 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3E4D168D28D8808900482C7D /* DeskingSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskingSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4D169028D8808900482C7D /* DeskingSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskingSwiftUIApp.swift; sourceTree = "<group>"; };
 		3E4D169228D8808900482C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */,
 				3E3239BB2919294700BBBE74 /* TimeEntryModel.swift */,
+				3E47EF2A29199CB900DEA494 /* Project.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				3E54C86028EEAD8F00AD16AB /* VacationView.swift in Sources */,
 				3E4D169128D8808900482C7D /* DeskingSwiftUIApp.swift in Sources */,
 				3E0BFEC028EA0D1B00A55022 /* Stopwatch.swift in Sources */,
+				3E47EF2B29199CB900DEA494 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
