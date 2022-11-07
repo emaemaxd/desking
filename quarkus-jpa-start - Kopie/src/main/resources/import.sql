@@ -35,3 +35,5 @@ insert into projectentries (entry_timerecid, project_id) values (5,4);
 insert into userprojects (user_id, project_id) values (1,1);
 insert into userprojects(user_id, project_id) values (1,2);
 insert into userprojects(user_id, project_id) values (2,3);
+insert into userprojects(user_id, project_id) values (1,4);
+insert into userprojects(user_id, project_id) values (2,4);
