@@ -22,7 +22,7 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
         return query.getResultList();
     }
     public List<Timerecording> getEntriesForProject(int id){
-        var query = getEntityManager().createQuery("select pe.id.entry from ProjectEntries pe where pe.id.project.id = :id");
+        var query = getEntityManager().createQuery("select pe.id.entry,p.customer.email,pe.id.entry.user.firstname,pe.id.entry.user.lastname from ProjectEntries pe join Projects p on p.id = pe.id.project.id where pe.id.project.id = :id");
         query.setParameter("id",id);
         return query.getResultList();
     }
