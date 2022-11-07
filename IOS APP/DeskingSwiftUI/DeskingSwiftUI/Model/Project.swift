@@ -19,5 +19,5 @@ struct Customer: Codable{
     var firstname: String?
     var lastname: String?
     var email: String
-    var tel: Int
+    var tel: String
 }
