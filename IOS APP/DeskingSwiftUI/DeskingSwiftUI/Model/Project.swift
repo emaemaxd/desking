@@ -8,10 +8,10 @@
 import Foundation
 
 struct Project:Codable {
-    var id: Int
-    var name: String
-    var description: String
-    var customerid: Customer
+    var id: Int = 0
+    var name: String = ""
+    var description: String = ""
+    var customerid: Customer? 
 }
 
 struct Customer: Codable{
@@ -19,5 +19,9 @@ struct Customer: Codable{
     var firstname: String?
     var lastname: String?
     var email: String
-    var tel: String
+    var tel: Int        // TODO: make backend change to String instead of Int
 }
+
+//class ProjectClass: ObservableObject{
+//    @Published var projects = [Project]()
+//}

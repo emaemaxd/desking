@@ -50,7 +50,7 @@ struct TrackTimeView: View {
                     pressedRecordTime.toggle()
                     print("Button was tapped")
                 } label: {
-                    // tracktimevm togglen 
+                    // TODO: tracktimevm togglen 
                     if pressedRecordTime {
                         Image(systemName: "stop.circle.fill")
                             .resizable()
