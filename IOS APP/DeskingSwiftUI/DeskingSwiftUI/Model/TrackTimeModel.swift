@@ -10,6 +10,8 @@ import SwiftUI
 
 class TrackTimeModel: ObservableObject{
     @Published var startedTimer = false
+    @Published var time = 0
+    
     func timeEntryStart() {
         // start timer
     }

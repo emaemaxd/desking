@@ -25,7 +25,15 @@ struct Stopwatch: View {
     
     var timer: Timer {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
-            progressTime += 1
+            if trackTimeVM.startedTimer{
+                progressTime = 0
+                trackTimeVM.time = 0
+            } else{
+                progressTime += 1
+                trackTimeVM.time = progressTime
+            }
+            print("progress time ", progressTime)
+            print("track time ", trackTimeVM.time)
         }
     }
     
@@ -46,8 +54,6 @@ struct Stopwatch: View {
     }
 
 }
-
-
 
 struct Stopwatch_Previews: PreviewProvider {
     static var previews: some View {

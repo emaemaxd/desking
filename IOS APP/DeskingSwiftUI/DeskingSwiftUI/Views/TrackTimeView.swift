@@ -28,9 +28,7 @@ struct TrackTimeView: View {
     var body: some View {
         NavigationView{
             VStack(spacing: 30) {
-                    
                 Spacer()
-                
                 if pressedRecordTime {
                     Stopwatch()
                 } else {
@@ -52,13 +50,13 @@ struct TrackTimeView: View {
                     pressedRecordTime.toggle()
                     print("Button was tapped")
                 } label: {
+                    // tracktimevm togglen 
                     if pressedRecordTime {
                         Image(systemName: "stop.circle.fill")
                             .resizable()
                             .padding(.vertical, 16.0)
                             .frame(width: 160.0, height: 192.0)
                             .foregroundColor(.primary)
-                        
                     } else {
                         Image(systemName: "play.circle.fill")
                             .resizable()
