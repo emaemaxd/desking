@@ -7,7 +7,16 @@
 
 import Foundation
 
-class TimeEntryModel {
-    var long = 0.0
-    var lat = 0.0
+let url = "http://localhost:8080/api/entries/project/1"
+
+struct Response: Codable {
+    let results: TimeEntryModel
+    let status: String
+}
+
+struct TimeEntryModel:Codable {
+    var timepassed: Int
+    var starttime: String
+    var long: Float
+    var lat:Float
 }
