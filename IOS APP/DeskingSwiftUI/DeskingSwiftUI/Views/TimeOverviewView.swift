@@ -37,7 +37,15 @@ struct TimeOverviewView: View {
             guard let json = results else {
                 return
             }
-            
+            for project in json{
+                let oneProject = Project()
+                oneProject.title = project["title"] as! String
+                oneProject.userId = project["userId"] as! Int
+                oneProject.id = project["id"] as! Int
+                oneProject.completed = project["completed"] as! Bool
+                
+//                toDoModel.todos.append(onetodo)
+            }
             print(json)
         })
         
