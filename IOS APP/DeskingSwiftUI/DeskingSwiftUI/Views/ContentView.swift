@@ -18,7 +18,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                 }
                 .tag(1)
-            Text("Statistiken Screen")
+            TimeOverviewView()
                 .tabItem{
                     Image(systemName: "chart.bar")
                 }
