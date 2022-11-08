@@ -30,7 +30,6 @@ const MemberTable = (props) => {
             })}
         </table>
     );
-
 }
 
 export default MemberTable
