@@ -5,6 +5,7 @@ import at.htl.Models.User;
 import at.htl.repository.UserRepository;
 
 import javax.inject.Inject;
+import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -34,10 +35,18 @@ public class UserResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/create/")
+    @Path("/")
     public Response createUser(User user, @Context UriInfo uriInfo) {
         ur.persist(user);
         URI uri = uriInfo.getAbsolutePathBuilder().path(Long.toString(user.getId())).build();
         return Response.created(uri).build();
+    }
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/update/")
+    public Response updateUser(User user, @Context UriInfo uriInfo){
+        ur.persist(user);
+        URI uri = uriInfo.getAbsolutePathBuilder().path(Long.toString(user.getId())).build();
+        return Response.ok(uri).build();
     }
 }

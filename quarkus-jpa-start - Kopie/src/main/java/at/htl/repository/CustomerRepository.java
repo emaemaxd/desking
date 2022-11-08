@@ -29,5 +29,6 @@ public class CustomerRepository implements PanacheRepository<Customer> {
         var query = getEntityManager().createQuery("select c from Customer c");
         return query.getResultList();
     }
+
     }
 
