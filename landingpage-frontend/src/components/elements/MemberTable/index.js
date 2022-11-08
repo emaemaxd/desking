@@ -27,7 +27,7 @@ const MemberTable = (props) => {
                 <th>Zuletzt Eingecheckt</th>
             </tr>
             {data !== undefined && data.map((item) => {      
-            return <Member vorname={item.firstname} nachname={item.lastname} email={item.email} last="Noch kein Eintrag" />
+            return <Member vorname={item.firstname} nachname={item.lastname} email={item.email} last="-" />
             })}
         </table>
     );
