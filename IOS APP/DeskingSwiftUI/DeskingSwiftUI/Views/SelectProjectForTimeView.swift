@@ -4,6 +4,7 @@ struct TimeOverviewView: View {
     
     let url = "http://127.0.0.1:8080/api/projects"
     @State var projects =  [Project]()
+    @State var fullSelectedProject = Project()
     @State var selectedProject = "Desking"
     
     var body: some View {
@@ -15,8 +16,12 @@ struct TimeOverviewView: View {
                     Picker("Projekte", selection: $selectedProject){
                         ForEach(projects, id: \.id) { project in
                             Text(project.name).tag(project.name)
+//                            Text(project.name).tag(project)
                         }
                     }
+//                    .onChange(of: selectedProject) {
+//                        self.fullSelectedProject = $0.rawValue
+//                    }
                 }
                 .padding()
                 .frame(width: 250, height: 40)
@@ -29,7 +34,10 @@ struct TimeOverviewView: View {
                 
                 Button{
                     // getData(from: url)
+//                    if let index = find(projects, selectedProject){
+                        // found! do something }
                     print("button pressed...")
+//                    TimeEntriesView()
                 } label: {
                     Text("auswahl bestätigen")
                 }
