@@ -4,19 +4,22 @@ struct TimeOverviewView: View {
     
     let url = "http://127.0.0.1:8080/api/projects"
     @State var projects =  [Project]()
-    @State var selectedProject = ""
+    @State var selectedProject = "Desking"
     
     var body: some View {
         NavigationView {
             VStack{
                 Text("Projet auswählen...").font(.title3)
-                Picker("Projekte", selection: $selectedProject){
-                    ForEach(projects, id: \.id) { project in
-                        Text(project.name)
+                HStack{
+                    Text(selectedProject)
+                    Picker("Projekte", selection: $selectedProject){
+                        ForEach(projects, id: \.id) { project in
+                            Text(project.name).tag(project.name)
+                        }
                     }
                 }
                 .padding()
-                .frame(width: 200, height: 40)
+                .frame(width: 250, height: 40)
                 .clipShape(Capsule())
                 .overlay(
                     RoundedRectangle(cornerRadius: 7)
@@ -30,6 +33,7 @@ struct TimeOverviewView: View {
                 } label: {
                     Text("auswahl bestätigen")
                 }
+                .buttonStyle(BorderedProminentButtonStyle())
             }
         }
         .navigationBarTitle("hi")
@@ -39,10 +43,11 @@ struct TimeOverviewView: View {
     }
     
     func getData(from url: String){
+//        var returnProjects = [Project]()
         print("running getData()-func...")
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             
-            guard let data = data, error == nil else {
+            guard let data = data, error == nil else {
                 print("could not get data")
                 return
             }
@@ -68,13 +73,14 @@ struct TimeOverviewView: View {
                 temp.customerid = onePr.customerid
                 
                 projects.append(temp)
+//                returnProjects.append(temp)
                 print(temp)
-                
             }
             //            print(json)
+            selectedProject = projects[0].name
         })
-        
         task.resume()
+//        return returnProjects
     }
     
 }
