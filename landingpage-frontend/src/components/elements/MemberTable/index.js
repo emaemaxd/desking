@@ -17,7 +17,6 @@ const MemberTable = (props) => {
 
         })
     }
-
     return (
         <table className={styles.table}>
             <tr>
