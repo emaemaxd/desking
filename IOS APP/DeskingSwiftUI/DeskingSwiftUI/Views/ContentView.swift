@@ -10,15 +10,16 @@ import SwiftUI
 struct ContentView: View {
    
     @State var selected = 3
+    var projectVM: ProjectViewModel
     
     var body: some View {
         TabView(selection: $selected) {
-            Text("Home Screen")
+            TimeEntriesView()
                 .tabItem {
                     Image(systemName: "house")
                 }
                 .tag(1)
-            TimeOverviewView()
+            TimeOverviewView(projectsModel: projectVM)
                 .tabItem{
                     Image(systemName: "chart.bar")
                 }
@@ -43,9 +44,9 @@ struct ContentView: View {
         
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
