@@ -1,7 +1,7 @@
 import Foundation
 
 struct TimeEntryModel{
-    private(set) var timeEntries = [TimeEntry]()
+//    private(set) var timeEntries = [TimeEntry]()
     
     /*
     struct Response: Codable {
@@ -11,17 +11,12 @@ struct TimeEntryModel{
         var lastName: String
     }
      */
+//    struct TimeEntryAndProjectId: Codable{
+//        var timeEntry: OneTimeEntry
+//        var projectId: Int
+//    }
     
-    
-    struct TimeCustomer: Codable{
-        var id: Float
-        var firstName: String
-        var lastName: String
-        var email: String
-        var tel: Int
-    }
-    
-    struct TimeEntry:Codable {
+    struct OneTimeEntry:Codable {
         var timepassed: Int
         var starttime: String
         var longitude: Float
