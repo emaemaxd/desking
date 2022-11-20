@@ -11,11 +11,10 @@
 		3E0BFEC428EA589900A55022 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0BFEC328EA589900A55022 /* SettingsView.swift */; };
 		3E3239B82919237000BBBE74 /* TimeEntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3239B72919237000BBBE74 /* TimeEntryService.swift */; };
 		3E3239BA2919290100BBBE74 /* SelectProjectForTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3239B92919290100BBBE74 /* SelectProjectForTimeView.swift */; };
-		3E3239BC2919294700BBBE74 /* TimeEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3239BB2919294700BBBE74 /* TimeEntryModel.swift */; };
 		3E47EF2B29199CB900DEA494 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E47EF2A29199CB900DEA494 /* Project.swift */; };
 		3E47EF2D291A39CA00DEA494 /* TimeEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E47EF2C291A39CA00DEA494 /* TimeEntriesView.swift */; };
 		3E4D169128D8808900482C7D /* DeskingSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D169028D8808900482C7D /* DeskingSwiftUIApp.swift */; };
-		3E4D169328D8808900482C7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D169228D8808900482C7D /* ContentView.swift */; };
+		3E4D169328D8808900482C7D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4D169228D8808900482C7D /* HomeView.swift */; };
 		3E4D169528D8808B00482C7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4D169428D8808B00482C7D /* Assets.xcassets */; };
 		3E4D169828D8808B00482C7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4D169728D8808B00482C7D /* Preview Assets.xcassets */; };
 		3E54C85E28ED8EFD00AD16AB /* SettingsEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54C85D28ED8EFD00AD16AB /* SettingsEditView.swift */; };
@@ -26,6 +25,7 @@
 		3E64A9E528E0F4DF00F338D5 /* TrackTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */; };
 		3EAD52FC28FFFE710031F966 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FB28FFFE710031F966 /* ApiClient.swift */; };
 		3EAD52FF290000D60031F966 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FE290000D60031F966 /* DIContainer.swift */; };
+		3EFF85EB292A63FD00A1A57B /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF85EA292A63FD00A1A57B /* TimeEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +33,11 @@
 		3E0BFEC328EA589900A55022 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3E3239B72919237000BBBE74 /* TimeEntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryService.swift; sourceTree = "<group>"; };
 		3E3239B92919290100BBBE74 /* SelectProjectForTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProjectForTimeView.swift; sourceTree = "<group>"; };
-		3E3239BB2919294700BBBE74 /* TimeEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryModel.swift; sourceTree = "<group>"; };
 		3E47EF2A29199CB900DEA494 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3E47EF2C291A39CA00DEA494 /* TimeEntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesView.swift; sourceTree = "<group>"; };
 		3E4D168D28D8808900482C7D /* DeskingSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskingSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4D169028D8808900482C7D /* DeskingSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskingSwiftUIApp.swift; sourceTree = "<group>"; };
-		3E4D169228D8808900482C7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3E4D169228D8808900482C7D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3E4D169428D8808B00482C7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E4D169728D8808B00482C7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3E54C85D28ED8EFD00AD16AB /* SettingsEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditView.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeModel.swift; sourceTree = "<group>"; };
 		3EAD52FB28FFFE710031F966 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		3EAD52FE290000D60031F966 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		3EFF85EA292A63FD00A1A57B /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 			children = (
 				3E3239B92919290100BBBE74 /* SelectProjectForTimeView.swift */,
 				3E54C85D28ED8EFD00AD16AB /* SettingsEditView.swift */,
-				3E4D169228D8808900482C7D /* ContentView.swift */,
+				3E4D169228D8808900482C7D /* HomeView.swift */,
 				3E64A9E028E0F0CB00F338D5 /* TrackTimeView.swift */,
 				3E0BFEC328EA589900A55022 /* SettingsView.swift */,
 				3E54C85F28EEAD8F00AD16AB /* VacationView.swift */,
@@ -130,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */,
-				3E3239BB2919294700BBBE74 /* TimeEntryModel.swift */,
 				3E47EF2A29199CB900DEA494 /* Project.swift */,
+				3EFF85EA292A63FD00A1A57B /* TimeEntry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,14 +228,14 @@
 				3E64A9E328E0F19900F338D5 /* DeskingLocation.swift in Sources */,
 				3E64A9DF28E0ED2F00F338D5 /* TestView.swift in Sources */,
 				3EAD52FF290000D60031F966 /* DIContainer.swift in Sources */,
+				3EFF85EB292A63FD00A1A57B /* TimeEntry.swift in Sources */,
 				3E0BFEC428EA589900A55022 /* SettingsView.swift in Sources */,
 				3E64A9E128E0F0CB00F338D5 /* TrackTimeView.swift in Sources */,
-				3E4D169328D8808900482C7D /* ContentView.swift in Sources */,
+				3E4D169328D8808900482C7D /* HomeView.swift in Sources */,
 				3E3239B82919237000BBBE74 /* TimeEntryService.swift in Sources */,
 				3E54C85E28ED8EFD00AD16AB /* SettingsEditView.swift in Sources */,
 				3E3239BA2919290100BBBE74 /* SelectProjectForTimeView.swift in Sources */,
 				3E47EF2D291A39CA00DEA494 /* TimeEntriesView.swift in Sources */,
-				3E3239BC2919294700BBBE74 /* TimeEntryModel.swift in Sources */,
 				3E54C86028EEAD8F00AD16AB /* VacationView.swift in Sources */,
 				3E4D169128D8808900482C7D /* DeskingSwiftUIApp.swift in Sources */,
 				3E0BFEC028EA0D1B00A55022 /* Stopwatch.swift in Sources */,
