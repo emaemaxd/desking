@@ -17,7 +17,7 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
         return query.getResultList();
     }
     public List<Timerecording> getUserEntries(int userid){
-        var query = getEntityManager().createQuery("select t,t.projectid.id from Timerecording t where t.user.id = :id");
+        var query = getEntityManager().createQuery("select new at.htl.Models.userentry(t.latitude,t.longitude,t.timepassed,t.starttime,t.projectid.id) from Timerecording t where t.user.id = :id");
         query.setParameter("id",userid);
         return query.getResultList();
     }
