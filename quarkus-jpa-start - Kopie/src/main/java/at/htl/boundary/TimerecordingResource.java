@@ -1,6 +1,5 @@
 package at.htl.boundary;
 
-import at.htl.Models.ProjectEntryDTO;
 import at.htl.Models.Timerecording;
 import at.htl.repository.TimerecordingRepository;
 
