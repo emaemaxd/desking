@@ -24,11 +24,11 @@ public class Customer {
         this.email = email;
     }
 
-    public long getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(long tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
 
@@ -55,6 +55,6 @@ public class Customer {
     }
 
     private String email;
-    private long tel;
+    private String tel;
 
 }
