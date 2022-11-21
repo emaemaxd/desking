@@ -4,6 +4,7 @@ struct TimeOverviewView: View {
     
     let url = "http://127.0.0.1:8080/api/projects"
     @ObservedObject var projectsModel: ProjectViewModel
+    @ObservedObject var timeEntriesModel: TimeEntriesViewModel
 //    @State var fullSelectedProject = Project()
     @State var selectedProject = "Desking"
     
@@ -15,7 +16,7 @@ struct TimeOverviewView: View {
                     Text(selectedProject)
                     Picker("Projekte", selection: $selectedProject){
                         ForEach(projectsModel.projects) { project in
-                            Text(project.name).tag(project.name)
+                            Text(project.name).tag(project.id)
 //                            Text(project.name).tag(project)
                         }
                     }
@@ -29,16 +30,9 @@ struct TimeOverviewView: View {
                 )
                 .padding(.bottom)
                 
-                Button{
-                    // getData(from: url)
-//                    if let index = find(projects, selectedProject){
-                        // found! do something }
-                    print("button pressed...")
-//                    TimeEntriesView()
-                } label: {
-                    Text("auswahl bestätigen")
-                }
-                .buttonStyle(BorderedProminentButtonStyle())
+                Text("Geloggte Zeit: ")
+                    .font(.title3)
+                
             }
         }
         .navigationBarTitle("hi")
@@ -50,7 +44,9 @@ struct TimeOverviewView: View {
 
 struct TimeOverviewView_Previews: PreviewProvider {
     static let projectsVM = ProjectViewModel()
+    static let timeEntryVM = TimeEntriesViewModel()
+    
     static var previews: some View {
-        TimeOverviewView(projectsModel: projectsVM)
+        TimeOverviewView(projectsModel: projectsVM, timeEntriesModel: timeEntryVM)
     }
 }
