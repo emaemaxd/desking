@@ -41,11 +41,11 @@ class ProjectViewModel: ObservableObject{
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             
             guard let data = data, error == nil else {
-                print("could not get data")
+                print("could not get data from \(url)")
                 return
             }
             
-            // get data
+            // get actual data
             var results: [Project]?
             do {
                 results = try JSONDecoder().decode([PrModel.Project].self, from: data)
