@@ -1,10 +1,3 @@
-//
-//  Project.swift
-//  DeskingSwiftUI
-//
-//  Created by Ema xd on 07.11.22.
-//
-
 import Foundation
 
 struct PrModel {
@@ -28,8 +21,6 @@ struct PrModel {
     mutating func setProjects(projects: [Project]){
         self.projects = projects
     }
-    
-    
 }
 
 class ProjectViewModel: ObservableObject{
