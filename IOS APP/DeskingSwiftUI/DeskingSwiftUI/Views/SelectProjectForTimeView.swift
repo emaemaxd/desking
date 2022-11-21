@@ -11,9 +11,11 @@ struct TimeOverviewView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("Projet auswählen...").font(.title3)
+                Text("Projet auswählen...")
+                    .font(.title3)
                 HStack{
-                    Text(selectedProject)
+                    Text("Geloggte Zeit für: ")
+                        .font(.title3)
                     Picker("Projekte", selection: $selectedProject){
                         ForEach(projectsModel.projects) { project in
                             Text(project.name).tag(project.id)
@@ -21,8 +23,10 @@ struct TimeOverviewView: View {
                         }
                     }
                 }
+                .foregroundColor(Color.white)
                 .padding()
                 .frame(width: 250, height: 40)
+                .background(.yellow)
                 .clipShape(Capsule())
                 .overlay(
                     RoundedRectangle(cornerRadius: 7)
@@ -30,8 +34,6 @@ struct TimeOverviewView: View {
                 )
                 .padding(.bottom)
                 
-                Text("Geloggte Zeit: ")
-                    .font(.title3)
                 
             }
         }
