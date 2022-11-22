@@ -2,39 +2,49 @@ import SwiftUI
 
 struct TimeOverviewView: View {
     
-    let url = "http://127.0.0.1:8080/api/projects"
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var timeEntriesModel: TimeEntriesViewModel
-//    @State var fullSelectedProject = Project()
-    @State var selectedProject = "Desking"
+    @State var selectedProjectName = "Desking"
+    
+    var dateFormatter :DateFormatter
+    let isoDate =  "2018-09-01T09:01:16.8012"
+    
+    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, selectedProjectName: String = "Desking") {
+        self.projectsModel = projectsModel
+        self.timeEntriesModel = timeEntriesModel
+        self.selectedProjectName = selectedProjectName
+        self.dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'ssss"
+    }
     
     var body: some View {
         NavigationView {
             VStack{
-                Text("Projet auswählen...")
+                Text("Geloggte Zeit für: ")
                     .font(.title3)
-                HStack{
-                    Text("Geloggte Zeit für: ")
-                        .font(.title3)
-                    Picker("Projekte", selection: $selectedProject){
-                        ForEach(projectsModel.projects) { project in
-                            Text(project.name).tag(project.id)
-//                            Text(project.name).tag(project)
-                        }
+                Picker("Projekte", selection: $selectedProjectName){
+                    ForEach(projectsModel.projects){ item in
+                        Text(item.projName).tag(item.projName)
                     }
                 }
-                .foregroundColor(Color.white)
                 .padding()
                 .frame(width: 250, height: 40)
                 .background(.yellow)
                 .clipShape(Capsule())
-                .overlay(
-                    RoundedRectangle(cornerRadius: 7)
-                        .stroke(.primary, lineWidth: 1.5)
-                )
                 .padding(.bottom)
                 
-                
+                List{
+                    ForEach(timeEntriesModel.timeEntries){ item in
+                        if(selectedProjectName == item.projectName){
+                            VStack{
+                                // TODO: ask for help
+                                Text(dateFormatter.date(from: isoDate)!, format: .dateTime.day().month().year())
+                                
+                                Text("hi")
+                            }
+                        }
+                    }
+                }
             }
         }
         .navigationBarTitle("hi")

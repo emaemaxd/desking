@@ -13,6 +13,7 @@ struct DeskingSwiftUIApp: App {
     
     let projectVM = ProjectViewModel()
     let timeEntriesVM = TimeEntriesViewModel()
+    let locationsVM = LocationViewModel()
     
     init() {
         setupDependencies()
@@ -20,7 +21,7 @@ struct DeskingSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(projectVM: projectVM, timeEntriesVM: timeEntriesVM)
+            ContentView(projectVM: projectVM, timeEntriesVM: timeEntriesVM, locationVM: locationsVM)
         }
     }
     
@@ -28,7 +29,7 @@ struct DeskingSwiftUIApp: App {
         let apiBaseUrl: String = "http://localhost:8080/api/"
         
         /// set projects as environment variable
-        projectVM.getData(from: apiBaseUrl + "projects")
+        projectVM.getData(from: apiBaseUrl + "projects/user/\(loggedUserId)")
         
         timeEntriesVM.getData(from: apiBaseUrl + "entries/\(loggedUserId)")
         

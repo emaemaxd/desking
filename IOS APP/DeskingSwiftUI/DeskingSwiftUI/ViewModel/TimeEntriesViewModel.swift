@@ -1,10 +1,3 @@
-//
-//  TimeEntriesViewModel.swift
-//  DeskingSwiftUI
-//
-//  Created by Ema xd on 20.11.22.
-//
-
 import Foundation
 
 class TimeEntriesViewModel: ObservableObject{
@@ -41,4 +34,9 @@ class TimeEntriesViewModel: ObservableObject{
         })
         task.resume()
     }
+    
+    func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
 }
