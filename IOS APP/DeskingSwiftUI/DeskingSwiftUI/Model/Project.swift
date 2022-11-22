@@ -5,11 +5,16 @@ struct PrModel {
     
     struct Project:Codable, Identifiable {
         var id: Int = 0
-        var name: String = ""
-        var description: String = ""
-        var customerid: Customer?
+        var projName: String = ""
+        var projDescr: String = ""
+        var customerId: Int?
+        var customerName: String?
+        var customerEmail: String?
+        var userLastName: String = ""
+        var userRole: Int = 0
     }
     
+    /*
     struct Customer: Codable{
         var id: Int
         var firstname: String?
@@ -17,6 +22,7 @@ struct PrModel {
         var email: String
         var tel: Int        // TODO: make backend change to String instead of Int
     }
+     */
     
     mutating func setProjects(projects: [Project]){
         self.projects = projects
@@ -58,22 +64,6 @@ class ProjectViewModel: ObservableObject{
                 print("empty data")
                 return
             }
-            
-            /*
-            for onePr in json{
-                var temp = Project()
-                temp.name = onePr.name
-                temp.id = onePr.id
-                temp.description = onePr.description
-                temp.customerid = onePr.customerid
-                
-                projects.append(temp)
-                //                returnProjects.append(temp)
-                print(temp)
-            }
-            //            print(json)
-             = projects[0].name
-             */
         })
         task.resume()
         

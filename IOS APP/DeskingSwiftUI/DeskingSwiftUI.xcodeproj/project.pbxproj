@@ -24,6 +24,8 @@
 		3E64A9E528E0F4DF00F338D5 /* TrackTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */; };
 		3EAD52FC28FFFE710031F966 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FB28FFFE710031F966 /* ApiClient.swift */; };
 		3EAD52FF290000D60031F966 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FE290000D60031F966 /* DIContainer.swift */; };
+		3ECDDAB5292CA7A8000424E7 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */; };
+		3ECDDAB7292CA87A000424E7 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDAB6292CA87A000424E7 /* LocationModel.swift */; };
 		3EFF85EB292A63FD00A1A57B /* TimeEntryForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF85EA292A63FD00A1A57B /* TimeEntryForUser.swift */; };
 		3EFF85EE292A818F00A1A57B /* TimeEntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFF85ED292A818F00A1A57B /* TimeEntriesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,8 @@
 		3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeModel.swift; sourceTree = "<group>"; };
 		3EAD52FB28FFFE710031F966 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		3EAD52FE290000D60031F966 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		3ECDDAB6292CA87A000424E7 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		3EFF85EA292A63FD00A1A57B /* TimeEntryForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryForUser.swift; sourceTree = "<group>"; };
 		3EFF85ED292A818F00A1A57B /* TimeEntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,7 @@
 				3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */,
 				3E47EF2A29199CB900DEA494 /* Project.swift */,
 				3EFF85EA292A63FD00A1A57B /* TimeEntryForUser.swift */,
+				3ECDDAB6292CA87A000424E7 /* LocationModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				3EFF85ED292A818F00A1A57B /* TimeEntriesViewModel.swift */,
+				3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,12 +244,14 @@
 				3EFF85EB292A63FD00A1A57B /* TimeEntryForUser.swift in Sources */,
 				3E0BFEC428EA589900A55022 /* SettingsView.swift in Sources */,
 				3E64A9E128E0F0CB00F338D5 /* TrackTimeView.swift in Sources */,
+				3ECDDAB5292CA7A8000424E7 /* LocationViewModel.swift in Sources */,
 				3E4D169328D8808900482C7D /* HomeView.swift in Sources */,
 				3E3239B82919237000BBBE74 /* TimeEntryService.swift in Sources */,
 				3E54C85E28ED8EFD00AD16AB /* SettingsEditView.swift in Sources */,
 				3E3239BA2919290100BBBE74 /* SelectProjectForTimeView.swift in Sources */,
 				3E47EF2D291A39CA00DEA494 /* TimeEntriesView.swift in Sources */,
 				3E54C86028EEAD8F00AD16AB /* VacationView.swift in Sources */,
+				3ECDDAB7292CA87A000424E7 /* LocationModel.swift in Sources */,
 				3EFF85EE292A818F00A1A57B /* TimeEntriesViewModel.swift in Sources */,
 				3E4D169128D8808900482C7D /* DeskingSwiftUIApp.swift in Sources */,
 				3E0BFEC028EA0D1B00A55022 /* Stopwatch.swift in Sources */,
