@@ -82,6 +82,7 @@ struct TrackTimeView: View {
                     )
                     .padding(.bottom)
                     
+                    // added condition if no locations available
                     if(!locationsModel.locationsForUser.isEmpty){
                         VStack{
                             Text("Ausgewählter Standort: ")
