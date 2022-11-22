@@ -26,9 +26,6 @@ struct TrackTimeView: View {
     
     @State var isMarked = false
     
-    var mockupLocations = ["HTL Leonding", "Linz HBF", "Shell Tankstelle Leonding"]
-    
-    
     var body: some View {
         NavigationView{
             VStack(spacing: 30) {
@@ -36,6 +33,7 @@ struct TrackTimeView: View {
                 if pressedRecordTime {
                     Stopwatch()
                 } else {
+                    // default showing
                     HStack(spacing: 1){
                         Text("00")
                             .tracking(1.8)
@@ -54,7 +52,6 @@ struct TrackTimeView: View {
                     pressedRecordTime.toggle()
                     print("Button was tapped")
                 } label: {
-                    // TODO: tracktimevm togglen 
                     if pressedRecordTime {
                         Image(systemName: "stop.circle.fill")
                             .resizable()
@@ -85,30 +82,32 @@ struct TrackTimeView: View {
                     )
                     .padding(.bottom)
                     
-                    Text("Ausgewählter Standort: ")
-                        .padding(.top)
-                        .font(.title3)
-                    Text("vorgeschlagen, von dir entfernt")
-                        .font(.subheadline)
-                    HStack{
-                        Button{
-                            isMarked.toggle()
-                        } label: {
-                            Image(systemName: self.isMarked ? "largecircle.fill.circle" : "circle")
-                                .clipShape(Circle())
-                                .foregroundColor(.blue)
-                        }
-                        
-                        
-                        
-                        
-                        Text(Image(systemName: "location.circle.fill"))
-                            .foregroundColor(.blue)
-                        
-                        // LOCATION auswählen
-                        Picker("Standort auswählen", selection: $selectedLocation){
-                            ForEach(locationsModel.locationsForUser){ item in
-                                Text(item.name)
+                    // added condition if no locations available
+                    if(!locationsModel.locationsForUser.isEmpty){
+                        VStack{
+                            Text("Ausgewählter Standort: ")
+                                .padding(.top)
+                                .font(.title3)
+                            Text("vorgeschlagen, von dir entfernt")
+                                .font(.subheadline)
+                            HStack{
+                                Button{
+                                    isMarked.toggle()
+                                } label: {
+                                    Image(systemName: self.isMarked ? "largecircle.fill.circle" : "circle")
+                                        .clipShape(Circle())
+                                        .foregroundColor(.blue)
+                                }
+                                
+                                Text(Image(systemName: "location.circle.fill"))
+                                    .foregroundColor(.blue)
+                                
+                                // LOCATION auswählen
+                                Picker("Standort auswählen", selection: $selectedLocation){
+                                    ForEach(locationsModel.locationsForUser){ item in
+                                        Text(item.name)
+                                    }
+                                }
                             }
                         }
                     }
@@ -119,10 +118,11 @@ struct TrackTimeView: View {
     }
 }
 
-//struct TrackTimeView_Previews: PreviewProvider {
-//    static let projectsVM = ProjectViewModel()
-//    
-//    static var previews: some View {
-//        TrackTimeView(projectsModel: projectsVM.projects)
-//    }
-//}
+struct TrackTimeView_Previews: PreviewProvider {
+    static let projectsVM = ProjectViewModel()
+    static let locationsVM = LocationViewModel()
+    
+    static var previews: some View {
+        TrackTimeView(projectsModel: projectsVM, locationsModel: locationsVM)
+    }
+}
