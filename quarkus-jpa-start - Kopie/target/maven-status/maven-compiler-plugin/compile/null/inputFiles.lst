@@ -2,6 +2,7 @@ D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Locations.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\UserRepository.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\timerecID.java
+D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\allProj.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\ProjectLocationID.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\UserProjects.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\UserProjID.java
@@ -14,6 +15,7 @@ D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\ProjectRepository.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Customer.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Timerecording.java
+D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\userProjFinal.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\TimerecordingResource.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\ProjectEntries.java
 D:\S\ITP\Projekt\projekt2\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\ProjectsResource.java
