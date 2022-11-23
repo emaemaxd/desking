@@ -27,7 +27,9 @@ class TimeEntriesViewModel: ObservableObject{
             do {
                 results = try
                 JSONDecoder().decode([TimeEntryModel.TimeEntryForUser].self, from: data)
-                self.timeEntryModel.setTimeEntriesForUser(timeEntries: results!)
+                DispatchQueue.main.async {
+                    self.timeEntryModel.setTimeEntriesForUser(timeEntries: results!)
+                }
             } catch {
                 print("failed to convert data \(error)")
             }

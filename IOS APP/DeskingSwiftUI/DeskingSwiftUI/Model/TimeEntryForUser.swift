@@ -15,6 +15,8 @@ struct TimeEntryModel{
         var projectName: String?
         
         var userId: Int?
+        var userLastName: String
+        var userRole: Int
     }
     
     mutating func setTimeEntriesForUser(timeEntries: [TimeEntryForUser]){

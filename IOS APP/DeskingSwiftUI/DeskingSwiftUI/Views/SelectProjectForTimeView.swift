@@ -14,7 +14,7 @@ struct TimeOverviewView: View {
         self.timeEntriesModel = timeEntriesModel
         self.selectedProjectName = selectedProjectName
         self.dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'ssss"
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
     }
     
     var body: some View {
@@ -37,8 +37,9 @@ struct TimeOverviewView: View {
                     ForEach(timeEntriesModel.timeEntries){ item in
                         if(selectedProjectName == item.projectName){
                             VStack{
-                                // TODO: ask for help
-                                Text(dateFormatter.date(from: isoDate)!, format: .dateTime.day().month().year())
+//                                Text("\(item.userLastName) (\(item.userRole))")
+                                
+                                Text(dateFormatter.date(from: item.starttime)!, format: .dateTime.day().month().year())
                                 
                                 Text("hi")
                             }
