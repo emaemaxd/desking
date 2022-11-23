@@ -55,7 +55,9 @@ class ProjectViewModel: ObservableObject{
             var results: [Project]?
             do {
                 results = try JSONDecoder().decode([PrModel.Project].self, from: data)
-                self.model.setProjects(projects: results!)
+                DispatchQueue.main.async {
+                    self.model.setProjects(projects: results!)
+                }
             } catch{
                 print("failed to convert data \(error)")
             }
