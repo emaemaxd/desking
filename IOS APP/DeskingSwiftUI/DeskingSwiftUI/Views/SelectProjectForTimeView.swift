@@ -7,7 +7,9 @@ struct TimeOverviewView: View {
     @State var selectedProjectName = "Desking"
     
     var dateFormatter :DateFormatter
-    let isoDate =  "2018-09-01T09:01:16.8012"
+    
+//    TODO: remove testdata
+    let testDate =  "2018-09-01T09:01:16.8012"
     
     init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, selectedProjectName: String = "Desking") {
         self.projectsModel = projectsModel
@@ -29,15 +31,14 @@ struct TimeOverviewView: View {
                 }
                 .padding()
                 .frame(width: 250, height: 40)
-                .background(.yellow)
-                .clipShape(Capsule())
+                .background(.brown)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.bottom)
                 
                 List{
                     ForEach(timeEntriesModel.timeEntries){ item in
                         if(selectedProjectName == item.projectName){
                             VStack{
-//                                Text("\(item.userLastName) (\(item.userRole))")
                                 
                                 Text(dateFormatter.date(from: item.starttime)!, format: .dateTime.day().month().year())
                                 
@@ -47,8 +48,8 @@ struct TimeOverviewView: View {
                     }
                 }
             }
+            .navigationTitle("Einträge nach Projekt")
         }
-        .navigationBarTitle("hi")
     }
     
     
