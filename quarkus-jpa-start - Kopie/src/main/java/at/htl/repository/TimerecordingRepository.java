@@ -31,13 +31,14 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
     }
 
     public Response addEntry(addEntryDTO Entry){
-        var query = getEntityManager().createNativeQuery("Insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, user_id)" +
-                " values (:timerecID, :latitude, :longitude, :starttime, :timepassed, :userid)");
+        var query = getEntityManager().createNativeQuery("Insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id)" +
+                " values (:timerecID, :latitude, :longitude, :starttime, :timepassed, :projectid, :userid)");
         query.setParameter("timerecID", Entry.getEntryID());
         query.setParameter("latitude", Entry.getLatitude());
         query.setParameter("longitude", Entry.getLongitude());
         query.setParameter("starttime", Entry.getStarttime());
         query.setParameter("timepassed", Entry.getTimepassed());
+        query.setParameter("projectid", Entry.getProjectID());
         query.setParameter("userid", Entry.getUserID());
         System.out.println(query.executeUpdate());
         var query2 = getEntityManager().createNativeQuery("INSERT INTO projectentries (entry_timerecid, project_id) values (:timerecID, :projectid)");
