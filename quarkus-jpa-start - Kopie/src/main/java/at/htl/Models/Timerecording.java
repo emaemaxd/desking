@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Timerecording {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long timerecID;
     @ManyToOne
     @JoinColumn(name="user_id")
