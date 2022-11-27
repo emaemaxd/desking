@@ -1,10 +1,12 @@
 package at.htl.repository;
 
 import at.htl.Models.Timerecording;
+import at.htl.Models.addEntryDTO;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
-import java.sql.Time;
+import javax.ws.rs.core.Response;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @ApplicationScoped
@@ -28,4 +30,21 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
         return query.getResultList();
     }
 
+    public Response addEntry(addEntryDTO Entry){
+        var query = getEntityManager().createNativeQuery("Insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id)" +
+                " values (:timerecID, :latitude, :longitude, :starttime, :timepassed, :projectid, :userid)");
+        query.setParameter("timerecID", Entry.getEntryID());
+        query.setParameter("latitude", Entry.getLatitude());
+        query.setParameter("longitude", Entry.getLongitude());
+        query.setParameter("starttime", Entry.getStarttime());
+        query.setParameter("timepassed", Entry.getTimepassed());
+        query.setParameter("projectid", Entry.getProjectID());
+        query.setParameter("userid", Entry.getUserID());
+        System.out.println(query.executeUpdate());
+        var query2 = getEntityManager().createNativeQuery("INSERT INTO projectentries (entry_timerecid, project_id) values (:timerecID, :projectid)");
+        query2.setParameter("timerecID", Entry.getEntryID());
+        query2.setParameter("projectid", Entry.getProjectID());
+        System.out.println(query2.executeUpdate());
+        return Response.ok().build();
+    }
 }
