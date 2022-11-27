@@ -1,6 +1,7 @@
 package at.htl.boundary;
 
 import at.htl.Models.Timerecording;
+import at.htl.Models.addEntryDTO;
 import at.htl.repository.TimerecordingRepository;
 
 import javax.inject.Inject;
@@ -42,9 +43,16 @@ public class TimerecordingResource {
      */
     @POST
     @Transactional
-    public Response addEntry(Timerecording timerecording){
-        trr.persist(timerecording);
-        return Response.ok(timerecording).build();
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/addEntry/{entry}")
+    public Response addEntry(addEntryDTO entryToAdd){
+        try {
+            trr.addEntry(entryToAdd);
+        }catch(Exception e){
+            System.out.println(e);
+            return Response.status(500).build();
+        }
+        return Response.ok(entryToAdd).build();
     }
 
 }
