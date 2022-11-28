@@ -21,7 +21,7 @@
 		3E54C86028EEAD8F00AD16AB /* VacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E54C85F28EEAD8F00AD16AB /* VacationView.swift */; };
 		3E64A9E128E0F0CB00F338D5 /* TrackTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E028E0F0CB00F338D5 /* TrackTimeView.swift */; };
 		3E64A9E328E0F19900F338D5 /* DeskingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E228E0F19900F338D5 /* DeskingLocation.swift */; };
-		3E64A9E528E0F4DF00F338D5 /* TrackTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */; };
+		3E64A9E528E0F4DF00F338D5 /* TrackTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E428E0F4DF00F338D5 /* TrackTimeViewModel.swift */; };
 		3EAD52FC28FFFE710031F966 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FB28FFFE710031F966 /* ApiClient.swift */; };
 		3EAD52FF290000D60031F966 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FE290000D60031F966 /* DIContainer.swift */; };
 		3ECDDAB5292CA7A8000424E7 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */; };
@@ -46,7 +46,7 @@
 		3E54C85F28EEAD8F00AD16AB /* VacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationView.swift; sourceTree = "<group>"; };
 		3E64A9E028E0F0CB00F338D5 /* TrackTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeView.swift; sourceTree = "<group>"; };
 		3E64A9E228E0F19900F338D5 /* DeskingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskingLocation.swift; sourceTree = "<group>"; };
-		3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeModel.swift; sourceTree = "<group>"; };
+		3E64A9E428E0F4DF00F338D5 /* TrackTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeViewModel.swift; sourceTree = "<group>"; };
 		3EAD52FB28FFFE710031F966 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		3EAD52FE290000D60031F966 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		3E6D66E428FFFBAF0020039D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3E64A9E428E0F4DF00F338D5 /* TrackTimeModel.swift */,
+				3E64A9E428E0F4DF00F338D5 /* TrackTimeViewModel.swift */,
 				3E47EF2A29199CB900DEA494 /* Project.swift */,
 				3EFF85EA292A63FD00A1A57B /* TimeEntryForUser.swift */,
 				3ECDDAB6292CA87A000424E7 /* LocationModel.swift */,
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EAD52FC28FFFE710031F966 /* ApiClient.swift in Sources */,
-				3E64A9E528E0F4DF00F338D5 /* TrackTimeModel.swift in Sources */,
+				3E64A9E528E0F4DF00F338D5 /* TrackTimeViewModel.swift in Sources */,
 				3E64A9E328E0F19900F338D5 /* DeskingLocation.swift in Sources */,
 				3EAD52FF290000D60031F966 /* DIContainer.swift in Sources */,
 				3EFF85EB292A63FD00A1A57B /* TimeEntryForUser.swift in Sources */,

@@ -17,7 +17,7 @@ class TimeEntriesViewModel: ObservableObject{
         print("running getData()-func for TimeEntriesForUser...")
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             
-            guard let data = data, error == nil else {
+            guard let data = data, error == nil else{
                 print("could not get data from \(url)")
                 return
             }

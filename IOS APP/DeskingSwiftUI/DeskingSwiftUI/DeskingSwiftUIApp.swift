@@ -1,10 +1,3 @@
-//
-//  DeskingSwiftUIApp.swift
-//  DeskingSwiftUI
-//
-//  Created by Ema xd on 19.09.22.
-//
-
 import SwiftUI
 
 @main
@@ -31,7 +24,7 @@ struct DeskingSwiftUIApp: App {
         /// set projects as environment variable
         projectVM.getData(from: apiBaseUrl + "projects/user/\(loggedUserId)")
         
-        timeEntriesVM.getData(from: apiBaseUrl + "entries/\(loggedUserId)")
+        timeEntriesVM.getData(from: apiBaseUrl + "entries")
         
         DIContainer.shared.register(type: ApiClient.self, component: DeskingApiClient(baseUrl: apiBaseUrl))
     }

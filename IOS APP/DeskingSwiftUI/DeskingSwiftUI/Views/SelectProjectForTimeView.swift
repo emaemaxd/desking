@@ -7,7 +7,6 @@ struct TimeOverviewView: View {
     @State var selectedProjectName = "Desking"
     
     var dateFormatter :DateFormatter
-    let isoDate =  "2018-09-01T09:01:16.8012"
     
     init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, selectedProjectName: String = "Desking") {
         self.projectsModel = projectsModel
@@ -27,32 +26,54 @@ struct TimeOverviewView: View {
                         Text(item.projName).tag(item.projName)
                     }
                 }
-                .padding()
-                .frame(width: 250, height: 40)
-                .background(.yellow)
+                .fixedSize(horizontal: true, vertical: false)
                 .clipShape(Capsule())
+                .overlay(
+                    RoundedRectangle(cornerRadius: 7)
+                        .stroke(.primary, lineWidth: 1.5)
+                )
                 .padding(.bottom)
                 
                 List{
                     ForEach(timeEntriesModel.timeEntries){ item in
                         if(selectedProjectName == item.projectName){
                             VStack{
-//                                Text("\(item.userLastName) (\(item.userRole))")
-                                
                                 Text(dateFormatter.date(from: item.starttime)!, format: .dateTime.day().month().year())
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .foregroundColor(.gray)
+                                    .font(.subheadline)
                                 
-                                Text("hi")
+                                HStack{
+                                    Text("\(item.lastname)")
+                                    Spacer()
+                                    Text("\(dateFormatter.date(from: item.starttime)!, format: .dateTime.hour().minute()) -")
+                                    Text("\(dateFormatter.date(from: item.starttime)!.adding(seconds: item.timepassed), format: .dateTime.hour().minute())")
+                                }
                             }
                         }
                     }
                 }
             }
+            .navigationTitle("Einträge nach Projekt")
         }
-        .navigationBarTitle("hi")
     }
     
     
     
+}
+
+extension Date {
+    func adding(seconds: Int) -> Date {
+        Calendar.current.date(byAdding: .second, value: seconds, to: self)!
+    }
+    
+    func adding(minutes: Int) -> Date {
+        Calendar.current.date(byAdding: .minute, value: minutes, to: self)!
+    }
+    
+    func adding(hours: Int) -> Date {
+        Calendar.current.date(byAdding: .hour, value: hours, to: self)!
+    }
 }
 
 struct TimeOverviewView_Previews: PreviewProvider {

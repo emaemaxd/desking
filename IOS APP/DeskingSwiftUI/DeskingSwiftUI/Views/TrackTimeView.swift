@@ -16,7 +16,7 @@ struct TrackTimeView: View {
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var locationsModel: LocationViewModel
     
-    let trackTimeVM = TrackTimeModel()
+    let trackTimeVM = TrackTimeViewModel()
     
 //    var timer = Timer()
     @State var selectedProject = "Desking"
@@ -50,7 +50,10 @@ struct TrackTimeView: View {
                 }
                 Button {
                     pressedRecordTime.toggle()
-                    print("Button was tapped")
+                    if (!pressedRecordTime){
+//                        trackTimeVM.sendPostRequest(to: URL(from: "http://localhost:8080/api/entries/addEntry"), body: TimeEntryModel.TimeEntryForPost, then: <#T##(Result<Data, Error>) -> Void#>)
+//                        trackTimeVM.postData(from: "http://localhost:8080/api/entries/addEntry")
+                    }
                 } label: {
                     if pressedRecordTime {
                         Image(systemName: "stop.circle.fill")

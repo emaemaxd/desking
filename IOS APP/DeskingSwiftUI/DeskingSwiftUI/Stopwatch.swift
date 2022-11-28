@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Stopwatch: View {
-    let trackTimeVM = TrackTimeModel()
+    let trackTimeVM = TrackTimeViewModel()
     @State private var progressTime = 0
     
     var hours: Int {
@@ -32,8 +32,8 @@ struct Stopwatch: View {
                 progressTime += 1
                 trackTimeVM.time = progressTime
             }
-            print("progress time ", progressTime)
-            print("track time ", trackTimeVM.time)
+//            print("progress time ", progressTime)
+//            print("track time ", trackTimeVM.time)
         }
     }
     
