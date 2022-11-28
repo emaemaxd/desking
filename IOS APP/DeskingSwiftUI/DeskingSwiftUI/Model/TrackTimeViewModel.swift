@@ -14,40 +14,47 @@ class TrackTimeViewModel: ObservableObject{
     
     var timeentryPost: TimeEntryModel.TimeEntryForUser?
     
-//    TODO: das usen
+    //    TODO: das usen
     @Published var timeEntryModelToPost = TimeEntryModel()
     
+    
+    func sendTimeEntry(url: String){
+        var toSend = TimeEntryModel.TimeEntryForPost()
+        toSend.projectID = -2
         
-        var urlSession = URLSession.shared
+//
+        let jsonData = try? JSONEncoder().encode(toSend)
+
+        // create post request
+        let postUrl = URL(string: url)!
+        var request = URLRequest(url: postUrl)
+        request.httpMethod = "POST"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+
+
+        // insert json data to the request
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+
+        task.resume()
+            
+        }
         
-        func sendPostRequest(
-            to url: URL,
-            body: Data,
-            then handler: @escaping (Result<Data, Error>) -> Void
-        ) {
-            // To ensure that our request is always sent, we tell
-            // the system to ignore all local cache data:
-            var request = URLRequest(
-                url: url,
-                cachePolicy: .reloadIgnoringLocalCacheData
-            )
-            
-            request.httpMethod = "POST"
-            request.httpBody = body
-            
-            let task = urlSession.dataTask(
-                with: request,
-                completionHandler: { data, response, error in
-                    // Validate response and call handler
-                    }
-            )
-            
-            task.resume()
+        
+        func timeEntryStart() {
+            // start timer
+        }
+        
+        
     }
-    
-    func timeEntryStart() {
-        // start timer
-    }
-    
-    
-}
+
