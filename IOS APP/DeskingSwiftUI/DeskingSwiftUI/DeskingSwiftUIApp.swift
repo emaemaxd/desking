@@ -24,7 +24,7 @@ struct DeskingSwiftUIApp: App {
         /// set projects as environment variable
         projectVM.getData(from: apiBaseUrl + "projects/user/\(loggedUserId)")
         
-        timeEntriesVM.getData(from: apiBaseUrl + "entries/\(loggedUserId)")
+        timeEntriesVM.getData(from: apiBaseUrl + "entries")
         
         DIContainer.shared.register(type: ApiClient.self, component: DeskingApiClient(baseUrl: apiBaseUrl))
     }
