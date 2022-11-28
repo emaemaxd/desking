@@ -44,7 +44,7 @@ public class TimerecordingResource {
     @POST
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("/addEntry/{entry}")
+    @Path("/addEntry/")
     public Response addEntry(addEntryDTO entryToAdd){
         try {
             trr.addEntry(entryToAdd);
