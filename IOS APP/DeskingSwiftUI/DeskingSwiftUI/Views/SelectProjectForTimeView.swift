@@ -8,9 +8,6 @@ struct TimeOverviewView: View {
     
     var dateFormatter :DateFormatter
     
-//    TODO: remove testdata
-    let testDate =  "2018-09-01T09:01:16.8012"
-    
     init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, selectedProjectName: String = "Desking") {
         self.projectsModel = projectsModel
         self.timeEntriesModel = timeEntriesModel

@@ -26,4 +26,14 @@ struct TimeEntryModel{
     mutating func setTimeEntriesForUser(timeEntries: [TimeEntryForUser]){
         self.timeEntries = timeEntries
     }
+    
+    struct TimeEntryForPost: Decodable{
+        var entryID: Int? = 0
+        var userID = 1
+        var projectID = 1
+        var latitude = 0
+        var longitude = 0
+        var timepassed = 123
+        var starttime = "2022-03-10T12:15:50"
+    }
 }
