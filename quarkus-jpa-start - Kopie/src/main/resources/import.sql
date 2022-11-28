@@ -18,11 +18,22 @@ insert into projects (id,description,name,customer_id) values (2,'Sony TV Ad Kam
 insert into projects (id,description,name,customer_id) values (3,'Linz AG Straßenbahn Bildschirme austauschen', 'Linz AG Öffis',3);
 insert into projects (id,description,name,customer_id) values (4,'Desking - Zeiterfassungstool leicht gemacht', 'Desking',2);
 
-insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (1,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),200,1,1);
-insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (2,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),5433,1,2);
-insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (3,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),444,2,1);
-insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (4,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),86400000,3,1);
-insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (5,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),90000000,1,2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-1,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),200,1,1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-2,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),5433,1,2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-3,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),444,2,1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-4,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),86400000,3,1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-5,48.268455462664114,14.25179316922848,(TIMESTAMP '2022-05-10 12:00:00+02:00'),90000000,1,2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-6,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-28 12:30:00+02:00'), 10700, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-7,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-21 11:50:00+02:00'),7200, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-8,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-22 08:00:00+02:00'),7200, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-9,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-07 11:50:00+02:00'),8200, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-10,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-08 08:00:00+02:00'),8245, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-11,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-12 :50:00+02:00'),7200, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-12,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-20 11:50:00+02:00'),14400, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-13,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-19 16:30:00+02:00'),9400, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (-14,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-27 14:30:00+02:00'),8750, 4, 1);
+
+
 
 insert into projectentries (entry_timerecid, project_id) values (1,1);
 insert into projectentries (entry_timerecid, project_id) values (2,1);
