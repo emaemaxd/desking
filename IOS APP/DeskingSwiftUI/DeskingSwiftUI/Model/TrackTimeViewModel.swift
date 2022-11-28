@@ -39,8 +39,7 @@ class TrackTimeViewModel: ObservableObject{
                 with: request,
                 completionHandler: { data, response, error in
                     // Validate response and call handler
-                    ...
-                }
+                    }
             )
             
             task.resume()
