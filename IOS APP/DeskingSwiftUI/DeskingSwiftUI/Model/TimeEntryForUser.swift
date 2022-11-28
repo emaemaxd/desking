@@ -27,7 +27,7 @@ struct TimeEntryModel{
         self.timeEntries = timeEntries
     }
     
-    struct TimeEntryForPost: Decodable{
+    struct TimeEntryForPost: Codable {
         var entryID: Int? = 0
         var userID = 1
         var projectID = 1

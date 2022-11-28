@@ -51,8 +51,7 @@ struct TrackTimeView: View {
                 Button {
                     pressedRecordTime.toggle()
                     if (!pressedRecordTime){
-//                        trackTimeVM.sendPostRequest(to: URL(from: "http://localhost:8080/api/entries/addEntry"), body: TimeEntryModel.TimeEntryForPost, then: <#T##(Result<Data, Error>) -> Void#>)
-//                        trackTimeVM.postData(from: "http://localhost:8080/api/entries/addEntry")
+                        trackTimeVM.sendTimeEntry(url: "http://localhost:8080/api/entries/addEntry")
                     }
                 } label: {
                     if pressedRecordTime {
