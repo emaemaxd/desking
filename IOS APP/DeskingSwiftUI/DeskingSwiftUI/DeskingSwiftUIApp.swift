@@ -26,6 +26,6 @@ struct DeskingSwiftUIApp: App {
         
         timeEntriesVM.getData(from: apiBaseUrl + "entries")
         
-        DIContainer.shared.register(type: ApiClient.self, component: DeskingApiClient(baseUrl: apiBaseUrl))
+//        DIContainer.shared.register(type: ApiClient.self, component: DeskingApiClient(baseUrl: apiBaseUrl))
     }
 }

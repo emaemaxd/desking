@@ -19,6 +19,7 @@ struct TrackTimeView: View {
     let trackTimeVM = TrackTimeViewModel()
     
 //    var timer = Timer()
+    // TODO: wegen user ex das als model machen
     @State var selectedProject = "Desking"
     @State var selectedLocation = ""
     @State var pressedRecordTime = false
