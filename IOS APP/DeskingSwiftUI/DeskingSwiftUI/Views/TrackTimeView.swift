@@ -13,17 +13,18 @@ enum Flavor: String, CaseIterable, Identifiable {
 }
 
 struct TrackTimeView: View {
-    let trackTimeVM = TrackTimeModel()
+    @ObservedObject var projectsModel: ProjectViewModel
+    @ObservedObject var locationsModel: LocationViewModel
+    
+    let trackTimeVM = TrackTimeViewModel()
     
 //    var timer = Timer()
-    @State var selectedProject = ""
+    @State var selectedProject = "Desking"
     @State var selectedLocation = ""
     @State var pressedRecordTime = false
     @State var showProjectPicker = false
     
-    var mockupProjects = ["Project one", "Desking", "NASA"]
-    var mockupLocations = ["HTL Leonding", "Linz HBF", "Shell Tankstelle Leonding"]
-    
+    @State var isMarked = false
     
     var body: some View {
         NavigationView{
@@ -32,6 +33,7 @@ struct TrackTimeView: View {
                 if pressedRecordTime {
                     Stopwatch()
                 } else {
+                    // default showing
                     HStack(spacing: 1){
                         Text("00")
                             .tracking(1.8)
@@ -48,9 +50,10 @@ struct TrackTimeView: View {
                 }
                 Button {
                     pressedRecordTime.toggle()
-                    print("Button was tapped")
+                    if (!pressedRecordTime){
+                        trackTimeVM.sendTimeEntry(url: "http://localhost:8080/api/entries/addEntry")
+                    }
                 } label: {
-                    // TODO: tracktimevm togglen 
                     if pressedRecordTime {
                         Image(systemName: "stop.circle.fill")
                             .resizable()
@@ -67,10 +70,9 @@ struct TrackTimeView: View {
                 }
                 
                 VStack{
-//                Text("Ausgewähltes Projekt: ")
                     Picker("Projekt auswählen", selection: $selectedProject){
-                        ForEach(mockupProjects, id: \.self){ item in
-                            Text(item)
+                        ForEach(projectsModel.projects){ item in
+                            Text(item.projName).tag(item.projName)
                         }
                     }
                     .padding()
@@ -82,18 +84,32 @@ struct TrackTimeView: View {
                     )
                     .padding(.bottom)
                     
-                    Text("Ausgewählter Standort: ")
-                        .padding(.top)
-                        .font(.title3)
-                    Text("vorgeschlagen, von dir entfernt")
-                        .font(.subheadline)
-                    HStack{
-                        Text(Image(systemName: "location.circle.fill"))
-                            .foregroundColor(.blue)
-                        
-                        Picker("Standort auswählen", selection: $selectedLocation){
-                            ForEach(mockupLocations, id: \.self){ item in
-                                Text(item)
+                    // added condition if no locations available
+                    if(!locationsModel.locationsForUser.isEmpty){
+                        VStack{
+                            Text("Ausgewählter Standort: ")
+                                .padding(.top)
+                                .font(.title3)
+                            Text("vorgeschlagen, von dir entfernt")
+                                .font(.subheadline)
+                            HStack{
+                                Button{
+                                    isMarked.toggle()
+                                } label: {
+                                    Image(systemName: self.isMarked ? "largecircle.fill.circle" : "circle")
+                                        .clipShape(Circle())
+                                        .foregroundColor(.blue)
+                                }
+                                
+                                Text(Image(systemName: "location.circle.fill"))
+                                    .foregroundColor(.blue)
+                                
+                                // LOCATION auswählen
+                                Picker("Standort auswählen", selection: $selectedLocation){
+                                    ForEach(locationsModel.locationsForUser){ item in
+                                        Text(item.name)
+                                    }
+                                }
                             }
                         }
                     }
@@ -105,12 +121,10 @@ struct TrackTimeView: View {
 }
 
 struct TrackTimeView_Previews: PreviewProvider {
+    static let projectsVM = ProjectViewModel()
+    static let locationsVM = LocationViewModel()
+    
     static var previews: some View {
-        TrackTimeView()
+        TrackTimeView(projectsModel: projectsVM, locationsModel: locationsVM)
     }
 }
-
-func addItem(){
-    print("ajsidfj")
-}
-

@@ -4,6 +4,8 @@ struct ContentView: View {
    
     @State var selected = 3
     var projectVM: ProjectViewModel
+    var timeEntriesVM: TimeEntriesViewModel
+    var locationVM: LocationViewModel
     
     var body: some View {
         TabView(selection: $selected) {
@@ -12,12 +14,12 @@ struct ContentView: View {
                     Image(systemName: "house")
                 }
                 .tag(1)
-            TimeOverviewView(projectsModel: projectVM)
+            TimeOverviewView(projectsModel: projectVM, timeEntriesModel: timeEntriesVM)
                 .tabItem{
                     Image(systemName: "chart.bar")
                 }
                 .tag(2)
-            TrackTimeView()
+            TrackTimeView(projectsModel: projectVM, locationsModel: locationVM)
                 .tabItem {
                     Image(systemName: "play.circle")
                 }

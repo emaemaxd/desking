@@ -1,25 +1,30 @@
-//
-//  DeskingSwiftUIApp.swift
-//  DeskingSwiftUI
-//
-//  Created by Ema xd on 19.09.22.
-//
-
 import SwiftUI
 
 @main
 struct DeskingSwiftUIApp: App {
+    let loggedUserId = 1
+    
     let projectVM = ProjectViewModel()
+    let timeEntriesVM = TimeEntriesViewModel()
+    let locationsVM = LocationViewModel()
+    
+    init() {
+        setupDependencies()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(projectVM: projectVM)
+            ContentView(projectVM: projectVM, timeEntriesVM: timeEntriesVM, locationVM: locationsVM)
         }
     }
     
     private func setupDependencies() {
         let apiBaseUrl: String = "http://localhost:8080/api/"
         
-        // TODO: projectVM.getData
+        /// set projects as environment variable
+        projectVM.getData(from: apiBaseUrl + "projects/user/\(loggedUserId)")
+        
+        timeEntriesVM.getData(from: apiBaseUrl + "entries")
         
         DIContainer.shared.register(type: ApiClient.self, component: DeskingApiClient(baseUrl: apiBaseUrl))
     }

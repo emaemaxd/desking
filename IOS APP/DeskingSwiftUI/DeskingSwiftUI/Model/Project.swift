@@ -1,10 +1,3 @@
-//
-//  Project.swift
-//  DeskingSwiftUI
-//
-//  Created by Ema xd on 07.11.22.
-//
-
 import Foundation
 
 struct PrModel {
@@ -12,11 +5,16 @@ struct PrModel {
     
     struct Project:Codable, Identifiable {
         var id: Int = 0
-        var name: String = ""
-        var description: String = ""
-        var customerid: Customer?
+        var projName: String = ""
+        var projDescr: String = ""
+        var customerId: Int?
+        var customerName: String?
+        var customerEmail: String?
+        var userLastName: String = ""
+        var userRole: Int = 0
     }
     
+    /*
     struct Customer: Codable{
         var id: Int
         var firstname: String?
@@ -24,12 +22,11 @@ struct PrModel {
         var email: String
         var tel: Int        // TODO: make backend change to String instead of Int
     }
+     */
     
     mutating func setProjects(projects: [Project]){
         self.projects = projects
     }
-    
-    
 }
 
 class ProjectViewModel: ObservableObject{
@@ -50,15 +47,17 @@ class ProjectViewModel: ObservableObject{
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response, error in
             
             guard let data = data, error == nil else {
-                print("could not get data")
+                print("could not get data from \(url)")
                 return
             }
             
-            // get data
+            // get actual data
             var results: [Project]?
             do {
                 results = try JSONDecoder().decode([PrModel.Project].self, from: data)
-                self.model.setProjects(projects: results!)
+                DispatchQueue.main.async {
+                    self.model.setProjects(projects: results!)
+                }
             } catch{
                 print("failed to convert data \(error)")
             }
@@ -67,22 +66,6 @@ class ProjectViewModel: ObservableObject{
                 print("empty data")
                 return
             }
-            
-            /*
-            for onePr in json{
-                var temp = Project()
-                temp.name = onePr.name
-                temp.id = onePr.id
-                temp.description = onePr.description
-                temp.customerid = onePr.customerid
-                
-                projects.append(temp)
-                //                returnProjects.append(temp)
-                print(temp)
-            }
-            //            print(json)
-             = projects[0].name
-             */
         })
         task.resume()
         
