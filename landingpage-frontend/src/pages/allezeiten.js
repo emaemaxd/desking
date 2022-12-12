@@ -7,7 +7,6 @@ const Page = () => {
 
   return (
     <Layout slug="alltimes">
-        <Total></Total>
         <AllEntries/>
    </Layout>
   );

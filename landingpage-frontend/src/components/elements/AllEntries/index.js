@@ -5,6 +5,9 @@ import { useState,useEffect } from "react";
 import axios from "axios"
 
 const AllEntries = (props) => {
+    const queryParams = new URLSearchParams(window.location.search)
+    const projekt = queryParams.get("projekt");
+    var filtered;
 
     const msToTime = (duration) => {
         var milliseconds = Math.floor((duration % 1000) / 100),
@@ -26,9 +29,20 @@ const AllEntries = (props) => {
 
     const getdata = () => {
         axios.get('http://localhost:8080/api/entries/').then((response) => {
-            setData(response.data);
+            if(projekt){
+            setData(calcData(response.data));
             console.log(data);
+            }else{
+                setData(response.data);
+            }
         })
+    }
+
+    const calcData = (data) => {
+        if(data) {
+        filtered = data.filter(d => d.customer.toLowerCase() == projekt.toLowerCase());
+        return filtered;
+        }  
     }
 
    return (
@@ -39,7 +53,9 @@ const AllEntries = (props) => {
                 <th>Dauer</th>
                 <th>Projekt</th>
             </tr>
+            
             {data !== undefined && data.map((item) => {
+                console.log(data.timepassed);
                  return (<tr style={{borderBottom:"2px solid #FFFFFF", borderTop: "2px solid #FFFFFF"}}><td>{item.lastname}</td><td>{item.starttime.split('T')[0]}<br/>{item.starttime.split('T')[1]}</td>
                  <td>{(msToTime(item.timepassed))}</td> <td>{item.customer}</td>
                  </tr>);
