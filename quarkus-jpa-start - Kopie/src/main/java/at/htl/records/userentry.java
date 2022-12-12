@@ -1,4 +1,4 @@
-package at.htl.Models;
+package at.htl.records;
 
 import java.time.LocalDateTime;
 
