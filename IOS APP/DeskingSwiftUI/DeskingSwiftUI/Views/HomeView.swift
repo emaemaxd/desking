@@ -6,6 +6,7 @@ struct ContentView: View {
     var projectVM: ProjectViewModel
     var timeEntriesVM: TimeEntriesViewModel
     var locationVM: LocationViewModel
+    var generalVM: GeneralViewModel
     
     var body: some View {
         TabView(selection: $selected) {
@@ -19,7 +20,7 @@ struct ContentView: View {
                     Image(systemName: "chart.bar")
                 }
                 .tag(2)
-            TrackTimeView(projectsModel: projectVM, locationsModel: locationVM)
+            TrackTimeView(projectsModel: projectVM, locationsModel: locationVM, generalVM: generalVM)
                 .tabItem {
                     Image(systemName: "play.circle")
                 }
@@ -36,6 +37,7 @@ struct ContentView: View {
                 }
                 .tag(5)
         }
+        .background(.primary)
         
     }
 }

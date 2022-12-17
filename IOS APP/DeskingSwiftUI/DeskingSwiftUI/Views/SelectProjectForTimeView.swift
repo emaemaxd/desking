@@ -54,7 +54,7 @@ struct TimeOverviewView: View {
                     }
                 }
             }
-            .navigationTitle("Einträge nach Projekt")
+            .navigationTitle("Einträge")
         }
     }
     

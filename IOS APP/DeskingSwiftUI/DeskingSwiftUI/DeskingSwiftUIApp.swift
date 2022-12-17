@@ -7,6 +7,7 @@ struct DeskingSwiftUIApp: App {
     let projectVM = ProjectViewModel()
     let timeEntriesVM = TimeEntriesViewModel()
     let locationsVM = LocationViewModel()
+    let generalVM = GeneralViewModel()
     
     init() {
         setupDependencies()
@@ -14,7 +15,7 @@ struct DeskingSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(projectVM: projectVM, timeEntriesVM: timeEntriesVM, locationVM: locationsVM)
+            ContentView(projectVM: projectVM, timeEntriesVM: timeEntriesVM, locationVM: locationsVM, generalVM: generalVM)
         }
     }
     
