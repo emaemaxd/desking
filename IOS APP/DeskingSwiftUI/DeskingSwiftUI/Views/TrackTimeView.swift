@@ -71,12 +71,14 @@ struct TrackTimeView: View {
                 }
                 
                 VStack{
-                    Picker("Projekt auswählen", selection: $selectedProject){
-                        ForEach(projectsModel.projects){ item in
-                            Text(item.projName).tag(item.projName)
-                        }
-                    }
+//                    Picker("Projekt auswählen", selection: $selectedProject){
+//                        ForEach(projectsModel.projects){ item in
+//                            Text(item.projName).tag(item.projName)
+//                        }
+//                    }
+                    Text("Desking")
                     .padding()
+                    .foregroundColor(.blue)
                     .frame(width: 200, height: 40)
                     .clipShape(Capsule())
                     .overlay(
