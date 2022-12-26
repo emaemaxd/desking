@@ -22,7 +22,6 @@ class TrackTimeViewModel: ObservableObject{
         var toSend = TimeEntryModel.TimeEntryForPost()
         toSend.projectID = -2
         
-//
         let jsonData = try? JSONEncoder().encode(toSend)
 
         // create post request

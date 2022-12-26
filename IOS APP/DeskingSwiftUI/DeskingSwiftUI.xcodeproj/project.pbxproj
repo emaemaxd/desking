@@ -22,6 +22,7 @@
 		3E64A9E128E0F0CB00F338D5 /* TrackTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E028E0F0CB00F338D5 /* TrackTimeView.swift */; };
 		3E64A9E328E0F19900F338D5 /* DeskingLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E228E0F19900F338D5 /* DeskingLocation.swift */; };
 		3E64A9E528E0F4DF00F338D5 /* TrackTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E64A9E428E0F4DF00F338D5 /* TrackTimeViewModel.swift */; };
+		3EA44A40294DD1450043EFDD /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA44A3F294DD1450043EFDD /* GeneralViewModel.swift */; };
 		3EAD52FC28FFFE710031F966 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FB28FFFE710031F966 /* ApiClient.swift */; };
 		3EAD52FF290000D60031F966 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD52FE290000D60031F966 /* DIContainer.swift */; };
 		3ECDDAB5292CA7A8000424E7 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */; };
@@ -47,6 +48,7 @@
 		3E64A9E028E0F0CB00F338D5 /* TrackTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeView.swift; sourceTree = "<group>"; };
 		3E64A9E228E0F19900F338D5 /* DeskingLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskingLocation.swift; sourceTree = "<group>"; };
 		3E64A9E428E0F4DF00F338D5 /* TrackTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTimeViewModel.swift; sourceTree = "<group>"; };
+		3EA44A3F294DD1450043EFDD /* GeneralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		3EAD52FB28FFFE710031F966 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		3EAD52FE290000D60031F966 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				3EFF85ED292A818F00A1A57B /* TimeEntriesViewModel.swift */,
 				3ECDDAB4292CA7A8000424E7 /* LocationViewModel.swift */,
+				3EA44A3F294DD1450043EFDD /* GeneralViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				3EFF85EB292A63FD00A1A57B /* TimeEntryForUser.swift in Sources */,
 				3E0BFEC428EA589900A55022 /* SettingsView.swift in Sources */,
 				3E64A9E128E0F0CB00F338D5 /* TrackTimeView.swift in Sources */,
+				3EA44A40294DD1450043EFDD /* GeneralViewModel.swift in Sources */,
 				3ECDDAB5292CA7A8000424E7 /* LocationViewModel.swift in Sources */,
 				3E4D169328D8808900482C7D /* HomeView.swift in Sources */,
 				3E3239B82919237000BBBE74 /* TimeEntryService.swift in Sources */,

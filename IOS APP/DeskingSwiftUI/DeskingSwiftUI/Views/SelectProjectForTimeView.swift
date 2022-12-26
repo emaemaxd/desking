@@ -33,7 +33,7 @@ struct TimeOverviewView: View {
                         .stroke(.primary, lineWidth: 1.5)
                 )
                 .padding(.bottom)
-                
+                // TODO: Project name should be unique 
                 List{
                     ForEach(timeEntriesModel.timeEntries){ item in
                         if(selectedProjectName == item.projectName){
@@ -54,7 +54,7 @@ struct TimeOverviewView: View {
                     }
                 }
             }
-            .navigationTitle("Einträge nach Projekt")
+            .navigationTitle("Einträge")
         }
     }
     
