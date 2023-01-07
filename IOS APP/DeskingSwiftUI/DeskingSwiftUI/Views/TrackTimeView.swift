@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-enum Flavor: String, CaseIterable, Identifiable {
-    case chocolate, vanilla, strawberry
-    var id: Self { self }
-}
-
 struct TrackTimeView: View {
+    var mockProjects = ["BillaPLUS App", "HTBLA Leonding Webseite", "Johnny Sins Video", "Desking"]
+    
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var locationsModel: LocationViewModel
+    @ObservedObject var generalVM: GeneralViewModel
     
     let trackTimeVM = TrackTimeViewModel()
     
 //    var timer = Timer()
-    @State var selectedProject = "Desking"
+    // TODO: wegen user ex das als model machen
+//    @State var selectedProject = "Desking"
     @State var selectedLocation = ""
     @State var pressedRecordTime = false
     @State var showProjectPicker = false
@@ -28,7 +27,7 @@ struct TrackTimeView: View {
     
     var body: some View {
         NavigationView{
-            VStack(spacing: 30) {
+            VStack(spacing: 50) {
                 Spacer()
                 if pressedRecordTime {
                     Stopwatch()
@@ -70,13 +69,24 @@ struct TrackTimeView: View {
                 }
                 
                 VStack{
-                    Picker("Projekt auswählen", selection: $selectedProject){
-                        ForEach(projectsModel.projects){ item in
-                            Text(item.projName).tag(item.projName)
+//                    Picker("Projekt auswählen", selection: $selectedProject){
+//                        ForEach(projectsModel.projects){ item in
+//                            Text(item.projName).tag(item.projName)
+//                        }
+//                    }
+//                    Text("Desking")
+                    
+                    Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
+                        ForEach(mockProjects, id: \.self){ item in
+                            Text(item)
+                                .underline(color: .black)
                         }
                     }
                     .padding()
-                    .frame(width: 200, height: 40)
+                    .foregroundColor(.blue)
+                    .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 40, maxHeight: 40)
+                    .foregroundColor(.white)
+//                    .background(.secondary)
                     .clipShape(Capsule())
                     .overlay(
                         RoundedRectangle(cornerRadius: 7)
@@ -115,6 +125,7 @@ struct TrackTimeView: View {
                     }
                 }
                 Spacer()
+                Spacer()
             }.navigationBarTitle("Zeit erfassen")
         }
     }
@@ -123,8 +134,9 @@ struct TrackTimeView: View {
 struct TrackTimeView_Previews: PreviewProvider {
     static let projectsVM = ProjectViewModel()
     static let locationsVM = LocationViewModel()
+    static let generalVM = GeneralViewModel()
     
     static var previews: some View {
-        TrackTimeView(projectsModel: projectsVM, locationsModel: locationsVM)
+        TrackTimeView(projectsModel: projectsVM, locationsModel: locationsVM, generalVM: generalVM)
     }
 }
