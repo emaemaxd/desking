@@ -25,7 +25,7 @@ const ProjectTable = (props) => {
                 <th>Kunde</th>
             </tr>
             {data !== undefined && data.map((item) => {
-                return <ProjectEntry name={item.name} client={item.customerid.email} />
+                return <ProjectEntry name={item.projName} client={item.customerEmail} />
             })}
         </table>
     );
