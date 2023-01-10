@@ -1,9 +1,15 @@
 import SwiftUI
+import WebKit
 
 struct TimeOverviewView: View {
     
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var timeEntriesModel: TimeEntriesViewModel
+    
+    @State var showWebView = false
+    private let urlForWebView = "https://google.com"
+    
+    // TODO: change selectedProject to environment variable
     @State var selectedProjectName = "Desking"
     
     var dateFormatter :DateFormatter
@@ -19,21 +25,24 @@ struct TimeOverviewView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("Geloggte Zeit für: ")
-                    .font(.title3)
-                Picker("Projekte", selection: $selectedProjectName){
-                    ForEach(projectsModel.projects){ item in
-                        Text(item.projName).tag(item.projName)
+                HStack{
+                    Text("Geloggte Zeit für: ")
+                    Picker("Projekte", selection: $selectedProjectName){
+                        ForEach(projectsModel.projects){ item in
+                            Text(item.projName).tag(item.projName)
+                        }
                     }
                 }
-                .fixedSize(horizontal: true, vertical: false)
-                .clipShape(Capsule())
-                .overlay(
-                    RoundedRectangle(cornerRadius: 7)
-                        .stroke(.primary, lineWidth: 1.5)
-                )
-                .padding(.bottom)
-                // TODO: Project name should be unique 
+                
+                Button{
+                    showWebView.toggle()
+                }label:{
+                    Text("mehr Infos...")
+                }
+                .sheet(isPresented: $showWebView){
+                    WebView(url: URL(string: urlForWebView)!)
+                }
+                // TODO: Project name should be unique
                 List{
                     ForEach(timeEntriesModel.timeEntries){ item in
                         if(selectedProjectName == item.projectName){
@@ -55,11 +64,25 @@ struct TimeOverviewView: View {
                 }
             }
             .navigationTitle("Einträge")
+            
         }
     }
     
     
     
+}
+
+struct WebView : UIViewRepresentable {
+    var url: URL
+    
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        uiView.load(request)
+    }
 }
 
 extension Date {

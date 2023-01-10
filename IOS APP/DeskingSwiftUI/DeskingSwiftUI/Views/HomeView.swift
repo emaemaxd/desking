@@ -28,7 +28,6 @@ struct ContentView: View {
             VacationView()
                 .tabItem {
                     Image(systemName: "calendar.badge.clock")
-                
                 }
                 .tag(4)
             SettingsView()
@@ -37,8 +36,7 @@ struct ContentView: View {
                 }
                 .tag(5)
         }
-        .background(.primary)
-        
+        .toolbar(.visible)
     }
 }
 //

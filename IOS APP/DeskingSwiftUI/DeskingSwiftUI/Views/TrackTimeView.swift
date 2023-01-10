@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TrackTimeView: View {
     var mockProjects = ["BillaPLUS App", "HTBLA Leonding Webseite", "Johnny Sins Video", "Desking"]
+    var mockLocation = ["HTBLA Leonding", "Hanusstraße 21", "Johnny Sins Video", "Desking"]
     
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var locationsModel: LocationViewModel
@@ -16,9 +17,9 @@ struct TrackTimeView: View {
     
     let trackTimeVM = TrackTimeViewModel()
     
-//    var timer = Timer()
+    //    var timer = Timer()
     // TODO: wegen user ex das als model machen
-//    @State var selectedProject = "Desking"
+    //    @State var selectedProject = "Desking"
     @State var selectedLocation = ""
     @State var pressedRecordTime = false
     @State var showProjectPicker = false
@@ -69,12 +70,12 @@ struct TrackTimeView: View {
                 }
                 
                 VStack{
-//                    Picker("Projekt auswählen", selection: $selectedProject){
-//                        ForEach(projectsModel.projects){ item in
-//                            Text(item.projName).tag(item.projName)
-//                        }
-//                    }
-//                    Text("Desking")
+                    //                    Picker("Projekt auswählen", selection: $selectedProject){
+                    //                        ForEach(projectsModel.projects){ item in
+                    //                            Text(item.projName).tag(item.projName)
+                    //                        }
+                    //                    }
+                    //                    Text("Desking")
                     
                     Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
                         ForEach(mockProjects, id: \.self){ item in
@@ -86,57 +87,58 @@ struct TrackTimeView: View {
                     .foregroundColor(.blue)
                     .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 40, maxHeight: 40)
                     .foregroundColor(.white)
-//                    .background(.secondary)
+                    //                    .background(.secondary)
                     .clipShape(Capsule())
                     .overlay(
                         RoundedRectangle(cornerRadius: 7)
                             .stroke(.primary, lineWidth: 1.5)
                     )
                     .padding(.bottom)
-                    
-                    // added condition if no locations available
-                    if(!locationsModel.locationsForUser.isEmpty){
-                        VStack{
-                            Text("Ausgewählter Standort: ")
-                                .padding(.top)
-                                .font(.title3)
-                            Text("vorgeschlagen, von dir entfernt")
-                                .font(.subheadline)
-                            HStack{
-                                Button{
-                                    isMarked.toggle()
-                                } label: {
-                                    Image(systemName: self.isMarked ? "largecircle.fill.circle" : "circle")
-                                        .clipShape(Circle())
+                        
+                        // added condition if no locations available
+                        if(!locationsModel.locationsForUser.isEmpty){
+                            VStack{
+                                Text("Ausgewählter Standort: ")
+                                    .padding(.top)
+                                    .font(.title3)
+                                Text("vorgeschlagen, von dir entfernt")
+                                    .font(.subheadline)
+                                HStack{
+                                    Button{
+                                        isMarked.toggle()
+                                    } label: {
+                                        Image(systemName: self.isMarked ? "largecircle.fill.circle" : "circle")
+                                            .clipShape(Circle())
+                                            .foregroundColor(.blue)
+                                    }
+                                    
+                                    Text(Image(systemName: "location.circle.fill"))
                                         .foregroundColor(.blue)
-                                }
-                                
-                                Text(Image(systemName: "location.circle.fill"))
-                                    .foregroundColor(.blue)
-                                
-                                // LOCATION auswählen
-                                Picker("Standort auswählen", selection: $selectedLocation){
-                                    ForEach(locationsModel.locationsForUser){ item in
-                                        Text(item.name)
+                                    
+                                    // LOCATION auswählen
+                                    Picker("Standort auswählen", selection: $selectedLocation){
+                                        ForEach(locationsModel.locationsForUser){ item in
+                                            Text(item.name)
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
-                Spacer()
-                Spacer()
-            }.navigationBarTitle("Zeit erfassen")
+                    Spacer()
+                    Spacer()
+                }.navigationBarTitle("Zeit erfassen")
+            }
         }
     }
-}
-
-struct TrackTimeView_Previews: PreviewProvider {
-    static let projectsVM = ProjectViewModel()
-    static let locationsVM = LocationViewModel()
-    static let generalVM = GeneralViewModel()
     
-    static var previews: some View {
-        TrackTimeView(projectsModel: projectsVM, locationsModel: locationsVM, generalVM: generalVM)
+    struct TrackTimeView_Previews: PreviewProvider {
+        static let projectsVM = ProjectViewModel()
+        static let locationsVM = LocationViewModel()
+        static let generalVM = GeneralViewModel()
+        
+        static var previews: some View {
+            TrackTimeView(projectsModel: projectsVM, locationsModel: locationsVM, generalVM: generalVM)
+        }
     }
-}
+
