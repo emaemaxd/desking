@@ -9,7 +9,8 @@ body {
     height: 100%;
     margin: 0;
     font-size: 14px;
-    color: #3C3429;
+    color: #3C3429 !important;
+    background-color: white !important;
 }
 
 * {
@@ -154,11 +155,11 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD !important;
 
     th {
         padding: 10px 14px;
-        color: #272727;
+        color: #272727 !important;
         font-size: 15px;
         span {
             font-size: 10px;
@@ -169,7 +170,7 @@ tr {
 
     td {
         padding: 14px;
-        color: #3C3429;
+        color: #3C3429 !important;
 
         span {
             font-size: 12px;
@@ -177,7 +178,7 @@ tr {
     }
 
     &:first-child {
-        background-color: #FAFAFA;
+        background-color: #FAFAFA !important;
     }
 
     td:first-child, th:first-child {
@@ -337,5 +338,8 @@ tr {
 
 p.light {
     font-weight: 100;
-    color: #8d8d8d;
+    color: #8d8d8d !important;
+}
+.sickrow {
+    background-color: white !important; 
 }
