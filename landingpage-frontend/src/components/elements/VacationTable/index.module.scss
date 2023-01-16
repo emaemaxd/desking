@@ -10,7 +10,9 @@
         }
     }
 }
-
+.prevGrid, tr, td, th {
+    background-color: white !important;
+}
 .prevGrid {
     display: grid;
     grid: auto-flow dense / 1fr 1fr;

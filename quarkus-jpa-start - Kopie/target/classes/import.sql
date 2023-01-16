@@ -33,6 +33,17 @@ insert into timerecording (timerecid, latitude, longitude, starttime, timepassed
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (13,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-19 16:30:00+02:00'),9400, 4, 1);
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (14,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-27 14:30:00+02:00'),8750, 4, 1);
 
+
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (15,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-28 12:30:00+02:00'), 10700, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (16,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-21 11:50:00+02:00'),7200, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (17,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-22 08:00:00+02:00'),7200, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (18,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-07 11:50:00+02:00'),8200, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (19,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-08 08:00:00+02:00'),8245, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (20,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-12 12:50:00+02:00'),7200, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (21,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-20 11:50:00+02:00'),14400, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (22,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-19 16:30:00+02:00'),9400, 4, 2);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (23,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-27 14:30:00+02:00'),8750, 4, 2);
+
 insert into projectentries (entry_timerecid, project_id) values (1,1);
 insert into projectentries (entry_timerecid, project_id) values (2,1);
 insert into projectentries (entry_timerecid, project_id) values (3,1);
@@ -47,6 +58,17 @@ insert into projectentries (entry_timerecid, project_id) values (11,4);
 insert into projectentries (entry_timerecid, project_id) values (12,4);
 insert into projectentries (entry_timerecid, project_id) values (13,4);
 insert into projectentries (entry_timerecid, project_id) values (14,4);
+
+
+insert into projectentries (entry_timerecid, project_id) values (15,4);
+insert into projectentries (entry_timerecid, project_id) values (16,4);
+insert into projectentries (entry_timerecid, project_id) values (17,4);
+insert into projectentries (entry_timerecid, project_id) values (18,4);
+insert into projectentries (entry_timerecid, project_id) values (19,4);
+insert into projectentries (entry_timerecid, project_id) values (20,4);
+insert into projectentries (entry_timerecid, project_id) values (21,4);
+insert into projectentries (entry_timerecid, project_id) values (22,4);
+insert into projectentries (entry_timerecid, project_id) values (23,4);
 
 insert into userprojects (user_id, project_id) values (1,1);
 insert into userprojects(user_id, project_id) values (1,2);
