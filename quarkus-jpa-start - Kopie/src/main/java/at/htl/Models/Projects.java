@@ -15,6 +15,7 @@ public class Projects {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
+    @Column(unique = true)
     private String name;
     @ManyToOne
     private Customer customer;

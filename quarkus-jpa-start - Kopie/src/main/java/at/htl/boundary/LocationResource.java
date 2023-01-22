@@ -6,10 +6,7 @@ import at.htl.repository.LocationRepository;
 
 import javax.inject.Inject;
 import javax.print.attribute.standard.Media;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
@@ -36,5 +33,15 @@ public class LocationResource {
     @Path("/projects/{id}")
     public List<Projects> getProjectsByLocation(@PathParam("id") long id){
         return lr.getProjectsbyLocaton(id);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/add")
+    public Response addLocation(Locations location) {
+        // Koordinaten Fetch
+
+        lr.getEntityManager().persist(location);
+        return Response.ok().build();
     }
 }

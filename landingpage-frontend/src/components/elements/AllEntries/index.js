@@ -3,6 +3,13 @@ import React from "react"
 import * as styles from "./index.module.scss"
 import { useState,useEffect } from "react";
 import axios from "axios"
+import Shadow from "react-shadow"
+import root from "react-shadow"
+
+ShadowRoot.defaultProps = {
+    mode: 'open',
+    styleSheets: [styles]
+};
 
 const AllEntries = (props) => {
     const queryParams = new URLSearchParams(window.location.search)
@@ -46,6 +53,7 @@ const AllEntries = (props) => {
     }
 
    return (
+    <root.div className="table">
         <table style={{marginTop: -60, fontSize: 10}}className={styles.table}>
             <tr>
                 <th>User</th>
@@ -61,6 +69,7 @@ const AllEntries = (props) => {
                  </tr>);
             })}
         </table>
+        </root.div>
    );
 }
 

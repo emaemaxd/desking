@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/desking.iml" filepath="$PROJECT_DIR$/.idea/desking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quarkus-jpa-start - Kopie/quarkus-jpa-start.iml" filepath="$PROJECT_DIR$/quarkus-jpa-start - Kopie/quarkus-jpa-start.iml" />
     </modules>
   </component>
 </project>

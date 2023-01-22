@@ -17,6 +17,11 @@ public class CustomerRepository implements PanacheRepository<Customer> {
 
     EntityManager em;
 
+    /**
+     * <h1>Update Customer</h1>
+     * @param customer (Model located in Models package)
+     */
+
     public void update(Customer customer) {
         getEntityManager().merge(customer);
     }

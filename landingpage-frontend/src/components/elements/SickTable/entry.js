@@ -8,9 +8,9 @@ const Entry = (props) => {
     return (
         <>
             <tr class="sickrow">
-                <td>Max</td>
-                <td>Mustermann</td>
-                <td>13.12.21 - 22.12.21</td>
+                <td>Mathias</td>
+                <td>Witak</td>
+                <td>13.12.22 - 22.12.22</td>
             </tr>
             
 

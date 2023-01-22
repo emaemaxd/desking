@@ -18,18 +18,6 @@ const SickTable = (props) => {
             <Entry />
             <Entry />
             <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
-            <Entry />
             
 
         </table>
