@@ -9,7 +9,7 @@ struct TimeEntriesView: View {
         VStack{
             NavigationView{
                 // TODO: webview not in main thread?
-                WebView(url: URL(string: "https://google.com")!)
+                WebView(url: URL(string: "http://localhost:8000/allezeiten")!)
                     .frame(height: 500.0)
                     .cornerRadius(10)
                     .shadow(color: .black.opacity(0.3), radius: 20.0, x: 5, y: 5)

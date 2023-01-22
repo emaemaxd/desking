@@ -2,23 +2,22 @@ import SwiftUI
 import WebKit
 
 struct TimeOverviewView: View {
-    
+    @ObservedObject var generelVM: GeneralViewModel
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var timeEntriesModel: TimeEntriesViewModel
     
     @State var showWebView = false
-    private let urlForWebView = "https://google.com"
     
     // TODO: change selectedProject to environment variable
     @State var selectedProjectName = "Desking"
     
     var dateFormatter :DateFormatter
     
-    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, selectedProjectName: String = "Desking") {
+    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel) {
         self.projectsModel = projectsModel
         self.timeEntriesModel = timeEntriesModel
-        self.selectedProjectName = selectedProjectName
         self.dateFormatter = DateFormatter()
+        self.generelVM = GeneralViewModel()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
     }
     
@@ -27,7 +26,7 @@ struct TimeOverviewView: View {
             VStack{
                 HStack{
                     Text("Geloggte Zeit für: ")
-                    Picker("Projekte", selection: $selectedProjectName){
+                    Picker("Projekte", selection: $generelVM.selectedProjectName){
                         ForEach(projectsModel.projects){ item in
                             Text(item.projName).tag(item.projName)
                         }
@@ -40,7 +39,7 @@ struct TimeOverviewView: View {
                     Text("mehr Infos...")
                 }
                 .sheet(isPresented: $showWebView){
-                    WebView(url: URL(string: urlForWebView)!)
+                    WebView(url: URL(string: generelVM.alleZeitenUrl)!)
                 }
                 // TODO: Project name should be unique
                 List{
