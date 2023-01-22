@@ -5,6 +5,7 @@ struct TimeOverviewView: View {
     @ObservedObject var generalVM: GeneralViewModel
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var timeEntriesModel: TimeEntriesViewModel
+    @ObservedObject var loginModel: LoginModel
     
     @State var showWebView = false
     @State var pr =  {
@@ -16,11 +17,12 @@ struct TimeOverviewView: View {
     
     var dateFormatter :DateFormatter
     
-    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, generalVM: GeneralViewModel) {
+    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, generalVM: GeneralViewModel, loginModel: LoginModel) {
         self.projectsModel = projectsModel
         self.timeEntriesModel = timeEntriesModel
         self.dateFormatter = DateFormatter()
         self.generalVM = generalVM
+        self.loginModel = loginModel
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
     }
     
@@ -46,7 +48,8 @@ struct TimeOverviewView: View {
                 }
                 List{
                     ForEach(timeEntriesModel.timeEntries){ item in
-                        if(generalVM.selectedProjectName == item.projectName){
+                        if(generalVM.selectedProjectName == item.projectName
+                           && item.lastname == loginModel.lastname){
                             VStack{
                                 Text(dateFormatter.date(from: item.starttime)!, format: .dateTime.day().month().year())
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -101,8 +104,9 @@ struct TimeOverviewView_Previews: PreviewProvider {
     static let projectsVM = ProjectViewModel()
     static let timeEntryVM = TimeEntriesViewModel()
     static let generalVM = GeneralViewModel()
+    static let login = LoginModel()
     
     static var previews: some View {
-        TimeOverviewView(projectsModel: projectsVM, timeEntriesModel: timeEntryVM, generalVM: generalVM)
+        TimeOverviewView(projectsModel: projectsVM, timeEntriesModel: timeEntryVM, generalVM: generalVM, loginModel: login)
     }
 }

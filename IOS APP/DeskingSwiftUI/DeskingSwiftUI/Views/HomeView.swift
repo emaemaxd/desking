@@ -6,6 +6,7 @@ struct ContentView: View {
     var projectVM: ProjectViewModel
     var timeEntriesVM: TimeEntriesViewModel
     var locationVM: LocationViewModel
+    var loginModel: LoginModel
     var generalVM: GeneralViewModel
     
     var body: some View {
@@ -15,7 +16,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                 }
                 .tag(1)
-            TimeOverviewView(projectsModel: projectVM, timeEntriesModel: timeEntriesVM, generalVM: generalVM)
+            TimeOverviewView(projectsModel: projectVM, timeEntriesModel: timeEntriesVM, generalVM: generalVM, loginModel: loginModel)
                 .tabItem{
                     Image(systemName: "chart.bar")
                 }
