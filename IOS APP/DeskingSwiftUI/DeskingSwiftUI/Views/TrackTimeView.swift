@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TrackTimeView: View {
-    var mockProjects = ["BillaPLUS App", "HTBLA Leonding Webseite", "Johnny Sins Video", "Desking"]
-    var mockLocation = ["HTBLA Leonding", "Hanusstraße 21", "Johnny Sins Video", "Desking"]
+//    var mockProjects = ["BillaPLUS App", "HTBLA Leonding Webseite", "Johnny Sins Video", "Desking"]
+//    var mockLocation = ["HTBLA Leonding", "Hanusstraße 21", "Johnny Sins Video", "Desking"]
     
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var locationsModel: LocationViewModel
@@ -70,19 +70,18 @@ struct TrackTimeView: View {
                 }
                 
                 VStack{
-                    //                    Picker("Projekt auswählen", selection: $selectedProject){
-                    //                        ForEach(projectsModel.projects){ item in
-                    //                            Text(item.projName).tag(item.projName)
-                    //                        }
-                    //                    }
-                    //                    Text("Desking")
-                    
                     Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
-                        ForEach(mockProjects, id: \.self){ item in
-                            Text(item)
-                                .underline(color: .black)
+                            ForEach(projectsModel.projects){ item in
+                                Text(item.projName).tag(item.projName)
+                            }
                         }
-                    }
+                    
+//                    Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
+//                        ForEach(mockProjects, id: \.self){ item in
+//                            Text(item)
+//                                .underline(color: .black)
+//                        }
+//                    }
                     .padding()
                     .foregroundColor(.blue)
                     .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 40, maxHeight: 40)

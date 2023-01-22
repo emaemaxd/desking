@@ -15,7 +15,7 @@ struct ContentView: View {
                     Image(systemName: "house")
                 }
                 .tag(1)
-            TimeOverviewView(projectsModel: projectVM, timeEntriesModel: timeEntriesVM)
+            TimeOverviewView(projectsModel: projectVM, timeEntriesModel: timeEntriesVM, generalVM: generalVM)
                 .tabItem{
                     Image(systemName: "chart.bar")
                 }

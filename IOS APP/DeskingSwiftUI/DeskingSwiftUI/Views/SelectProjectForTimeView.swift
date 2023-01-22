@@ -2,22 +2,25 @@ import SwiftUI
 import WebKit
 
 struct TimeOverviewView: View {
-    @ObservedObject var generelVM: GeneralViewModel
+    @ObservedObject var generalVM: GeneralViewModel
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var timeEntriesModel: TimeEntriesViewModel
     
     @State var showWebView = false
+    @State var pr =  {
+        
+    }
     
     // TODO: change selectedProject to environment variable
-    @State var selectedProjectName = "Desking"
+    // @State var selectedProjectName = "Desking"
     
     var dateFormatter :DateFormatter
     
-    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel) {
+    init(projectsModel: ProjectViewModel, timeEntriesModel: TimeEntriesViewModel, generalVM: GeneralViewModel) {
         self.projectsModel = projectsModel
         self.timeEntriesModel = timeEntriesModel
         self.dateFormatter = DateFormatter()
-        self.generelVM = GeneralViewModel()
+        self.generalVM = generalVM
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
     }
     
@@ -26,7 +29,7 @@ struct TimeOverviewView: View {
             VStack{
                 HStack{
                     Text("Geloggte Zeit für: ")
-                    Picker("Projekte", selection: $generelVM.selectedProjectName){
+                    Picker("Projekte", selection: $generalVM.selectedProjectName){
                         ForEach(projectsModel.projects){ item in
                             Text(item.projName).tag(item.projName)
                         }
@@ -39,12 +42,11 @@ struct TimeOverviewView: View {
                     Text("mehr Infos...")
                 }
                 .sheet(isPresented: $showWebView){
-                    WebView(url: URL(string: generelVM.alleZeitenUrl)!)
+                    WebView(url: URL(string: "\(generalVM.alleZeitenUrl)?projekt=\(generalVM.selectedProjectName.replacingOccurrences(of: " ", with: "%20"))")!)
                 }
-                // TODO: Project name should be unique
                 List{
                     ForEach(timeEntriesModel.timeEntries){ item in
-                        if(selectedProjectName == item.projectName){
+                        if(generalVM.selectedProjectName == item.projectName){
                             VStack{
                                 Text(dateFormatter.date(from: item.starttime)!, format: .dateTime.day().month().year())
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -63,13 +65,10 @@ struct TimeOverviewView: View {
                 }
             }
             .navigationTitle("Einträge")
-            
         }
     }
-    
-    
-    
 }
+
 
 struct WebView : UIViewRepresentable {
     var url: URL
@@ -101,8 +100,9 @@ extension Date {
 struct TimeOverviewView_Previews: PreviewProvider {
     static let projectsVM = ProjectViewModel()
     static let timeEntryVM = TimeEntriesViewModel()
+    static let generalVM = GeneralViewModel()
     
     static var previews: some View {
-        TimeOverviewView(projectsModel: projectsVM, timeEntriesModel: timeEntryVM)
+        TimeOverviewView(projectsModel: projectsVM, timeEntriesModel: timeEntryVM, generalVM: generalVM)
     }
 }
