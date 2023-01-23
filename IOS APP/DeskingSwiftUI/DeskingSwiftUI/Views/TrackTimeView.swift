@@ -18,8 +18,6 @@ struct TrackTimeView: View {
     let trackTimeVM = TrackTimeViewModel()
     
     //    var timer = Timer()
-    // TODO: wegen user ex das als model machen
-    //    @State var selectedProject = "Desking"
     @State var selectedLocation = ""
     @State var pressedRecordTime = false
     @State var showProjectPicker = false
@@ -51,7 +49,7 @@ struct TrackTimeView: View {
                 Button {
                     pressedRecordTime.toggle()
                     if (!pressedRecordTime){
-                        trackTimeVM.sendTimeEntry(url: "http://localhost:8080/api/entries/addEntry")
+                        trackTimeVM.sendTimeEntry(url: generalVM.baseApiUrl + "/entries/addEntry")
                     }
                 } label: {
                     if pressedRecordTime {
@@ -70,29 +68,33 @@ struct TrackTimeView: View {
                 }
                 
                 VStack{
-                    Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
+                    if(projectsModel.projects.isEmpty){
+                        Text("bitte mit dem Internet verbinden...")
+                    }else {
+                        Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
                             ForEach(projectsModel.projects){ item in
                                 Text(item.projName).tag(item.projName)
                             }
                         }
-                    
-//                    Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
-//                        ForEach(mockProjects, id: \.self){ item in
-//                            Text(item)
-//                                .underline(color: .black)
-//                        }
-//                    }
-                    .padding()
-                    .foregroundColor(.blue)
-                    .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 40, maxHeight: 40)
-                    .foregroundColor(.white)
-                    //                    .background(.secondary)
-                    .clipShape(Capsule())
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 7)
-                            .stroke(.primary, lineWidth: 1.5)
-                    )
-                    .padding(.bottom)
+                        
+                        //                    Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
+                        //                        ForEach(mockProjects, id: \.self){ item in
+                        //                            Text(item)
+                        //                                .underline(color: .black)
+                        //                        }
+                        //                    }
+                        .padding()
+                        .foregroundColor(.blue)
+                        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 40, maxHeight: 40)
+                        .foregroundColor(.white)
+                        //                    .background(.secondary)
+                        .clipShape(Capsule())
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(.primary, lineWidth: 1.5)
+                        )
+                        .padding(.bottom)
+                    }
                         
                         // added condition if no locations available
                         if(!locationsModel.locationsForUser.isEmpty){
