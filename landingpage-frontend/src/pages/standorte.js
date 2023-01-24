@@ -7,7 +7,7 @@ import LocationTable from "../components/elements/LocationTable"
 const Page = () => {
 
   const { register, handleSubmit } = useForm();
- /* const onSubmit = data => console.log(data); */
+  const onSubmit = data => console.log(data);
 
   return (
     <Layout slug="/standorte">
@@ -21,7 +21,7 @@ const Page = () => {
         <div className="col3">
           <h1 style={{ marginBottom: 60 }}>Standort hinzufügen</h1>
           <div>
-            <form className="form-standort" onSubmit={console.log("gaga")/*handleSubmit(onSubmit())*/}>
+            <form className="form-standort" onSubmit={handleSubmit(onSubmit())}>
               <div>
                 <label htmlFor="name">Name:</label>
                 <input id="name" {...register("name")} />
@@ -42,7 +42,7 @@ const Page = () => {
                 <label htmlFor="info">Info:</label>
                 <input id="info" {...register("info")} />
               </div>
-              <Button text="Hinzufügen" type="primary" disabled={true} align="center" />
+              <Button text="Hinzufügen" type="primary" disabled={false} align="center" />
             </form>
           </div>
         </div>

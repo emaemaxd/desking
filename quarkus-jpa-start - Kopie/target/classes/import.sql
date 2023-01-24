@@ -13,7 +13,7 @@ insert into customer (id, email, firstname, lastname, tel) values (3,'info@linza
 
 insert into projects (id,description,name,customer_id) values (1,'Website für HTL Leonding überarbeiten', 'HTL Leonding Webpage',2);
 insert into projects (id,description,name,customer_id) values (2,'Sony TV Ad Kampagne schalten', 'Sony Ads',1);
-insert into projects (id,description,name,customer_id) values (3,'Linz AG Straßenbahn Bildschirme austauschen', 'Linz AG Öffis',3);
+insert into projects (id,description,name,customer_id) values (3,'Linz AG Straßenbahn Bildschirme austauschen', 'Linz AG Oeffis',3);
 insert into projects (id,description,name,customer_id) values (4,'Desking - Zeiterfassungstool leicht gemacht', 'Desking',2);
 
 insert into projectlocations (project_id, location_id) values (1,1);

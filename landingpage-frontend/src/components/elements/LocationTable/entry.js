@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import * as styles from "./index.module.scss"
 import SettingsIcon from "../../../images/settings.png"
+import standorte from "../../../pages/standorte"
 
 const ProjectEntry = (props) => {
 
@@ -10,6 +11,7 @@ const ProjectEntry = (props) => {
     const info = props.info || "-"
     const [showDetail, setShowDetail] = useState(false);
     const reverseGeocodingUrl = `https://api.geoapify.com/v1/geocode/reverse?lat=${props.lat}&lon=${props.lon}&apiKey=37a34965914146f99bbcf1df22ab7ee1`;
+    const GeocodingUrl = `https://api.geoapify.com/v1/geocode/search?text=${props.lat}%&apiKey=37a34965914146f99bbcf1df22ab7ee1`
     const [data, setData] = useState();
     useEffect(() => {
         getdata()
@@ -22,11 +24,12 @@ const ProjectEntry = (props) => {
             axios.get(reverseGeocodingUrl).then((response) => {
         setData(response.data);
         console.log(data);
-
+        
     })
     }
 
     return (
+        
         <>
             <tr onClick={detailToggle}>
             <td className="checkbox-column"><input aria-label="Auswählen" type="checkbox" /></td>

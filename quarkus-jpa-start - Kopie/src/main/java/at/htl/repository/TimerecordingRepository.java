@@ -21,6 +21,7 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
                 "join User u on u.id = t.user.id " +
                 "join ProjectEntries pe on pe.id.entry.timerecID = t.timerecID " +
                 "join Projects p on p.id = pe.id.project.id");
+        
         return query.getResultList();
     }
     /**
@@ -44,7 +45,7 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
      */
     public List getEntriesForProject(int id){
         var query = getEntityManager().createQuery("select new at.htl.records.projectentry(pe.id.entry.timerecID,pe.id.entry.latitude, pe.id.entry.longitude,pe.id.entry.timepassed,pe.id.entry.starttime,pe.id.entry.user.firstname,pe.id.entry.user.lastname,pe.id.entry.user.email,pe.id.entry.user.Role,p.id,pe.id.entry.user.id) from ProjectEntries pe join Projects p on p.id = pe.id.project.id where pe.id.project.id = :id");
-        query.setParameter("id",id);
+        query.setParameter("id", id);
         return query.getResultList();
     }
 
