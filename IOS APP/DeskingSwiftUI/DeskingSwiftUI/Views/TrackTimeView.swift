@@ -52,24 +52,38 @@ struct TrackTimeView: View {
                         trackTimeVM.sendTimeEntry(url: generalVM.baseApiUrl + "/entries/addEntry")
                     }
                 } label: {
-                    if pressedRecordTime {
-                        Image(systemName: "stop.circle.fill")
-                            .resizable()
-                            .padding(.vertical, 16.0)
-                            .frame(width: 160.0, height: 192.0)
-                            .foregroundColor(.primary)
+                    if (!projectsModel.projects.isEmpty){
+                        if pressedRecordTime {
+                            Image(systemName: "stop.circle.fill")
+                                .resizable()
+                                .padding(.vertical, 16.0)
+                                .frame(width: 160.0, height: 192.0)
+                                .foregroundColor(.primary)
+                        } else {
+                            Image(systemName: "play.circle.fill")
+                                .resizable()
+                                .padding(.vertical, 16.0)
+                                .frame(width: 160.0, height: 192.0)
+                                .foregroundColor(.primary)
+                        }
                     } else {
-                        Image(systemName: "play.circle.fill")
+                        Image(systemName: "exclamationmark.circle.fill")
                             .resizable()
                             .padding(.vertical, 16.0)
                             .frame(width: 160.0, height: 192.0)
-                            .foregroundColor(.primary)
+                            .foregroundColor(.secondary)
                     }
+                    
                 }
                 
                 VStack{
                     if(projectsModel.projects.isEmpty){
-                        Text("bitte mit dem Internet verbinden...")
+                        HStack{
+                            Image(systemName: "wifi.slash")
+                                .foregroundColor(.blue)
+                            Text("bitte mit dem Internet verbinden...")
+                                .foregroundColor(.blue)
+                        }
                     }else {
                         Picker("Projekt auswählen", selection: $generalVM.selectedProjectName){
                             ForEach(projectsModel.projects){ item in
