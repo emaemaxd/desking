@@ -7,16 +7,16 @@ struct TimeEntriesView: View {
     
     var body: some View{
         VStack{
-            NavigationView{
-                // TODO: webview not in main thread?
-                WebView(url: URL(string: "http://localhost:8000/allezeiten")!)
-                    .frame(height: 500.0)
-                    .cornerRadius(10)
-                    .shadow(color: .black.opacity(0.3), radius: 20.0, x: 5, y: 5)
-            }.navigationBarTitle("Home")
+            Text("")
+            Text("00:00:00")
+            Text("")
+                VStack {
+                    PieChartView(sizes: [30, 28])
+                        .frame(width: 280, height: 280)
+                    Text("Two Sectors")
+                }
+            }
         }
-    }
-    
 }
 
 struct TimeEntriesView_Previews: PreviewProvider {
