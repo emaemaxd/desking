@@ -6,7 +6,6 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.core.Response;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @ApplicationScoped
@@ -21,7 +20,7 @@ public class TimerecordingRepository implements PanacheRepository<Timerecording>
                 "join User u on u.id = t.user.id " +
                 "join ProjectEntries pe on pe.id.entry.timerecID = t.timerecID " +
                 "join Projects p on p.id = pe.id.project.id");
-        
+
         return query.getResultList();
     }
     /**
