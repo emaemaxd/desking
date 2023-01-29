@@ -11,11 +11,11 @@ struct PieChartView: View {
     var sizes: [Double]
     let angleOffset = 90.0
     let colors = [
-        Color(.red),
-        Color(.blue),
-        Color(.green),
-        Color(.yellow),
-        Color(.purple)
+        Color("bear"),
+        Color("caramel"),
+        Color("lightcaramel"),
+        Color("oak"),
+        Color("sand")
     ]
     
     var body: some View {

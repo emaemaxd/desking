@@ -9,6 +9,8 @@ struct ContentView: View {
     var loginModel: LoginModel
     var generalVM: GeneralViewModel
     
+    let myColor = Color("FF9900")
+    
     var body: some View {
         TabView(selection: $selected) {
             TimeEntriesView()
