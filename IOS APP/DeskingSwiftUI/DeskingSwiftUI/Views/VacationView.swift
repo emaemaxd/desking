@@ -25,11 +25,7 @@ struct VacationView: View {
     
     var body: some View {
         NavigationView{
-//        HStack{
-//            Spacer()
             VStack(spacing: 20){
-                //                HStack{
-                //                    Spacer()
                 VStack{
                     DatePicker(
                         "Von",
@@ -50,7 +46,6 @@ struct VacationView: View {
                     Text("Zeitausgleich").tag("zeit")
                 }.pickerStyle(SegmentedPickerStyle())
                 
-                
                 Button{
                     //                    TODO: post
                 } label:{
@@ -58,7 +53,6 @@ struct VacationView: View {
                 }
                 .buttonStyle(BorderedButtonStyle())
                 .padding()
-                
             }
             .frame(minWidth: 250, idealWidth: 250, maxWidth: 250)
             .navigationBarTitle("Urlaub anfragen")

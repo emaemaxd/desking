@@ -11,11 +11,11 @@ struct PieChartView: View {
     var sizes: [Double]
     let angleOffset = 90.0
     let colors = [
-        Color("bear"),
-        Color("caramel"),
-        Color("lightcaramel"),
-        Color("oak"),
-        Color("sand")
+        Color("softgirl"),
+        Color("brickshade"),
+        Color("korallencool"),
+        Color("vampire"),
+        Color("orang")
     ]
     
     var body: some View {
@@ -33,10 +33,9 @@ struct PieChartView: View {
             ForEach(0..<runningAngles.count) { i in
                 let startAngle = i == 0 ? 0.0 : runningAngles[i-1]
                 Sector(startAngle: Angle(degrees: startAngle - angleOffset), endAngle: Angle(degrees: runningAngles[i] - angleOffset))
-                    .fill(colors[i % colors.count])
+                    .fill(GeneralViewModel().colors[i % GeneralViewModel().colors.count])
             }
         }
-        
     }
 }
 
@@ -67,4 +66,3 @@ struct Sector: Shape {
         return path
     }
 }
-
