@@ -1,28 +1,28 @@
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/boundary/TimerecordingResource.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/repository/CustomerRepository.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/UserProjID.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/boundary/LocationResource.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/boundary/UserResource.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/boundary/ProjectsResource.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/records/userentry.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/ProjectLocations.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/records/projectentry.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/User.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/repository/ProjectRepository.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/records/allProj.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/Locations.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/records/entry.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/addEntryDTO.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/Projects.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/repository/TimerecordingRepository.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/ProjectEntries.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/UserProjects.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/Timerecording.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/repository/UserRepository.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/ExampleResource.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/timerecID.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/boundary/CustomerResource.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/records/userProjFinal.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/Customer.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/Models/ProjectLocationID.java
-/Users/emaxd/Desktop/Projects/desking/quarkus-jpa-start - Kopie/src/main/java/at/htl/repository/LocationRepository.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\ProjectEntries.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\addEntryDTO.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\ProjectLocationID.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\records\allProj.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\records\userentry.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\ProjectRepository.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\TimerecordingRepository.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\records\entry.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\records\projectentry.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\UserProjID.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\ProjectsResource.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\LocationResource.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Customer.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\UserRepository.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Timerecording.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\CustomerResource.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\UserResource.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Locations.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\Projects.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\boundary\TimerecordingResource.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\ProjectLocations.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\records\userProjFinal.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\ExampleResource.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\timerecID.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\UserProjects.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\LocationRepository.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\Models\User.java
+C:\Users\hymer\OneDrive\Desktop\DRI NEW\desking\quarkus-jpa-start - Kopie\src\main\java\at\htl\repository\CustomerRepository.java

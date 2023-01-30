@@ -1,19 +1,17 @@
 package at.htl.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Locations {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  //  @SequenceGenerator(name = "idSeq", sequenceName = "id_Seq_Gen", allocationSize = 1, initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
-    private double latitude;
-    private double longitude;
+    private Float latitude;
+    private Float longitude;
     private String info;
 
     public String getName() {
@@ -28,7 +26,7 @@ public class Locations {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(Float latitude) {
         this.latitude = latitude;
     }
 
@@ -36,7 +34,7 @@ public class Locations {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(Float longitude) {
         this.longitude = longitude;
     }
 
