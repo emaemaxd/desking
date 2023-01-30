@@ -83,6 +83,7 @@
 		3E40182D2986D19B00E3806F /* SideViews */ = {
 			isa = PBXGroup;
 			children = (
+				3E0BFEBF28EA0D1B00A55022 /* Stopwatch.swift */,
 				3E54C85D28ED8EFD00AD16AB /* SettingsEditView.swift */,
 				3E40182E2986D20A00E3806F /* PieChartView.swift */,
 			);
@@ -115,7 +116,6 @@
 				3E6D66E428FFFBAF0020039D /* Model */,
 				3E6D66E328FFFB560020039D /* Views */,
 				3E4D169028D8808900482C7D /* DeskingSwiftUIApp.swift */,
-				3E0BFEBF28EA0D1B00A55022 /* Stopwatch.swift */,
 				3E64A9E228E0F19900F338D5 /* DeskingLocation.swift */,
 				3E4D169428D8808B00482C7D /* Assets.xcassets */,
 				3E4D169628D8808B00482C7D /* Preview Content */,
