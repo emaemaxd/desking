@@ -8,7 +8,7 @@ struct TimeEntriesView: View {
     @ObservedObject var projectsModel: ProjectViewModel
     @ObservedObject var timeEntriesModel: TimeEntriesViewModel
     
-    let mockProjects = ["Desking", "ASDF", "SLKDFJ", "sldf", "ajsdf"]
+    let mockProjects = ["Desking", "Project ABC", "XYZ-ye", "Nochba", "HTL Leonding Homepage"]
     let colors = [
         Color("softgirl"),
         Color("brickshade"),
