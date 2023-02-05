@@ -3,7 +3,6 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import TimeEntry from "./entry";
 import * as styles from "./index.module.scss"
-import standorte from "../../../pages/standorte"
 
 const ProjectTable = (props) => {
   const reverseGeocodingUrl = "https://api.geoapify.com/v1/geocode/reverse?lat=${e.latlng.lat}&lon=${e.latlng.lng}&apiKey=37a34965914146f99bbcf1df22ab7ee1";

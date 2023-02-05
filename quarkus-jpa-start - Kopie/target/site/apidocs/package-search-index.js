@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"at.htl"},{"l":"at.htl.boundary"},{"l":"at.htl.Models"},{"l":"at.htl.repository"}];updateSearchResults();

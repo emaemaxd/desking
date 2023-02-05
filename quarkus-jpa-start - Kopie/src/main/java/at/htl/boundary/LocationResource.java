@@ -6,6 +6,7 @@ import at.htl.repository.LocationRepository;
 
 import javax.inject.Inject;
 import javax.print.attribute.standard.Media;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -37,6 +38,7 @@ public class LocationResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional
     @Path("/add")
     public Response addLocation(Locations location) {
         // Koordinaten Fetch

@@ -26,7 +26,12 @@ const Button = (props) => {
             return (
                 <Link style={props.style} to={props.target} className={`${styles.primary} ${disabled && styles.disabled} ${align}`}>{text}</Link>
             )
-        } else {
+        } else if (props.submit) {
+           return <input style={props.style} className={`${styles.primary} ${disabled && styles.disabled} ${align}`} value={text} type="submit" />
+
+        }
+        
+        else {
             return (
                 <button style={props.style} className={`${styles.primary} ${disabled && styles.disabled} ${align}`}>{text}</button>
 
