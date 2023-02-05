@@ -1,0 +1,6 @@
+Column Name,Data Type,Nullable,Default,Primary Key
+PROJECTID,NUMBER,No,,1
+NAME,VARCHAR2(30),No,,
+CUSTOMERID,NUMBER,No,,
+NOTES,VARCHAR2(300),Yes,,
+DUETO,DATE,Yes,,
