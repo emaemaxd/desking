@@ -6,10 +6,15 @@ class TimeEntriesViewModel: ObservableObject{
     var timeEntries: [TimeEntry]{
         timeEntryModel.timeEntries
     }
+    var counts = [String:Int]()
     
     func setTimeEntriesForUser(timeEntries: [TimeEntry]){
         DispatchQueue.main.async {
             self.timeEntryModel.setTimeEntriesForUser(timeEntries: timeEntries)
+            
+            for item in self.timeEntryModel.timeEntries {
+                self.counts[item.projectName ?? ""] = (self.counts[item.projectName ?? ""] ?? 0) + 1
+            }
         }
     }
     

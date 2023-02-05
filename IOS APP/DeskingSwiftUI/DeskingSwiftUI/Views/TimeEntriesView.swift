@@ -20,10 +20,28 @@ struct TimeEntriesView: View {
     var body: some View{
         NavigationView{
             VStack{
-                Text("")
+                Spacer()
+                Text("Insgesamt die letzten 7 Tage")
+                    .font(.title2)
                 Text("00:00:00")
-                    .font(.largeTitle)
-                Text("")
+                    .fontWeight(.bold)
+                Spacer()
+                Text("Davon Projekte")
+                    .font(.title2)
+                    .multilineTextAlignment(.leading)
+                if timeEntriesModel.timeEntries.isEmpty {
+                    Text("oops, something went wrong")
+                } else {
+                    // Text(timeEntriesModel.timeEntries[0].starttime)
+                    /*
+                        ForEach(timeEntriesModel.counts) { key, value in
+                            Section(header: Text(key)) {
+                                Text("\(value)")
+                            }
+                        }
+                    */
+                }
+                /*
                 PieChartView(sizes: [30, 28, 40, 100, 30])
                         .frame(width: 250, height: 250)
                 VStack{
@@ -45,7 +63,9 @@ struct TimeEntriesView: View {
                         Label(mockProjects[3], systemImage: "rectangle.inset.filled")
                             .foregroundColor(generalVM.colors[3])
                     }
-                }
+                }*/
+                Spacer()
+                Spacer()
             }.navigationBarTitle("Home")
         }
     }
