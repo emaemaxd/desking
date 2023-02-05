@@ -1,3 +1,0 @@
-Column Name,Data Type,Nullable,Default,Primary Key
-LOCATIONID,NUMBER,No,,1
-PROJECTID,NUMBER,No,,2

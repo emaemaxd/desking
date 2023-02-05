@@ -1,5 +1,0 @@
-Column Name,Data Type,Nullable,Default,Primary Key
-CUSTOMERID,NUMBER,No,,1
-NAME,VARCHAR2(30),No,,
-EMAIL,VARCHAR2(30),Yes,,
-TELEPHONENUM,"NUMBER(12,0)",Yes,,
