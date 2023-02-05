@@ -1,7 +1,0 @@
-Column Name,Data Type,Nullable,Default,Primary Key
-USERID,"NUMBER(4,0)",Yes,,
-STARTTIME,NUMBER,Yes,,
-TIMEPASSED,"NUMBER(8,0)",Yes,,
-LONGITUDE,"NUMBER(9,6)",Yes,,
-LATITUDE,"NUMBER(8,6)",Yes,,
-PROJECTID,NUMBER,Yes,,

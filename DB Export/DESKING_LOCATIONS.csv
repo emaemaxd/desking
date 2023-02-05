@@ -1,6 +1,0 @@
-Column Name,Data Type,Nullable,Default,Primary Key
-LOCATIONID,NUMBER,No,,1
-NAME,VARCHAR2(30),No,,
-LONGITUDE,"NUMBER(9,6)",No,,
-LATITUDE,"NUMBER(8,6)",No,,
-INFO,VARCHAR2(255),Yes,,
