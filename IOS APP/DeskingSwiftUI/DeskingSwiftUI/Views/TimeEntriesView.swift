@@ -38,12 +38,11 @@ struct TimeEntriesView: View {
     var body: some View{
         NavigationView{
             VStack(spacing:20){
-                Spacer()
                 Text("Insgesamt die letzten 7 Tage")
-                    .font(.title3)
+                    .font(.title2)
                 Text("\(sumOfEntries)")
-                    .fontWeight(.bold)
-                Spacer()
+                    .fontWeight(.black)
+                
                 Text("Davon Projekte")
                     .font(.title2)
                     .multilineTextAlignment(.leading)
