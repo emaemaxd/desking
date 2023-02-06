@@ -31,6 +31,7 @@ insert into timerecording (timerecid, latitude, longitude, starttime, timepassed
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (12,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-20 11:50:00+02:00'),14400, 4, 1);
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (13,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-19 16:30:00+02:00'),9400, 4, 1);
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (14,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-27 14:30:00+02:00'),8750, 4, 1);
+insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (15,48.268455462664114,14.25179316922848, (TIMESTAMP '2023-02-03 14:30:00+02:00'),8750, 4, 1);
 
 
 insert into timerecording (timerecid, latitude, longitude, starttime, timepassed, projectid_id, user_id) values (15,48.268455462664114,14.25179316922848, (TIMESTAMP '2022-11-28 12:30:00+02:00'), 10700, 4, 2);

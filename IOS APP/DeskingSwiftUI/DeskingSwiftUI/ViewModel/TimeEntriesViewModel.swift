@@ -11,10 +11,6 @@ class TimeEntriesViewModel: ObservableObject{
     func setTimeEntriesForUser(timeEntries: [TimeEntry]){
         DispatchQueue.main.async {
             self.timeEntryModel.setTimeEntriesForUser(timeEntries: timeEntries)
-            
-            for item in self.timeEntryModel.timeEntries {
-                self.counts[item.projectName ?? ""] = (self.counts[item.projectName ?? ""] ?? 0) + 1
-            }
         }
     }
     
@@ -41,9 +37,4 @@ class TimeEntriesViewModel: ObservableObject{
         })
         task.resume()
     }
-    
-    func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
 }
