@@ -81,7 +81,7 @@ struct TrackTimeView: View {
                         HStack{
                             Image(systemName: "wifi.slash")
                                 .foregroundColor(.blue)
-                            Text("bitte mit dem Internet verbinden...")
+                            Text("Verbindung zum Server konnte nicht aufgebaut werden...")
                                 .foregroundColor(.blue)
                         }
                     }else {

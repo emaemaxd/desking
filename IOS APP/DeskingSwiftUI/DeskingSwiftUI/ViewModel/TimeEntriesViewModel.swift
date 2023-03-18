@@ -6,6 +6,7 @@ class TimeEntriesViewModel: ObservableObject{
     var timeEntries: [TimeEntry]{
         timeEntryModel.timeEntries
     }
+    var counts = [String:Int]()
     
     func setTimeEntriesForUser(timeEntries: [TimeEntry]){
         DispatchQueue.main.async {
@@ -36,9 +37,4 @@ class TimeEntriesViewModel: ObservableObject{
         })
         task.resume()
     }
-    
-    func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
 }
