@@ -12,39 +12,22 @@ struct SettingsView: View {
     @State var email = "ema.halilovic@htl-leonding.ac.at"
     @State var adress = "Limesstraße 12-14"
     @State var tel = "+43 12334556"
+    @State var userValues = ["Ema Halilovic", "ema.halilovic@htl-leonding.ac.at", "Limesstraße 12-14", "+43 12334556"]
+    var fields = ["Name", "E-Mail", "Adresse", "Telefon"]
     
     var body: some View {
         NavigationView{
             Form{
                 Section{
-                    HStack(spacing: 25) {
-                        Text("Name").foregroundColor(.gray)
-                        
-                        TextField("Username", text: $name)
-//                        Spacer()
-//                        Picker(name, selection: $name){
-//                            SettingsEditView(savedState: "Ema Halilovic", toEdit: "Username")
-//                        }
+                    ForEach (0..<fields.count) { i in
+                        HStack{
+                            Text(fields[i])
+                                .foregroundColor(.gray)
+                            Spacer()
+                            Text(userValues[i])
+                        }
+                        .lineLimit(1)
                     }
-                    
-                    HStack(spacing: 20) {
-                        Text("E-Mail").foregroundColor(.gray)
-                        TextField("E-Mail", text: $email)
-                            
-                    }
-                    .lineLimit(1)
-                    
-                    HStack {
-                        Text("Adresse").foregroundColor(.gray)
-                        TextField("Adresse", text: $adress)
-                    }
-                    .lineLimit(1)
-                    
-                    HStack(spacing: 15) {
-                        Text("Telefon").foregroundColor(.gray)
-                        TextField("Telefon", text: $tel)
-                    }
-                    .lineLimit(1)
                 } header: {
                     Text("persönliche informationen")
                 }
@@ -53,7 +36,7 @@ struct SettingsView: View {
                     HStack {
                         Text("Unternehmen")
                         Spacer()
-                        Text("Desking GmbH")
+                        Text("Desking")
                     }
 
                 } header: {
@@ -69,8 +52,18 @@ struct SettingsView: View {
                         Text("1.0.0")
                     }
                 } header: {
-                    Text("app")
+                    Text("App")
                 }
+//                Section {
+//                    Button(action: {
+//                        print("ij")
+//                    }) {
+//                        HStack{
+//                            Image(systemName: "pencil")
+//                            Text("Eintellungen ändern")
+//                        }
+//                    }
+//                }
             }
             .navigationBarTitle("Einstellungen")
         }

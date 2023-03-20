@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsEditView: View {
+    @ObservedObject var generalVM: GeneralViewModel
+    
     @State var savedState: String
     @State var toEdit: String
     var body: some View {
