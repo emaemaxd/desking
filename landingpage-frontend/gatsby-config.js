@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/m.witak",
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Desking Landingpage",

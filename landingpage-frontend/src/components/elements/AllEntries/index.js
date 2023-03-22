@@ -6,14 +6,16 @@ import axios from "axios"
 import Shadow from "react-shadow"
 import root from "react-shadow"
 
+/*
 ShadowRoot.defaultProps = {
     mode: 'open',
     styleSheets: [styles]
 };
+*/
 
 const AllEntries = (props) => {
-    const queryParams = new URLSearchParams(window.location.search)
-    const projekt = queryParams.get("projekt");
+    //const queryParams = new URLSearchParams(window.location.search)
+    const projekt = "desking"; //queryParams.get("projekt");
     var filtered;
 
     const msToTime = (duration) => {

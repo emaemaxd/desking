@@ -1,0 +1,400 @@
+---
+openapi: 3.0.3
+info:
+  title: quarkus-jpa-start API
+  version: 1.0.0-SNAPSHOT
+paths:
+  /api/api/customer:
+    get:
+      tags:
+      - Customer Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+    post:
+      tags:
+      - Customer Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        "200":
+          description: OK
+  /api/api/customer/{id}:
+    get:
+      tags:
+      - Customer Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+  /api/api/entries:
+    get:
+      tags:
+      - Timerecording Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Timerecording'
+  /api/api/entries/addEntry:
+    post:
+      tags:
+      - Timerecording Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addEntryDTO'
+      responses:
+        "200":
+          description: OK
+  /api/api/entries/project/{id}:
+    get:
+      tags:
+      - Timerecording Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+  /api/api/entries/{id}:
+    get:
+      tags:
+      - Timerecording Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+  /api/api/locations:
+    get:
+      tags:
+      - Location Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Locations'
+  /api/api/locations/add:
+    post:
+      tags:
+      - Location Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Locations'
+      responses:
+        "200":
+          description: OK
+  /api/api/locations/projects/{id}:
+    get:
+      tags:
+      - Location Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Projects'
+  /api/api/locations/{id}:
+    get:
+      tags:
+      - Location Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Locations'
+  /api/api/projects:
+    get:
+      tags:
+      - Projects Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Projects'
+  /api/api/projects/user/{id}:
+    get:
+      tags:
+      - Projects Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+  /api/api/projects/{id}:
+    get:
+      tags:
+      - Projects Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Projects'
+  /api/api/users:
+    get:
+      tags:
+      - User Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags:
+      - User Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: OK
+  /api/api/users/update:
+    put:
+      tags:
+      - User Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        "200":
+          description: OK
+  /api/api/users/{id}:
+    get:
+      tags:
+      - User Resource
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int32
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/hello:
+    get:
+      tags:
+      - Example Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        tel:
+          type: string
+    LocalDateTime:
+      format: date-time
+      type: string
+      example: 2022-03-10T12:15:50
+    Locations:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        name:
+          type: string
+        latitude:
+          format: float
+          type: number
+        longitude:
+          format: float
+          type: number
+        info:
+          type: string
+    Projects:
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        name:
+          type: string
+        customer:
+          $ref: '#/components/schemas/Customer'
+        description:
+          type: string
+        customerid:
+          $ref: '#/components/schemas/Customer'
+    Timerecording:
+      type: object
+      properties:
+        timerecID:
+          format: int64
+          type: integer
+        user:
+          $ref: '#/components/schemas/User'
+        latitude:
+          format: int64
+          type: integer
+        longitude:
+          format: int64
+          type: integer
+        timepassed:
+          format: int32
+          type: integer
+        starttime:
+          $ref: '#/components/schemas/LocalDateTime'
+        projectid:
+          $ref: '#/components/schemas/Projects'
+    User:
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        Role:
+          format: int32
+          type: integer
+        role:
+          format: int32
+          type: integer
+    addEntryDTO:
+      type: object
+      properties:
+        entryID:
+          format: int32
+          type: integer
+        userID:
+          format: int32
+          type: integer
+        projectID:
+          format: int32
+          type: integer
+        latitude:
+          format: int64
+          type: integer
+        longitude:
+          format: int64
+          type: integer
+        timepassed:
+          format: int64
+          type: integer
+        starttime:
+          $ref: '#/components/schemas/LocalDateTime'

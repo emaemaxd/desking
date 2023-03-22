@@ -1,0 +1,5 @@
+io.vertx.ext.auth.impl.hash.SHA1
+io.vertx.ext.auth.impl.hash.SHA256
+io.vertx.ext.auth.impl.hash.SHA512
+io.vertx.ext.auth.impl.hash.PBKDF2
+

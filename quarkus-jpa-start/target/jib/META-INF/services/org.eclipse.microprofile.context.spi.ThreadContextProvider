@@ -1,0 +1,4 @@
+io.smallrye.context.jta.context.propagation.JtaContextProvider
+io.quarkus.arc.runtime.context.ArcContextProvider
+io.quarkus.resteasy.common.runtime.ResteasyContextProvider
+

@@ -6,7 +6,7 @@ import axios from "axios"
 
 const ProjectEntries = (props) => {
     var arr;
-    const queryParams = new URLSearchParams(window.location.search)
+    //const queryParams = new URLSearchParams(window.location.search)
 
     const msToTime = (duration) => {
         var milliseconds = Math.floor((duration % 1000) / 100),

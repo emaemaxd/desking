@@ -1,0 +1,2 @@
+com.arjuna.ats.jta.cdi.TransactionExtension
+io.smallrye.config.inject.ConfigExtension
